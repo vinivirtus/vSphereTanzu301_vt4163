@@ -159,7 +159,7 @@ jobs:
           echo member_record_sha=$(cat /tmp/merge_sha) >> GITHUB_ENV
       - name: delete_merged_member_registration_file
         run: |
-          echo "member_record_sha is: ${{ env.member_record_sha }}""
+          echo "member_record_sha is: ${{ env.member_record_sha }}"
           curl -X DELETE \
           -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           -H "Accept: application/vnd.github.v3+json" \
