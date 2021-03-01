@@ -170,11 +170,11 @@ jobs:
           echo inprogress=$(echo "status: in-progress" | base64 -w 0) >> $GITHUB_ENV         
       - name: create new member registration file from validated github metadata
         run: |
-          inprogress=$(echo "status: in-progress" | base64 -w 0)
+          echo "inprogress is: ${{ env.inprogress }}""
           curl -X PUT \
           -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           -H "Accept: application/vnd.github.v3+json" \
-          -d '{"message": "Updating Member Record File For '${{ github.event.sender.login }}'","content":"$inprogress"}' \
+          -d '{"message": "Updating Member Record File For '${{ github.event.sender.login }}'","content":"${{ env.inprogress }}"}' \
           "https://api.github.com/repos/${{ env.org_repo }}/contents/static/admin/userdata/registered_members/${{ github.event.sender.login }}.yml" \
           -o /tmp/member_repo_post_response.json
           cat /tmp/member_repo_post_response.json     
