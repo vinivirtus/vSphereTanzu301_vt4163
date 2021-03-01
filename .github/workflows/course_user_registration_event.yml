@@ -19,9 +19,9 @@ jobs:
       - name: set source repo as org_repo
         run: |
           echo $(echo org_repo="$GITHUB_REPOSITORY") >> $GITHUB_ENV
-          echo $org_repo
       - name: curl member record file
         run: |
+          echo "org_repo is ${{ env.org_repo }}"
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           "https://api.github.com/repos/modernappsninja/admin-private/contents/userdata/members/${{ github.event.sender.login }}_${{ github.event.sender.id }}.yml" \
           -o /tmp/raw_member_record_curl.json
@@ -155,6 +155,7 @@ jobs:
           -o /tmp/merge_sha.tmp
           cat /tmp/merge_sha.tmp
           cat /tmp/merge_sha.tmp | jq -r '.sha' > /tmp/merge_sha
+      - name: set merged member record sha
           cat /tmp/merge_sha
           echo member_record_sha=$(cat /tmp/merge_sha) >> GITHUB_ENV
       - name: delete_merged_member_registration_file
