@@ -172,7 +172,7 @@ jobs:
           echo inprogress=$(echo "status: in-progress" | base64 -w 0) >> $GITHUB_ENV         
       - name: create new member registration file from validated github metadata
         run: |
-          echo "inprogress is: ${{ env.inprogress }}""
+          echo "inprogress is: ${{ env.inprogress }}"
           curl -X PUT \
           -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           -H "Accept: application/vnd.github.v3+json" \
