@@ -16,7 +16,7 @@ weight: 1013
 
 ## Requirements for tests and course completion certificates
 
-ModernApps Ninja learning content is free and open to anyone to view, however to take tests and recieve certificates of completion for courses, you must sign up for a free community membership, **and** register for this course, per the instructions below. 
+ModernApps Ninja learning content is free and open to anyone to view, however to take tests and receive certificates of completion for courses, you must sign up for a free community membership, **and** register for this course, per the instructions below. 
 
 ### Join the ModernApps Ninja Community!
 
