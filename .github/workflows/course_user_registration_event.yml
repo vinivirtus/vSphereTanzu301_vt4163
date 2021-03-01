@@ -158,7 +158,9 @@ jobs:
       - name: set merged member record sha
         run: |
           cat /tmp/merge_sha
-          echo member_record_sha="$(cat /tmp/merge_sha)" >> GITHUB_ENV
+          member_record_sha=$(cat /tmp/merge_sha)
+          echo member_record_sha=$member_record_sha
+          echo member_record_sha=$member_record_sha >> GITHUB_ENV
       - name: delete_merged_member_registration_file
         run: |
           echo "member_record_sha is: ${{ env.member_record_sha }}"
