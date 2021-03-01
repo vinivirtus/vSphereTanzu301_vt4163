@@ -154,13 +154,13 @@ jobs:
           "https://api.github.com/repos/${{ env.org_repo }}/contents/${{ env.pr_filename }}" \
           -o /tmp/merge_sha.tmp
           cat /tmp/merge_sha.tmp
-          cat /tmp/merge_sha.tmp | jq -r '.sha' > /tmp/merge_sha
+          cat /tmp/merge_sha.tmp | jq '.sha' > /tmp/merge_sha
       - name: set merged member record sha
         run: |
           cat /tmp/merge_sha
           member_record_sha=$(cat /tmp/merge_sha)
-          echo "member_record_sha=$member_record_sha"
-          echo "member_record_sha=$member_record_sha" >> GITHUB_ENV
+          echo member_record_sha=$member_record_sha
+          echo member_record_sha=$member_record_sha >> GITHUB_ENV
       - name: delete_merged_member_registration_file
         run: |
           echo "member_record_sha is: ${{ env.member_record_sha }}"
