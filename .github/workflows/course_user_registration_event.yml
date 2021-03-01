@@ -162,7 +162,7 @@ jobs:
           echo filemergesha="$(cat /tmp/merge_sha)" >> GITHUB_ENV
       - name: delete_merged_member_registration_file
         run: |
-          echo "filemergesha is: ${{ filemergesha }}"
+          echo "filemergesha is: ${{ env.filemergesha }}"
           curl -X DELETE \
           -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           -H "Accept: application/vnd.github.v3+json" \
