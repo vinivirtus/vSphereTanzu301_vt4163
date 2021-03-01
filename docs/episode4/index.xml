@@ -1,0 +1,14 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>vSphere with Tanzu 301 – Episode 4: vSphere with Tanzu - Creating a Namespace and Deploying a K8s Cluster</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/</link><description>Recent content in Episode 4: vSphere with Tanzu - Creating a Namespace and Deploying a K8s Cluster on vSphere with Tanzu 301</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 09 Oct 2020 03:24:25 -0700</lastBuildDate><atom:link href="https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: vSphere with Tanzu - Creating a Namespace and Deploying a K8s Cluster</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/deploynamespacecluster/</link><pubDate>Mon, 12 Oct 2020 18:47:30 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/deploynamespacecluster/</guid><description>
+&lt;p>On the next page is&lt;/p>
+&lt;p>The fourth in a series of videos that walk you through the whole process of deploying and using vSphere with Tanzu. See below for chapter links.&lt;/p>
+&lt;p>This video gets into the good stuff - how to deploy an upstream Kubernetes Cluster to vSphere using vSphere with Tanzu. It goes into detail about how the vSphere admin configures a namespace, the delegation model and hand-off to the Kubernetes Cluster Admin, and then ultimately how to interact with vSphere to deploy a Tanzu Kubernetes Cluster.&lt;/p>
+&lt;p>Target audience: vSphere Admins and Kubernetes Admins Chapters:&lt;/p>
+&lt;pre>&lt;code> 0:00​ vSphere With Tanzu Deep Dive Series Ep 4
+0:57​ Validating and Troubleshooting 5:09​ Creating a Namespace
+10:30​ Logging into a Namespace
+20:27​ Creating a Tanzu Kubernetes Cluster
+27:34​ Inspecting the Tanzu Kubernetes Cluster
+32:08​ Logging into the Tanzu Kubernetes Cluster &lt;/code>&lt;/pre></description></item><item><title>Docs: Video - Creating a Namespace and Deploying a K8s Cluster</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/deploynamespaceclustervideo/</link><pubDate>Mon, 12 Oct 2020 20:05:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/deploynamespaceclustervideo/</guid><description>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/biqSFIu_hmQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,308 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>vSphere with Tanzu 301 – vSphere with Tanzu 301</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/</link><description>Recent content on vSphere with Tanzu 301</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Tech Preview</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/courseintroduction/techpreview/</link><pubDate>Mon, 12 Oct 2020 18:34:25 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/courseintroduction/techpreview/</guid><description>
+&lt;p>&lt;strong>Please Note: This course is currently in technical preview&lt;/strong> for
+additional review and feedback before the course is generally available.
+The purpose of the preview is to validate all information in the course
+and to receive input on additions on improvements we can make before GA.&lt;/p>
+&lt;p>Accordingly, please be aware that any technical details in the course
+are still under review and may not be fully accurate.&lt;/p>
+&lt;p>&lt;strong>Your feedback is extremely important!&lt;/strong> We really need your feedback
+to make this course the best experience we can. Any and all suggestions
+are appreciated from small grammar improvements to bigger additions.
+Please describe your suggestions with as much detail as possible. If you
+would like to discuss directly with the course development team we would
+appreciate it!&lt;/p>
+&lt;p>Please &lt;a href="https://github.com/ModernAppsNinja/CourseFeedback/issues/new?assignees=&amp;amp;labels=COU-VT7933&amp;amp;template=COU-VT7933-feedback.md&amp;amp;title=">submit a feedback ticket
+here&lt;/a>,
+or feel free to reach out to afewell@vmware.com with other feedback or
+suggestions.&lt;/p></description></item><item><title>Docs: Welcome to the Course</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/courseintroduction/welcometothecourse/</link><pubDate>Mon, 12 Oct 2020 18:34:25 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/courseintroduction/welcometothecourse/</guid><description>
+&lt;p>This course provides a technical introduction to vSphere with Tanzu.&lt;/p>
+&lt;p>If you complete all steps in this course, you can request a certificate
+of completion, by following the instructions provided at the end of the
+course. &lt;/p>
+&lt;p>This course is a community effort, to be able to keep up the material,
+we really need your help to report issues, suggest improvements, or help
+with the many volunteer opportunities available to support the
+community.&lt;/p>
+&lt;p>Thank you for investing your time!&lt;/p>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/5V03CSMkm2c" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div></description></item><item><title>Docs: Community Membership and Course Registration</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/courseintroduction/membershipregistration/</link><pubDate>Mon, 12 Oct 2020 18:34:25 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/courseintroduction/membershipregistration/</guid><description>
+&lt;ul>
+&lt;li>&lt;a href="#requirements-for-tests-and-course-completion-certificates">Requirements for tests and course completion certificates&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#join-the-modernapps-ninja-community">Join the ModernApps Ninja Community!&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#register-for-this-course">Register for this course&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#step-1---open-the-new-course-registration-document-link">Step 1 - Open the new course registration document link&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#step-2---name-your-file">Step 2 - Name your file&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#step-3---add-a-line-to-your-file">Step 3 - Add a line to your file&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#step-4---submit-your-registration-document">Step 4 - Submit your registration document&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="requirements-for-tests-and-course-completion-certificates">Requirements for tests and course completion certificates&lt;/h2>
+&lt;p>ModernApps Ninja learning content is free and open to anyone to view, however to take tests and recieve certificates of completion for courses, you must sign up for a free community membership, &lt;strong>and&lt;/strong> register for this course, per the instructions below.&lt;/p>
+&lt;h3 id="join-the-modernapps-ninja-community">Join the ModernApps Ninja Community!&lt;/h3>
+&lt;p>In addition to unlocking the ability to take tests and recieve course completion certificates, joining the ModernApps Ninja Community has a number of other benefits, and is a completely free program.&lt;/p>
+&lt;p>&lt;a href="https://modernapps.ninja/about/membership">Please click here to learn more about member benefits and to join the community!&lt;/a>&lt;/p>
+&lt;h3 id="register-for-this-course">Register for this course&lt;/h3>
+&lt;p>You must first be a member of the community before you can register for this course. Ensure that you have fully completed the community member registration process before proceeding.&lt;/p>
+&lt;p>To register for this course, follow the detailed instructions below to post a simple file with your github username to this repository. This process, while simple to follow, helps participants to gain experience and comfort, and validate their knowledge with foundational devops tools and process.&lt;/p>
+&lt;p>Posting a file to register uses the git pull request process, which is one of the most important and common foundational skills for participating in devops, cloud native, and infrastructure modernization initiatives.&lt;/p>
+&lt;p>This process will also show on your public github profile that you have made a commit, the course also provides several additional exercises throughout where you will make commits to gain additional git experience while enhancing your github and professional profiles.&lt;/p>
+&lt;h4 id="step-1---open-the-new-course-registration-document-link">Step 1 - Open the new course registration document link&lt;/h4>
+&lt;p>&lt;strong>The Course Registration Process Requires that you have a github account, and that you are signed in using the github account you want to be registered for the course. If you attempt to register a different account than the account you are signed in as, the process will fail.&lt;/strong>&lt;/p>
+&lt;p>The following link will direct your browser to a github web-based document editor that is used to submit new files or updates to this github repository. You will need to type in a few values and then submit the document as detailed in the following steps.&lt;/p>
+&lt;p>Please right click the following link and select the option to open it in a new browser tab, so you can keep this instruction page open in the current tab to guide you through the process.&lt;/p>
+&lt;p>&lt;a href="https://github.com/ModernAppsNinja/vSphereTanzu301_vt4163/tree/main/static/admin/userdata/registered_members">Right Click Here and select the option to open link in new tab&lt;/a> and click on &lt;code>Add File &amp;gt; Create new file&lt;/code>&lt;/p>
+&lt;h4 id="step-2---name-your-file">Step 2 - Name your file&lt;/h4>
+&lt;p>Note the page displays a message that &lt;code>You’re making changes in a project you don’t have write access to. Submitting a change will write it to a new branch in your fork YOUR_GITHUB_USERNAME/COURSE_REPOSITORY_NAME, so you can send a pull request.&lt;/code>&lt;/p>
+&lt;p>The pull request process works by submitting a copy of your new or updated file to the repository, which will only be applied to the course repository if a course administrator approves the request. Because you do not have write access to the repository, github will create a special copy called a &lt;code>fork&lt;/code> of the course repository within your github account with your new or updated files, and use your copy to save the updates you&amp;rsquo;re submitting to the official course repository as shown in the following steps.&lt;/p>
+&lt;p>In your browser tab to the new registration document, above the document editor in the file name field, type in the name of the file in the format &lt;code>your_github_username.yml&lt;/code>, replacing the value &lt;strong>your_github_username&lt;/strong> with the username for your github account.&lt;/p>
+&lt;p>The following screenshot shows an example of this step using the github username &lt;code>Oni-no-Hanzo&lt;/code>&lt;/p>
+&lt;p>&lt;strong>Note:&lt;/strong> If needed, you can verify your github username by clicking on your github profile menu, which can be found on the upper right hand corner on any github page if you are signed in.&lt;/p>
+&lt;p>&lt;img src="https://modernapps.ninja/course_repo_template_ct8279/admin/assets/images/course_registration_file_naming.png" alt="Screenshot of File Naming">&lt;/p>
+&lt;h4 id="step-3---add-a-line-to-your-file">Step 3 - Add a line to your file&lt;/h4>
+&lt;p>On line 1 in the document editor, type &lt;code>status: in-progress&lt;/code> as shown in the following screenshot:&lt;/p>
+&lt;p>&lt;img src="https://modernapps.ninja/course_repo_template_ct8279/admin/assets/images/course_registration_file_editing.png" alt="Screenshot of File Editing">&lt;/p>
+&lt;h4 id="step-4---submit-your-registration-document">Step 4 - Submit your registration document&lt;/h4>
+&lt;p>Scroll to the bottom of the registration document page and click &lt;code>Propose New File&lt;/code> as shown in the following image:&lt;/p>
+&lt;p>&lt;img src="https://github.com/ModernAppsNinja/course_repo_template_ct8279/new/main/static/admin/userdata/registered_members" alt="Propose New File Screenshot">&lt;/p>
+&lt;p>After you click &lt;code>Propose New File&lt;/code>, your browser will be redirected to the &lt;code>Comparing Changes&lt;/code> page with all the configuration all setup so all you sould need to do is click &lt;code>Create Pull Request&lt;/code> &amp;mdash; but before you click, please review the other details shown on the comparing changes and observe that the file you created and the lines added are shown, so you can easily review and verify your proposed changes before submitting.&lt;/p>
+&lt;p>After you click &lt;code>Create pull request&lt;/code>, an automated GitHub Action worklow will initiate that will do the following actions:&lt;/p>
+&lt;ul>
+&lt;li>verify that your github account is a member of the modernappsninja organization&lt;/li>
+&lt;li>verify the filename of the submitted document matches the github username of the logged-in user that submitted the pull request&lt;/li>
+&lt;li>if the above items are successfully validated:
+&lt;ul>
+&lt;li>add the course record page to the members profile repository to display course progress and completion records&lt;/li>
+&lt;li>add a message to the pull request ticket with the URL for the members course record page&lt;/li>
+&lt;li>trigger github to send an email from github to the email address for the github user account that submitted the pull request including the message from the previous step&lt;/li>
+&lt;li>approve and merge the new document you submitted into the registered members directory for this course&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>This completes the course registration process, once you have completed the above steps, you can proceed through the course and participate in any steps such as tests and completion certificates that require course registration.&lt;/p>
+&lt;p>Thank you!&lt;/p></description></item><item><title>Docs: Target Audience</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/courseintroduction/targetaudience/</link><pubDate>Mon, 12 Oct 2020 18:34:25 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/courseintroduction/targetaudience/</guid><description>
+&lt;p>This course is designed for Information Technology Professionals
+interested in learning more about VMware vSphere with Tanzu.&lt;/p>
+&lt;p>Please complete the course prerequisites and review the lab completion
+difficulty to ensure you are fully prepared to succeed in this course.&lt;/p></description></item><item><title>Docs: Prerequisites</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/courseintroduction/prerequisites/</link><pubDate>Mon, 12 Oct 2020 18:34:25 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/courseintroduction/prerequisites/</guid><description>
+&lt;p>We recommend taking the &lt;a href="https://www.modernapps.ninja/courses/course-v1:modernapps+COU-TP6539+Perpetual/course/">Introduction to VMware Tanzu
+Portfolio&lt;/a> course
+prior to taking the vSphere with Tanzu 101 course. &lt;/p>
+&lt;p>We also recommend completing the &lt;a href="https://www.modernapps.ninja/courses/course-v1:modernapps+COU-MN7417+Perpetual/course/">ModernApps Ninja 101
+course&lt;/a> to
+learn about the community resources available to support this course and
+maximize your learning experience.&lt;/p>
+&lt;p>This course assumes familiarity with Kubernetes and Cloud Native
+Technologies. If you are not familiar with these technologies, we
+recommend checking out &lt;a href="https://kube.academy/">KubeAcademy&lt;/a> by VMware,
+which has a terrific set of free, bite-size video resources on the
+basics of containers, Kubernetes and cloud native that are great for
+beginners.&lt;/p>
+&lt;p>Before taking this course, you should also have familiarity with vSphere
+administration. If you need additional background in vSphere, we
+recommend checking out &lt;a href="https://hol.vmware.com">VMware Hands on Labs&lt;/a>,
+which offers a number of vSphere labs and content.&lt;/p></description></item><item><title>Docs: Course Updates and Freshness</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/courseintroduction/courseupdatesandfreshness/</link><pubDate>Mon, 12 Oct 2020 18:34:25 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/courseintroduction/courseupdatesandfreshness/</guid><description>
+&lt;p>We make a strong effort to keep the content in this course as current as
+possible, however the Tanzu Portfolio is rapidly growing and there may
+be times where this course may not include the newest updates. Always
+please refer to the official &lt;a href="https://tanzu.vmware.com/tanzu">VMware Tanzu Portfiolio
+Website&lt;/a> and your VMware account team
+for the latest details on products covered in this course. &lt;/p>
+&lt;p>As part of our effort to keep this course as up-to-date as possible,
+this course is on a continuous update lifecycle. This means that the
+course can be updated at any time, and new content and requirements may
+be added while you are taking your course. We will make effort to notify
+students in advance of any significant updates are made to minimize any
+changes to course completion requirements. &lt;/p></description></item><item><title>Docs: Welcome to the Community</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/courseintroduction/welcometotheninjacommunity/</link><pubDate>Mon, 12 Oct 2020 18:34:25 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/courseintroduction/welcometotheninjacommunity/</guid><description>
+&lt;p>Please watch the video below to learn more about the ModernApps Ninja Community!
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/GlVSmFtIs1s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;/p></description></item><item><title>Docs: Course Input &amp; Feedback</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/courseintroduction/coursefeedback/</link><pubDate>Mon, 12 Oct 2020 18:34:25 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/courseintroduction/coursefeedback/</guid><description>
+&lt;p>Your feedback for this course is critical to help ensure we can improve
+course content and quality and is greatly appreciated!&lt;/p>
+&lt;p>If you see any problems or suggestions for improvement in this course, the community is very grateful for your help. The simplest way to provide your input is to click the &lt;code>Edit this page&lt;/code> link on the right nav bar on each page on this site, and it will open a page to a simple web text editor where you can easily make any update or suggested input you have and then click a button to submit your update. If the course administrators approve your update, the commit and each line you update will be shown on your public Github profile and add value to your professional portfolio, and you will be listed as a contributor to the site.&lt;/p>
+&lt;p>If you would prefer to provide feedback through a feedback form, all feedback is crucial to helping the community provide the best content we can. If you have feedback you would rather provide through a form, please click the &amp;ldquo;Open Issue Ticket&amp;rdquo; link found on the right navigation bar on each page of this course site.&lt;/p>
+&lt;p>The community thanks you for your feedback and contributions!&lt;/p></description></item><item><title>Docs: vSphere with Tanzu Lab Setup: Networking and Routing</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode1/setuplab/</link><pubDate>Fri, 09 Oct 2020 03:15:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode1/setuplab/</guid><description>
+&lt;p>On the next page you will find the first in a series of videos where Ben Corrie walks you through the whole process of deploying and using vSphere with Tanzu.&lt;/p>
+&lt;p>This particular video focuses on the lab setup we&amp;rsquo;re going to use for the series, the networking prerequisites and setting up routing using Linux gateways.&lt;/p>
+&lt;p>This series does assume you have a lab environment with vCenter and ESXi hosts available for the lab work.&lt;/p>
+&lt;p>If you already have a lab set up with vSphere with Tanzu and workload management enabled, skip ahead to &lt;a href="https://modernappsninja.github.io/vSphereTanzu301_vt4163/vSphereTanzu301_vt4163/docs/episode4/">Episode 4&lt;/a>.&lt;/p>
+&lt;p>&lt;span style="text-decoration: underline;">Timeline of topics in the video&lt;/span>&lt;/p>
+&lt;p>00:00 vSphere With Tanzu Deep Dive Series&lt;br>
+03:31 My vSphere Environment&lt;br>
+15:29 Creating a Client VM for Network Validation&lt;br>
+24:54 Configuring a Gateway VM for Network Routing&lt;br>
+29:02 Testing the &amp;ldquo;Frontend&amp;rdquo; Gateway&lt;br>
+31:26 Configuring and Testing the &amp;ldquo;Workload&amp;rdquo; Gateway&lt;/p>
+&lt;p>The following links provide additional materials and references from the video:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/corrieb/vspherewithtanzudemo">GitHub link to scripts&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://core.vmware.com/resource/vsphere-tanzu-quick-start-guide-v1a">Quick Start Guide&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.virtuallyghetto.com/2020/11/complete-vsphere-with-tanzu-homelab-with-just-32gb-of-memory.html">New simpler/faster lab setup from William Lam&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.virtuallyghetto.com/">William Lam&amp;rsquo;s Blog&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cormachogan.com/">Cormac Hogan&amp;rsquo;s Blog&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.vmware.com/en/VMware-vSphere/7.0/vmware-vsphere-with-tanzu/GUID-152BE7D2-E227-4DAA-B527-557B564D9718.html">vSphere Documentation&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Setup Lab Environment Networking Video</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode1/setuplabvideo/</link><pubDate>Fri, 09 Oct 2020 03:11:43 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode1/setuplabvideo/</guid><description>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/uSGujnlYpVc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div></description></item><item><title>Docs: Episode 1 Test</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode1/episode1test/</link><pubDate>Fri, 09 Oct 2020 03:15:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode1/episode1test/</guid><description>
+&lt;p>All Modernapps Ninja learning content is publicly accessible and available openly, however a free membership is required to take tests and recieve a certificate of completion for the course. You must first &lt;a href="https://modernapps.ninja/about/membership/">join the community&lt;/a> and register for this course per the instructions in the course introduction section before attempting to submit a test.&lt;/p>
+&lt;p>Ninja tests use devops tools and processes so the testing system itself provides both experience with and validation of foundational devops skills.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="#instructions">Instructions&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#full-test-instructions">Full Test Instructions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#test-answer-response-sheet">Test Answer Response Sheet&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#episode-1-test-questions">Episode 1 Test Questions&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="instructions">Instructions&lt;/h2>
+&lt;p>This test uses automated grading, you must follow the instructions exactly to ensure automated grading will complete successfully.&lt;/p>
+&lt;p>To complete the test you must review the questions on this page, and fill in your answers on a seperate answer sheet provided below. We recommend opening the answer sheet for the test in a seperate browser tab so you can fill in the answers as you proceed through the questions.&lt;/p>
+&lt;p>Every question in this test is titled &amp;ldquo;Question&amp;rdquo; followed by its order, for example Question1, Question2 etc&amp;hellip;&lt;/p>
+&lt;p>All questions will provide a list of possible answers. Each possible answer is represented by a lowercase letter, the first response is option &amp;ldquo;a&amp;rdquo;, the second is option &amp;ldquo;b&amp;rdquo; and so on, as shown in the example questions below.&lt;/p>
+&lt;p>The Answer sheet will open in Github&amp;rsquo;s web-based editor, similar to the image shown below:&lt;/p>
+&lt;p>&lt;img src="https://modernappsninja.github.io/vSphereTanzu301_vt4163/vSphereTanzu301_vt4163/admin/assets/images/blank_test_screen_example.png" alt="Example Test Response Sheet">&lt;/p>
+&lt;p>After you fill in your answer sheet, you will submit your responses as a git &lt;a href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests">pull request&lt;/a> following the instructions provided below, which will trigger a workflow that will grade your responses and provide your test grading sheet.&lt;/p>
+&lt;h3 id="full-test-instructions">Full Test Instructions&lt;/h3>
+&lt;p>If this is the first test you have taken, or if you have an questions at all about how to propely complete the test answer sheet or the test grading service, please review the full &lt;a href="https://modernapps.ninja/course_repo_template_ct8279/docs/reference/testinstructions/">How to Take a Test Instructions&lt;/a>.&lt;/p>
+&lt;p>It is important that you follow the instructions carefully to ensure the automated grading process completes successfully.&lt;/p>
+&lt;h3 id="test-answer-response-sheet">Test Answer Response Sheet&lt;/h3>
+&lt;p>Please right click the following link to the test answer response sheet and select to open it in a new tab. The questions for this test will be provided below in this page, but you will need to enter your responses in the answer response sheet.&lt;/p>
+&lt;p>&lt;a href="https://github.com/modernappsninja/vSphereTanzu301_vt4163/edit/main/static/admin/userdata/tests/test1.md">Test1 Answer Response Sheet&lt;/a>&lt;/p>
+&lt;h3 id="episode-1-test-questions">Episode 1 Test Questions&lt;/h3>
+&lt;h4 id="question1-vsphere-with-tanzu-is-the-fastest-way-to-get-started-with-kubernetes-workloads-and-----omit-in-toc---">&lt;strong>Question1:&lt;/strong> vSphere with Tanzu is the fastest way to get started with Kubernetes workloads. and &amp;hellip;? &lt;!-- omit in toc -->&lt;/h4>
+&lt;p>&lt;strong>Please select the best response from the following to complete the statement in Question1:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#204a87;font-weight:bold">Answers&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">a&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">requires NSX-T to be installed.&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">b&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">is designed to work with standard vSphere networking which allows you to bring your own networking.&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">c&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">allows you to avoid connecting any networks.&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="question2-in-the-setup-of-vsphere-with-tanzu-you-will-need-at-least-two-separate-routable-subnets-configured-one-subnet-will-be-for-management-networking-this-is-where-vcenter-esxi-the-supervisor-cluster-and-the-load-balancer-will-live-the-other-subnet-will-be-used-for-workload-networking-this-is-where-your-virtual-ips-and-tkg-clusters-will-live----omit-in-toc---">&lt;strong>Question2:&lt;/strong> In the setup of vSphere with Tanzu you will need at least two separate, routable subnets configured. One subnet will be for Management Networking. This is where vCenter, ESXi, the Supervisor Cluster and the Load Balancer will live. The other subnet will be used for Workload Networking. This is where your virtual IP’s and TKG clusters will live. &lt;!-- omit in toc -->&lt;/h4>
+&lt;p>&lt;strong>Based on the scenario above, please select which 2 of the following statements are accurate:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#204a87;font-weight:bold">Answers&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">a&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">The Management and Workload Networks cannot be on the same subnet. They require L2 isolation.&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">b&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">The Management and Workload Networks can be on the same subnet. They do not require L2 isolation.&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">c&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Avoid using VLANs to isolate the Management and Workload Network&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">d&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">VMware recommends using VLANs to isolate the Management and Workload Network&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="question3-which-of-the-following-items-can-be-used-to-check-and-validate-the-base-networking-configuration----omit-in-toc---">&lt;strong>Question3:&lt;/strong> Which of the following items can be used to check and validate the base networking configuration: &lt;!-- omit in toc -->&lt;/h4>
+&lt;p>&lt;strong>Select 3 of the following statements:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">&lt;span style="color:#204a87;font-weight:bold">Answers&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">a&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">basic networking - management network can reach internet&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">b&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">basic networking - management network can reach ESXi hosts&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">c&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">vmotion is working&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">d&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">basic networking between management network and workload networks is working so that you can ping between the networks&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: vSphere with Tanzu - Creating a Nested Cluster</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode2/createnestedcluster/</link><pubDate>Mon, 12 Oct 2020 18:34:25 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode2/createnestedcluster/</guid><description>
+&lt;p>On the next page you will find the second in a series of videos that walk you through the whole process of deploying and using vSphere with Tanzu.&lt;/p>
+&lt;p>This particular video focuses on setting up a nested vSphere Cluster in an existing vCenter using the networking we configured in episode 1. The nested vSphere Cluster is often used by our customers for situations where they want a sandbox type of environment.&lt;/p>
+&lt;p>This session is especially important for understanding validating and troubleshooting along the journey to setting up the environment.&lt;/p>
+&lt;p>If you already have a lab set up with workload management enabled, take the knowledge check in this module and then skip ahead to video 4.&lt;/p>
+&lt;p>Chapter Timing:&lt;/p>
+&lt;pre>&lt;code> 0:00​ vSphere With Tanzu Deep Dive Series Ep 1
+3:10​ Creating a Nested vSphere Cluster with HCI Mesh
+6:06​ Creating Nested ESXi Hosts
+11:36​ Configuring the vSphere Cluster
+14:11​ Validating the vSphere Cluster
+18:29​ Configuring Host Scratch Locations
+22:40​ Customizing the ESXi Hosts
+25:56​ Nested Cluster Network Configuration
+35:19​ Final Cluster Configuration and Validation&lt;/code>&lt;/pre></description></item><item><title>Docs: Video - Creating a Nested Cluster</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode2/createnestedclustervideo/</link><pubDate>Mon, 12 Oct 2020 18:40:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode2/createnestedclustervideo/</guid><description>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/Ubsm04VWXKk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div></description></item><item><title>Docs: Configuring a vSphere Cluster for Tanzu</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode3/configureclustertanzu/</link><pubDate>Mon, 12 Oct 2020 18:47:30 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode3/configureclustertanzu/</guid><description>
+&lt;p>On the next page is the third in a series of videos that walk you through the whole process of deploying and using vSphere with Tanzu. See below for chapter links.&lt;/p>
+&lt;p>This particular video focuses on enabling workload management and deploying a load balancer into the vSphere cluster we created in episode 2.&lt;/p>
+&lt;p>If you already have a lab set up with workload management enabled, skip ahead to video 4.&lt;/p>
+&lt;pre>&lt;code> 00:00​ vSphere With Tanzu Deep Dive Series Ep 3
+02:46​ Exploring Network Topologies and Supervisor Concept
+07:41​ Installing and Configuring HAProxy Load Balancer
+18:24​ Validating the HAProxy Appliance
+24:29​ Enabling Workload Management &lt;/code>&lt;/pre></description></item><item><title>Docs: Video - Configuring a vSphere Cluster for Tanzu</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode3/configureclustertanzuvideo/</link><pubDate>Mon, 12 Oct 2020 20:05:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode3/configureclustertanzuvideo/</guid><description>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/wfYDDbBJHfM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div></description></item><item><title>Docs: vSphere with Tanzu - Creating a Namespace and Deploying a K8s Cluster</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/deploynamespacecluster/</link><pubDate>Mon, 12 Oct 2020 18:47:30 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/deploynamespacecluster/</guid><description>
+&lt;p>On the next page is&lt;/p>
+&lt;p>The fourth in a series of videos that walk you through the whole process of deploying and using vSphere with Tanzu. See below for chapter links.&lt;/p>
+&lt;p>This video gets into the good stuff - how to deploy an upstream Kubernetes Cluster to vSphere using vSphere with Tanzu. It goes into detail about how the vSphere admin configures a namespace, the delegation model and hand-off to the Kubernetes Cluster Admin, and then ultimately how to interact with vSphere to deploy a Tanzu Kubernetes Cluster.&lt;/p>
+&lt;p>Target audience: vSphere Admins and Kubernetes Admins Chapters:&lt;/p>
+&lt;pre>&lt;code> 0:00​ vSphere With Tanzu Deep Dive Series Ep 4
+0:57​ Validating and Troubleshooting 5:09​ Creating a Namespace
+10:30​ Logging into a Namespace
+20:27​ Creating a Tanzu Kubernetes Cluster
+27:34​ Inspecting the Tanzu Kubernetes Cluster
+32:08​ Logging into the Tanzu Kubernetes Cluster &lt;/code>&lt;/pre></description></item><item><title>Docs: Video - Creating a Namespace and Deploying a K8s Cluster</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/deploynamespaceclustervideo/</link><pubDate>Mon, 12 Oct 2020 20:05:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/deploynamespaceclustervideo/</guid><description>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/biqSFIu_hmQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div></description></item><item><title>Docs: vSphere with Tanzu - Exploring a Tanzu Kubernetes Cluster</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode5/configureclustertanzu/</link><pubDate>Mon, 12 Oct 2020 18:47:30 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode5/configureclustertanzu/</guid><description>
+&lt;p>On the next page is the third in a series of videos that walk you through the whole process of deploying and using vSphere with Tanzu. See below for chapter links.&lt;/p>
+&lt;p>This particular video focuses on enabling workload management and deploying a load balancer into the vSphere cluster we created in episode 2.&lt;/p>
+&lt;p>If you already have a lab set up with workload management enabled, skip ahead to video 4.&lt;/p>
+&lt;pre>&lt;code> 00:00​ vSphere With Tanzu Deep Dive Series Ep 3
+02:46​ Exploring Network Topologies and Supervisor Concept
+07:41​ Installing and Configuring HAProxy Load Balancer
+18:24​ Validating the HAProxy Appliance
+24:29​ Enabling Workload Management &lt;/code>&lt;/pre></description></item><item><title>Docs: Video - Configuring a vSphere Cluster for Tanzu</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode5/configureclustertanzuvideo/</link><pubDate>Mon, 12 Oct 2020 20:05:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode5/configureclustertanzuvideo/</guid><description>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/wfYDDbBJHfM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div></description></item><item><title>Docs: Resources and References</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/closingsummary/resourcesandreferences/</link><pubDate>Mon, 12 Oct 2020 20:18:29 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/closingsummary/resourcesandreferences/</guid><description>
+&lt;p>&lt;strong>Links to additional materials:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>For more information on vSphere with Tanzu check out the &lt;a href="https://www.vmware.com/products/vsphere.html">vSphere
+product&lt;/a> page.&lt;/li>
+&lt;li>&lt;a href="https://blogs.vmware.com/vsphere/2020/09/announcing-vsphere-with-tanzu.html">vSphere with
+Tanzu&lt;/a> by
+Kit Colbert&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=d6Hc2ceghIk&amp;amp;feature=youtu.be">vSphere with Tanzu -
+YouTube&lt;/a> by
+Sheldon D'Paiva &lt;/li>
+&lt;li>ebook: &lt;a href="https://www.vmware.com/learn/648341_REG.html">Deliver Developer-Ready Infrastructure Using vSphere with
+Tanzu&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://kube.academy/">KubeAcademy&lt;/a> courses are composed of a
+series of bite-size video lessons - terrific resource for learning
+about containers, Kubernetes, and Cloud Native Concepts.&lt;/li>
+&lt;li>&lt;a href="https://tanzu.vmware.com/content/blog/simply-scaling-a-tanzu-kubernetes-cluster-with-the-tkg-service-for-vsphere">Scaling a Tanzu
+Kubernetes&lt;/a> Cluster
+by Kenny Coleman&lt;/li>
+&lt;li>&lt;a href="https://tanzu.vmware.com/content/blog/an-elevated-view-of-the-tanzu-kubernetes-grid-service-architecture">An Elevated View of the Tanzu Kubernetes Kubernetes Grid Service
+Architecture&lt;/a> by
+Kenny Coleman&lt;/li>
+&lt;li>&lt;a href="https://tanzu.vmware.com/content/blog/dissecting-a-tanzu-kubernetes-cluster-spec-with-the-tkg-service-for-vsphere">Dissecting a Tanzu Kubernetes Cluster Spec with the TKG Service for
+vSphere&lt;/a> by
+Kenny Coleman&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Web:&lt;/strong> &lt;a href="https://tanzu.vmware.com">https://tanzu.vmware.com&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Blog:&lt;/strong> &lt;a href="https://tanzu.vmware.com/blog">https://tanzu.vmware.com/blog&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Twitter:&lt;/strong> @vmwaretanzu&lt;/p>
+&lt;p>&lt;strong>Email:&lt;/strong> asktanzu@vmware.com&lt;/p></description></item><item><title>Docs: Course Survey</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/closingsummary/coursesurvey/</link><pubDate>Mon, 12 Oct 2020 20:20:14 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/closingsummary/coursesurvey/</guid><description>
+&lt;p>Your Survey response is critical to help ensure we can support the
+business case to continue this program and is greatly appreciated!&lt;/p>
+&lt;p>Completion of the course survey is required to receive a certificate of
+completion for this course.&lt;/p>
+&lt;p>Please complete the Survey for this course at this
+&lt;a href="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=yjiRs-48Skuk1s2D2d1i8AaekO_nWSVMuwFdpjcgcJtURUJJVE1aSUFYTDFYOTdNVURMWE5XOEVFSS4u">link&lt;/a>.&lt;/p></description></item><item><title>Docs: Course Feedback</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/closingsummary/coursefeedback/</link><pubDate>Mon, 12 Oct 2020 20:20:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/closingsummary/coursefeedback/</guid><description>
+&lt;p>Your feedback for this course is critical to help ensure we can improve
+course content and quality and is greatly appreciated!&lt;/p>
+&lt;p>Completion of the feedback form (issue ticket) is required to receive a
+certificate of completion for this course.&lt;/p>
+&lt;p>The link below opens a ticket where you can provide any free-text
+response you would like to provide including reports of problems or
+issues, suggestions for improvement, or general feedback. You can also
+paste images in the feedback form. &lt;/p>
+&lt;p>Please complete the Feedback form for this course at this
+&lt;a href="https://github.com/ModernAppsNinja/CourseFeedback/issues/new?assignees=&amp;amp;labels=COU-VT7933&amp;amp;template=COU-VT7933-feedback.md&amp;amp;title=">link&lt;/a>.&lt;/p></description></item><item><title>Docs: Course Complete</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/closingsummary/coursecomplete/</link><pubDate>Mon, 12 Oct 2020 20:20:53 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/closingsummary/coursecomplete/</guid><description>
+&lt;p>Thank you for completing the course!&lt;/p>
+&lt;p>Please see the progress tab in this course to see a record of your
+assessment grading. If you have completed the course assessments with a
+score above the passing grade, the progress tab will display the option
+to receive a certificate of course completion.&lt;/p>
+&lt;p>Please check out &lt;a href="https://modernapps.ninja/">modernapps.ninja&lt;/a> to see
+additional courses, and join our &lt;a href="https://groups.google.com/forum/#!forum/modernappsninja/join">google
+group&lt;/a> to
+receive regular updates as new courses and content are added
+frequently.&lt;/p></description></item></channel></rss>
