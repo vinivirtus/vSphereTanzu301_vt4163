@@ -156,6 +156,7 @@ jobs:
           cat /tmp/merge_sha.tmp
           cat /tmp/merge_sha.tmp | jq -r '.sha' > /tmp/merge_sha
       - name: set merged member record sha
+        run: |
           cat /tmp/merge_sha
           echo member_record_sha=$(cat /tmp/merge_sha) >> GITHUB_ENV
       - name: delete_merged_member_registration_file
