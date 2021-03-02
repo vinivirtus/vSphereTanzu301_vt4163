@@ -4,7 +4,7 @@ date: 2020-10-12T18:34:25-07:00
 weight: 1010
 
 ---
-This course provides a technical introduction to vSphere with Tanzu.
+This course provides a technical deep dive to vSphere with Tanzu.
 
 If you complete all steps in this course, you can request a certificate
 of completion, by following the instructions provided at the end of the
