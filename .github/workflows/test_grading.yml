@@ -109,38 +109,47 @@ jobs:
           echo pr_raw_file_url=$(cat /tmp/pr_raw_file_url) >> $GITHUB_ENV
       - name: curl the pr file
         run: |
+          echo "the env.pr_raw_file_url value is: ${{ env.pr_raw_file_url }}"
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           "${{ env.pr_raw_file_url }}" \
           -o /tmp/pr_raw_file.yml
+          cat /tmp/pr_raw_file.yml
       - name: curl the answer key
         run: |
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
-          "https://raw.githubusercontent.com/modernapsninja/admin-private/main/appdata/courses/${{ github.event.base.repo.name }}/key.${{ env.pr_filename }}.raw" \
+          "https://raw.githubusercontent.com/modernapsninja/admin-private/main/appdata/courses/${{ github.event.repository.name }}/answer_strings/${{ env.test_name }}.string"" \
           -o /tmp/key.${{ env.pr_filename }}.raw
-      - name: curl the test metadata file
-        run: |
-          curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
-          "https://raw.githubusercontent.com/modernapsninja/admin-private/main/appdata/courses/${{ github.event.base.repo.name }}/meta.${{ env.pr_filename }}" \
-          -o /tmp/meta.${{ env.pr_filename }}
+      # Below step is scaffolding for a test metadata file concept to enhance test customizability, but is not yet implemented
+      # - name: curl the test metadata file
+      #   run: |
+      #     curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
+      #     "https://raw.githubusercontent.com/modernapsninja/admin-private/main/appdata/courses/${{ github.event.base.repo.name }}/meta.${{ env.pr_filename }}" \
+      #     -o /tmp/meta.${{ env.pr_filename }}
       - name: decode answer key file
         run: |
           cat /tmp/key.${{ env.pr_filename }}.raw | base64 -d > /tmp/key.${{ env.pr_filename }}
       - name: diff pr_raw_file.yml against test answer key
         run: |
-          diff -iwB /tmp/key.${{ env.pr_filename }} /tmp/pr_raw_file.yml > /temp/diff_results_raw
+          diff -iwB /tmp/key.${{ env.pr_filename }} /tmp/pr_raw_file.yml > /tmp/diff_results_raw
+          cat /tmp/diff_results_raw
       - name: clean diff results file
         run: |
-          awk '/^/' /temp/diff_results_raw | sed -e 's/^< //g' > /tmp/wrong_answers
+          awk '/^/' /tmp/diff_results_raw | sed -e 's/^< //g' > /tmp/wrong_answers
       - name: set question count value for total questions and wrong_answer questions
         run: |
+          echo total_question_count=$(grep -ci /tmp/key.${{ env.pr_filename }})
           echo total_question_count=$(grep -ci /tmp/key.${{ env.pr_filename }}) >> $GITHUB_ENV
+          echo wrong_question_count=$(grep -ci /tmp/wrong_answers)
           echo wrong_question_count=$(grep -ci /tmp/wrong_answers) >> $GITHUB_ENV
       - name: set envar percent_correct as percent correct by comparing line count of diff results to line count of answer key
         run: |
           echo percent_correct=$(bc <<< 'scale=2; (1-('${{ env.wrong_question_count }}'/'${{ env.total_question_count}}'))*100') \
+          | sed 's/\..*//g'
+          echo percent_correct=$(bc <<< 'scale=2; (1-('${{ env.wrong_question_count }}'/'${{ env.total_question_count}}'))*100') \
           | sed 's/\..*//g' >> $GITHUB_ENV
       - name: set envar passing_percent
-        run: echo passing_percent=$(yq e '.passing_percent' /tmp/meta.${{ env.pr_filename }}) >> $GITHUB_ENV
+        run: echo passing_percent=70 >> $GITHUB_ENV
+        # run: echo passing_percent=$(yq e '.passing_percent' /tmp/meta.${{ env.pr_filename }}) >> $GITHUB_ENV
       - name: set envar passing_grade=true/false
         run: |
           if [ ${{ env.percent_correct}} -ge ${{ env.passing_percent }}]
@@ -167,7 +176,9 @@ jobs:
           echo "The following questions were incorrect in your test submission:" >> /tmp/grade_report.pr${{ github.event.number }}.${{ env.test_name }}.txt
           cat /tmp/wrong_answers >> /tmp/grade_report.pr${{ github.event.number }}.${{ env.test_name }}.txt
       - name: encode grade report with base64 -w 0
-        run: cat /tmp/grade_report.pr${{ github.event.number }}.${{ env.test_name }}.txt | base64 -w 0 > /tmp/grade_report.pr${{ github.event.number }}.${{ env.test_name }}.txt.base64
+        run: |
+          cat /tmp/grade_report.pr${{ github.event.number }}.${{ env.test_name }}.txt | base64 -w 0 > /tmp/grade_report.pr${{ github.event.number }}.${{ env.test_name }}.txt.base64
+          cat /tmp/grade_report.pr${{ github.event.number }}.${{ env.test_name }}.txt.base64
       - name: post grade report to member repo
         run: |
           curl -X PUT \
@@ -184,14 +195,17 @@ jobs:
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           "https://raw.githubusercontent.com/modernapsninjas/${{ github.event.sender.login }}/main/appdata/courses/${{ github.event.base.repo.name }}/coursecard/member_record.yml" \
           -o /tmp/member_record.yml.old
+          cat /tmp/member_record.yml.old
           # Pull latest student course card stub template
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           "https://raw.githubusercontent.com/modernapsninja/${{ github.event.base.repo.name }}/main/static/admin/assets/coursecards/memberrepocard/student_course_card_stub.md" \
           -o /tmp/student_course_card_stub.md
+          cat /tmp/student_course_card_stub.md
           # Pull latest course_meta.yml card
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           "https://raw.githubusercontent.com/modernapsninja/${{ github.event.base.repo.name }}/main/static/admin/assets/coursecards/course_meta.yml" \
           -o /tmp/course_meta.yml
+          cat /tmp/course_meta.yml
       - name: if passing, prepare updated member course card
         if: env.passing_grade == 'true'
         run: |
