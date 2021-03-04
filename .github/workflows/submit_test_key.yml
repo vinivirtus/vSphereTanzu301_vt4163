@@ -176,7 +176,7 @@ jobs:
           cat /tmp/${{ env.testname }}.yml.base64
           echo clean_answer_response_sheet=$(cat /tmp/${{ env.testname }}.yml.base64) >> $GITHUB_ENV
       - name: if update, gather sha from existing answer response sheet 
-        if: env.string_exists == "true"
+        if: env.string_exists == 'true'
         # gather sha of existing response sheet as needed to delete it in next step
         run: |
           curl \
@@ -189,7 +189,7 @@ jobs:
           cat /tmp/existing_response_sheet_sha
           echo existing_response_sheet_sha=$(cat /tmp/string_exists_sha) >> $GITHUB_ENV          
       - name: if update, delete existing answer response sheet 
-        if: env.string_exists == "true"
+        if: env.string_exists == 'true'
         run: |
           echo ${{ env.delete_response_sheet_sha }}
           curl -X DELETE \
