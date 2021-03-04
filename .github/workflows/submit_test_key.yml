@@ -159,7 +159,8 @@ jobs:
             -d '{"message": "Updating answer key string for ${{ env.testname }} for ${{ github.event.repository.name }}","content":${{ env.answer_key_double }}}' \
             "https://api.github.com/repos/modernappsninja/admin-private/contents/appdata/courses/${{ github.event.repository.name }}/answer_strings/${{ env.testname }}.string" \
             -o /tmp/new_key_post_response.json
-            cat /tmp/new_key_post_response.json     
+            cat /tmp/new_key_post_response.json
+          fi   
       - name: remove answers and create answer response sheet #for each line in file, remove all space from colon to end of line
         run: |
           cat /tmp/issuebody.yml
