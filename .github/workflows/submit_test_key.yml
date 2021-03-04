@@ -119,8 +119,13 @@ jobs:
           -o /tmp/string_exists
           cat /tmp/string_exists
           cat /tmp/string_exists | jq '.name' > /tmp/string_exists_name
-          if [ -s "/tmp/string_exists_name" ]
+          if [ $(cat /tmp/string_exists | jq '.name') == 'null' ]
           then
+            echo string_exists=false >> $GITHUB_ENV
+            string_exists=false
+            echo "the string does not exist"
+            echo "string exists value: $string_exists"            
+          else
             echo string_exists=true >> $GITHUB_ENV
             string_exists=true
             echo "the string does exist"
@@ -128,11 +133,6 @@ jobs:
             cat /tmp/string_exists | jq '.sha' > /tmp/string_exists_sha
             cat /tmp/string_exists_sha
             echo string_exists_sha=$(cat /tmp/string_exists_sha) >> $GITHUB_ENV
-          else
-            echo string_exists=false >> $GITHUB_ENV
-            string_exists=false
-            echo "the string does not exist"
-            echo "string exists value: $string_exists"            
           fi
       - name: post encoded answer key string #to admin-private/appdata/courses/$org_repo/answer_strings/{{ env.testname }}.string
         # if updating file, include sha, otherwise post new file
