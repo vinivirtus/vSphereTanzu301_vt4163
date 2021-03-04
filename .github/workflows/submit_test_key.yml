@@ -104,7 +104,7 @@ jobs:
           cat /tmp/answer_key_string| base64 -d > /tmp/issuebody.yml
           echo answer_key_string=$(cat /tmp/answer_key_string) >> $GITHUB_ENV
           cat /tmp/answer_key_string| base64 -w 0 > /tmp/answer_key_double
-          echo answer_key_double=$(cat /tmp/answer_key_double)
+          echo answer_key_double=$(cat /tmp/answer_key_double) >> $GITHUB_ENV
       - name: extract test name and set as envar testname
         run: |
           yq e '.testName' /tmp/issuebody.yml
