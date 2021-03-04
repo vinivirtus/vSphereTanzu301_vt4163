@@ -18,6 +18,7 @@ jobs:
   job_verify_membership:
     name: verify_membership
     runs-on: ubuntu-latest
+    if: contains( toJson(github), 'submit_test_key' )
     outputs:
       isprivileged: ${{ steps.isprivileged.outputs.isprivileged }}
     steps:
