@@ -100,11 +100,10 @@ jobs:
         run: |
           echo -e '${{ github.event.issue.body }}' > /tmp/answer_key_string
           echo "the issuebody base64 string is: $(cat /tmp/answer_key_string)"
-          echo "the issuebody decoded content is: $(cat /tmp/issuebody.yml.base64 | base64 -d)"
-          cat /tmp/issuebody.yml.base64 | base64 -d > /tmp/issuebody.yml
-          echo answer_key_string=$(cat /tmp/issuebody.yml.base64) >> $GITHUB_ENV
-          cat /tmp/issuebody.yml.base64 | base64 -w 0 > /tmp/answer_key_double
-          cat /tmp/answer_key_double
+          echo "the issuebody decoded content is: $(cat /tmp/answer_key_string | base64 -d)"
+          cat /tmp/answer_key_string| base64 -d > /tmp/issuebody.yml
+          echo answer_key_string=$(cat /tmp/answer_key_string) >> $GITHUB_ENV
+          cat /tmp/answer_key_string| base64 -w 0 > /tmp/answer_key_double
           echo answer_key_double=$(cat /tmp/answer_key_double)
       - name: extract test name and set as envar testname
         run: |
