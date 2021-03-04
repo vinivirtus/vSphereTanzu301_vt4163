@@ -146,7 +146,7 @@ jobs:
             curl -X PUT \
             -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
             -H "Accept: application/vnd.github.v3+json" \
-            -d '{"message": "Updating answer key string for ${{ env.testname }} for ${{ github.event.repository.name }}","content":${{ env.answer_key_double }}, "sha":${{ env.string_exists_sha }}}' \
+            -d '{"message": "Updating answer key string for ${{ env.testname }} for ${{ github.event.repository.name }}","content":"${{ env.answer_key_double }}", "sha":"${{ env.string_exists_sha }}"}' \
             "https://api.github.com/repos/modernappsninja/admin-private/contents/appdata/courses/${{ github.event.repository.name }}/answer_strings/${{ env.testname }}.string" \
             -o /tmp/update_key_post_response.json
             cat /tmp/update_key_post_response.json     
@@ -156,7 +156,7 @@ jobs:
             curl -X PUT \
             -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
             -H "Accept: application/vnd.github.v3+json" \
-            -d '{"message": "Updating answer key string for ${{ env.testname }} for ${{ github.event.repository.name }}","content":${{ env.answer_key_double }}}' \
+            -d '{"message": "Updating answer key string for ${{ env.testname }} for ${{ github.event.repository.name }}","content":"${{ env.answer_key_double }}"}' \
             "https://api.github.com/repos/modernappsninja/admin-private/contents/appdata/courses/${{ github.event.repository.name }}/answer_strings/${{ env.testname }}.string" \
             -o /tmp/new_key_post_response.json
             cat /tmp/new_key_post_response.json
@@ -205,7 +205,7 @@ jobs:
           curl -X PUT \
           -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           -H "Accept: application/vnd.github.v3+json" \
-          -d '{"message": "Updating answer key string for ${{ env.testname }} for ${{ github.event.repository.name }}","content":"${{ env.clean_answer_response_sheet }}""}' \
+          -d '{"message": "Updating answer key string for ${{ env.testname }} for ${{ github.event.repository.name }}","content":"${{ env.clean_answer_response_sheet }}"}' \
           "https://api.github.com/repos/${{ env.org_repo }}/contents/static/admin/userdata/tests/${{ env.testname }}.yml" \
           -o /tmp/new_response_sheet_post_response.json
           cat /tmp/new_response_sheet_post_response.json
