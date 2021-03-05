@@ -97,19 +97,20 @@ jobs:
           "https://api.github.com/repos/${{ env.org_repo }}/pulls/${{ github.event.number }}/files" \
           -o /tmp/pr_file_list.json
           cat /tmp/pr_file_list.json
-      - name: set envar pr_filename as filename value
-        run: |
-          cat /tmp/pr_file_list.json | jq -r '.[].filename' > /tmp/pr_filename
-          echo pr_filename=$(cat /tmp/pr_filename) >> $GITHUB_ENV
-          echo pr_filename=$(cat /tmp/pr_filename)
-      - name: set envar test_name as filename with extension removed
-        run: |
-          echo test_name=$(echo ${{ env.pr_filename }} | sed 's/\..*//g')
-          echo test_name=$(echo ${{ env.pr_filename }} | sed 's/\..*//g') >> $GITHUB_ENV
+      # - name: set envar pr_filename as filename value
+      #   run: |
+      #     cat /tmp/pr_file_list.json | jq -r '.[].filename' > /tmp/pr_filename
+      #     echo pr_filename=$(cat /tmp/pr_filename) >> $GITHUB_ENV
+      #     echo pr_filename=$(cat /tmp/pr_filename)
+      # - name: set envar test_name as filename with extension removed
+      #   run: |
+      #     echo test_name=$(echo ${{ env.pr_filename }} | sed 's/\..*//g')
+      #     echo test_name=$(echo ${{ env.pr_filename }} | sed 's/\..*//g') >> $GITHUB_ENV
       - name: set raw link to pr file as envar pr_raw_file_url
         run: |
           cat /tmp/pr_file_list.json | jq -r '.[0].raw_url' > /tmp/pr_raw_file_url
           echo pr_raw_file_url=$(cat /tmp/pr_raw_file_url) >> $GITHUB_ENV
+          echo pr_raw_file_url=$(cat /tmp/pr_raw_file_url)
       - name: curl the answer response file
         run: |
           echo "the env.pr_raw_file_url value is: ${{ env.pr_raw_file_url }}"
@@ -119,27 +120,31 @@ jobs:
           cat /tmp/pr_raw_file.yml
       - name: clean pr answer response file
         run: |
-          # remove all whitespace and newlines
+          # remove all whitespace and newlines to help ensure user typo doesnt disrupt grading
           cat /tmp/pr_raw_file.yml | tr -d '[:space:]' > /tmp/pr_raw_file.yml.ns
           # add newline before each question
           cat /tmp/pr_raw_file.yml.ns | sed 's/Question/\nQuestion/g' > /tmp/pr_raw_file.yml.lined
           # add single space after each colon
-          cat /tmp/pr_raw_file.yml.lined | sed 's/:/: /g' > /tmp/${{ env.pr_filename }}
+          cat /tmp/pr_raw_file.yml.lined | sed 's/:/: /g' > /tmp/pr_clean_file.yml
+      - name: extract test_name from answer response file
+        run: |
+          echo test_name=$(yq e '.testName' /tmp/pr_clean_file.yml)
+          echo test_name=$(yq e '.testName' /tmp/pr_clean_file.yml) >> $GITHUB_ENV
       - name: curl the answer key
         run: |
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           "https://raw.githubusercontent.com/modernapsninja/admin-private/main/appdata/courses/${{ github.event.repository.name }}/answer_strings/${{ env.test_name }}.string"" \
-          -o /tmp/key.${{ env.pr_filename }}.raw
+          -o /tmp/key.${{ env.test_name }}.raw
       # Below step is scaffolding for a test metadata file concept to enhance test customizability, but is not yet implemented
       # - name: curl the test metadata file
       #   run: |
       #     curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
-      #     "https://raw.githubusercontent.com/modernapsninja/admin-private/main/appdata/courses/${{ github.event.repository.name }}/meta.${{ env.pr_filename }}" \
-      #     -o /tmp/meta.${{ env.pr_filename }}
+      #     "https://raw.githubusercontent.com/modernapsninja/admin-private/main/appdata/courses/${{ github.event.repository.name }}/meta.${{ env.test_name }}" \
+      #     -o /tmp/meta.${{ env.test_name }}
       - name: decode answer key file
         run: |
-          cat /tmp/key.${{ env.pr_filename }}.raw | base64 -d > /tmp/key.${{ env.pr_filename }}
-          cat /tmp/key.${{ env.pr_filename }}
+          cat /tmp/key.${{ env.test_name }}.raw | base64 -d > /tmp/key.${{ env.test_name }}
+          cat /tmp/key.${{ env.test_name }}
       - name: grade questions
         run: |
           gradeloop=1
@@ -153,9 +158,9 @@ jobs:
           while [ $gradeloop -le $questioncount ]
           do
             echo "gradeloop number $gradeloop has begun"
-            current_key=$(yq e '.Question'$gradeloop'' /tmp/key.${{ env.pr_filename }})
+            current_key=$(yq e '.Question'$gradeloop'' /tmp/key.${{ env.test_name }})
             echo $current_key
-            current_response=$(yq e '.Question'$gradeloop'' /tmp/${{ env.pr_filename }})
+            current_response=$(yq e '.Question'$gradeloop'' /tmp/${{ env.test_name }}.yml)
             echo $current_response
             if [ "$current_key" == "$current_response" ]
             then
