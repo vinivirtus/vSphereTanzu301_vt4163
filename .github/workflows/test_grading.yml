@@ -36,7 +36,7 @@ jobs:
             -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
             -H "Accept: application/vnd.github.v3+json" \
             "https://api.github.com/repos/modernappsninja/${{ github.event.base.repo.name }}/contents/static/admin/userdata/registered_members/${{ github.event.sender.login }}.yml" \
-            -o /tmp/check_registration
+            -o /tmp/check_registration_response
           # extract name field from response - note that name field is only present if file is found in index
           cat /tmp/check_registration_response | jq -r '.name' >> /tmp/check_registration_response_name
       - name: check if member record exists and set envar isregistered=[true/false]
