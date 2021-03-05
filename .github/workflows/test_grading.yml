@@ -42,7 +42,7 @@ jobs:
       - name: check if member record exists and set envar isregistered=[true/false]
         run: |
           cat /tmp/check_registration_response_name
-          if [ "$(cat /tmp/check_registration_response_name)" = "${{ github.event.sender.login }}" ]
+          if [ "$(cat /tmp/check_registration_response_name)" = "${{ github.event.sender.login }}.yml" ]
           then
             echo isregistered=true >> $GITHUB_ENV
             echo "the requesting user is a member"
