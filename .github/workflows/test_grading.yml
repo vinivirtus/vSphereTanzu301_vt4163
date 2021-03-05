@@ -138,15 +138,11 @@ jobs:
           # add single space after each colon
           cat /tmp/pr_raw_file.yml.lined | sed 's/:/: /g' > /tmp/pr_clean_file.yml
           cat /tmp/pr_clean_file.yml
+          yq e '.testName' /tmp/pr_clean_file.yml
+          yq e '.testName' /tmp/pr_clean_file.yml > /tmp/pr_clean_file_name.yml
       - name: extract test_name from answer response file
         run: |
-          cat /tmp/pr_clean_file.yml
-          echo "-----"
-          yq e '.testName' /tmp/pr_clean_file.yml 
-          echo "-----"
-          yq e '.testName' /tmp/pr_clean_file.yml > /tmp/pr_clean_file_name.yml
           cat /tmp/pr_clean_file_name.yml
-          echo "-----"
           echo test_name=$(cat /tmp/pr_clean_file_name.yml)
           echo test_name=$(cat /tmp/pr_clean_file_name.yml) >> $GITHUB_ENV
       - name: curl the answer key
