@@ -98,12 +98,24 @@ jobs:
           sudo chmod +x /usr/bin/yq
       - name: extract payload data from issue body
         run: |
-          echo -e '${{ github.event.issue.body }}' > /tmp/answer_key_string
-          echo "the issuebody base64 string is: $(cat /tmp/answer_key_string)"
-          echo "the issuebody decoded content is: $(cat /tmp/answer_key_string | base64 -d)"
-          cat /tmp/answer_key_string| base64 -d > /tmp/issuebody.yml
-          echo answer_key_string=$(cat /tmp/answer_key_string) >> $GITHUB_ENV
-          cat /tmp/answer_key_string| base64 -w 0 > /tmp/answer_key_double
+          echo -e '${{ github.event.issue.body }}' > /tmp/answer_key_string_raw
+          echo "the issuebody base64 string is: $(cat /tmp/answer_key_string_raw)"
+          echo answer_key_string_raw=$(cat /tmp/answer_key_string) >> $GITHUB_ENV
+          echo "the issuebody decoded content is: $(cat /tmp/answer_key_string_raw | base64 -d)"
+          cat /tmp/answer_key_string_raw | base64 -d > /tmp/issuebody.yml.raw
+      - name: clean answer key file
+        run: |
+          # remove all whitespace and newlines
+          cat /tmp/issuebody.yml.raw | tr -d '[:space:]' > /tmp/issuebody.yml.ns
+          # add newline before each question
+          cat /tmp/issuebody.yml.raw.ns | sed 's/Question/\nQuestion/g' > /tmp/issuebody.yml.lined
+          # add single space after each colon
+          cat /tmp/issuebody.yml.raw.lined | sed 's/:/: /g' > /tmp/issuebody.yml
+          # encode cleaned answer file
+          cat /tmp/issuebody.yml| base64 -w 0 > /tmp/answer_key_string
+          echo answer_key_string=$(cat /tmp/answer_key_double) >> $GITHUB_ENV
+          # double encode cleaned answer file
+          cat /tmp/answer_key_string | base64 -w 0 > /tmp/answer_key_double
           echo answer_key_double=$(cat /tmp/answer_key_double) >> $GITHUB_ENV
       - name: extract test name and set as envar testname
         run: |
@@ -164,7 +176,7 @@ jobs:
       - name: remove answers and create answer response sheet #for each line in file, remove all space from colon to end of line
         run: |
           cat /tmp/issuebody.yml
-          #remove testName line for now
+          # remove testName line for now
           sed -i '1,1d' /tmp/issuebody.yml
           # clean file by removing all text on eacy line after the colon
           sed 's/\:.*/:/' /tmp/issuebody.yml >> /tmp/${{ env.testname }}.yml
