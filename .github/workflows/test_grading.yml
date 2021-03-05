@@ -20,7 +20,7 @@ jobs:
     name: verify_course_registration
     runs-on: ubuntu-latest
     outputs:
-      output1: ${{ steps.isregistered.outputs.isregistered }}
+      isregistered: ${{ steps.isregistered.outputs.isregistered }}
     steps:
       - name: review event details
         run: |
