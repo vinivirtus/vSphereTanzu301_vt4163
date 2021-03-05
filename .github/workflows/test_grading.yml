@@ -132,14 +132,17 @@ jobs:
           # remove all whitespace and newlines to help ensure user typo doesnt disrupt grading
           cat /tmp/pr_raw_file.yml | tr -d '[:space:]' > /tmp/pr_raw_file.yml.ns
           cat /tmp/pr_raw_file.yml.ns
+          sleep 1
           # add newline before each question
           cat /tmp/pr_raw_file.yml.ns | sed 's/Question/\nQuestion/g' > /tmp/pr_raw_file.yml.lined
           cat /tmp/pr_raw_file.yml.lined
+          sleep 1
           # add single space after each colon
-          cat /tmp/pr_raw_file.yml.lined | sed 's/:/: /g' > /tmp/pr_clean_file.yml
-          cat /tmp/pr_clean_file.yml
-          yq e '.testName' /tmp/pr_clean_file.yml
-          yq e '.testName' /tmp/pr_clean_file.yml > /tmp/pr_clean_file_name.yml
+          cat /tmp/pr_raw_file.yml.lined | sed 's/:/: /g' > /tmp/pr_raw_file.yml.clean
+          cat /tmp/pr_raw_file.yml.clean
+          sleep 1
+          yq e '.testName' /tmp/pr_raw_file.yml.clean
+          yq e '.testName' /tmp/pr_raw_file.yml.clean > /tmp/pr_clean_file_name.yml
       - name: extract test_name from answer response file
         run: |
           cat /tmp/pr_clean_file_name.yml
