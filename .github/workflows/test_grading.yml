@@ -97,11 +97,11 @@ jobs:
           "https://api.github.com/repos/${{ env.org_repo }}/pulls/${{ github.event.number }}/files" \
           -o /tmp/pr_file_list.json
           cat /tmp/pr_file_list.json
-      # - name: set envar pr_filename as filename value
-      #   run: |
-      #     cat /tmp/pr_file_list.json | jq -r '.[].filename' > /tmp/pr_filename
-      #     echo pr_filename=$(cat /tmp/pr_filename) >> $GITHUB_ENV
-      #     echo pr_filename=$(cat /tmp/pr_filename)
+      - name: set envar pr_filename as filename value
+        run: |
+          cat /tmp/pr_file_list.json | jq -r '.[].filename' > /tmp/pr_filename
+          echo pr_filename=$(cat /tmp/pr_filename) >> $GITHUB_ENV
+          echo pr_filename=$(cat /tmp/pr_filename)
       # - name: set envar test_name as filename with extension removed
       #   run: |
       #     echo test_name=$(echo ${{ env.pr_filename }} | sed 's/\..*//g')
@@ -111,11 +111,20 @@ jobs:
           cat /tmp/pr_file_list.json | jq -r '.[0].raw_url' > /tmp/pr_raw_file_url
           echo pr_raw_file_url=$(cat /tmp/pr_raw_file_url) >> $GITHUB_ENV
           echo pr_raw_file_url=$(cat /tmp/pr_raw_file_url)
-      - name: curl the answer response file
+      - name: curl the answer response file redirect url
         run: |
           echo "the env.pr_raw_file_url value is: ${{ env.pr_raw_file_url }}"
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           "${{ env.pr_raw_file_url }}" \
+          -o /tmp/pr_redirect_url.yml
+          cat /tmp/pr_redirect_url.yml
+          echo pr_redirect_url=$(grep -Po 'href="\K[^"]*' /tmp/pr_redirect_url.yml)
+          echo pr_redirect_url=$(grep -Po 'href="\K[^"]*' /tmp/pr_redirect_url.yml) >> $GITHUB_ENV
+      - name: curl the answer response file
+        run: |
+          echo "the env.pr_raw_file_url value is: ${{ env.pr_raw_file_url }}"
+          curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
+          "${{ env.pr_redirect_url }}" \
           -o /tmp/pr_raw_file.yml
           cat /tmp/pr_raw_file.yml
       - name: clean pr answer response file
