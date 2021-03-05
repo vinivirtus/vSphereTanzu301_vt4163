@@ -96,9 +96,10 @@ jobs:
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           "https://api.github.com/repos/${{ env.org_repo }}/pulls/${{ github.event.number }}/files" \
           -o /tmp/pr_file_list.json
+          cat /tmp/pr_file_list.json
       - name: set envar pr_filename as filename value
         run: |
-          cat /tmp/pr_file_list.json | jq -r '.filename' > /tmp/pr_filename
+          cat /tmp/pr_file_list.json | jq -r '.[].filename' > /tmp/pr_filename
           echo pr_filename=$(cat /tmp/pr_filename) >> $GITHUB_ENV
       - name: set envar test_name as filename with extension removed
         run: |
