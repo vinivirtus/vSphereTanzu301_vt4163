@@ -175,9 +175,9 @@ jobs:
           while [ $gradeloop -le $questioncount ]
           do
             echo "gradeloop number $gradeloop has begun"
-            current_key=$(yq e '.Question'$gradeloop'' /tmp/key.${{ env.test_name }})
+            current_key=$(yq e '.Question'$gradeloop' /tmp/key.${{ env.test_name }})
             echo $current_key
-            current_response=$(yq e '.Question'$gradeloop'' /tmp/pr_raw_file.yml.clean)
+            current_response=$(yq e '.Question'$gradeloop' /tmp/pr_raw_file.yml.clean)
             echo $current_response
             if [ "$current_key" == "$current_response" ]
             then
