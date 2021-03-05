@@ -76,9 +76,9 @@ jobs:
           cat /tmp/close_pr_response.json
   job_test_grading:
     name: test_grading
-    needs: job_verify_membership
+    needs: job_verify_course_registration
     runs-on: ubuntu-latest
-    if: needs.job_verify_membership.outputs.isregistered == 'true'
+    if: needs.job_verify_course_registration.outputs.isregistered == 'true'
     steps:
       - name: review event details
         run: |
