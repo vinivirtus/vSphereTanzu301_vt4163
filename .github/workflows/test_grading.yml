@@ -140,8 +140,12 @@ jobs:
           cat /tmp/pr_clean_file.yml
       - name: extract test_name from answer response file
         run: |
-          echo test_name=$(yq e '.testName' /tmp/pr_clean_file.yml)
-          echo test_name=$(yq e '.testName' /tmp/pr_clean_file.yml) >> $GITHUB_ENV
+          cat /tmp/pr_clean_file.yml
+          cat /tmp/pr_clean_file.yml | yq e '.testName'
+          cat /tmp/pr_clean_file.yml | yq e '.testName' > /tmp/pr_clean_file_name.yml
+          cat /tmp/pr_clean_file_name.yml
+          echo test_name=$(cat /tmp/pr_clean_file_name.yml)
+          echo test_name=$(cat /tmp/pr_clean_file_name.yml) >> $GITHUB_ENV
       - name: curl the answer key
         run: |
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
