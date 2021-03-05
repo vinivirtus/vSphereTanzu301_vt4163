@@ -165,7 +165,7 @@ jobs:
       - name: grade questions
         run: |
           gradeloop=1
-          questioncount=$(wc -l < key.${{ env.test_name }})
+          questioncount=$(wc -l < /tmp/key.${{ env.test_name }})
           correct_count=0
           incorrect_count=0
           echo "questioncount is: $questioncount"
@@ -175,9 +175,11 @@ jobs:
           while [ $gradeloop -le $questioncount ]
           do
             echo "gradeloop number $gradeloop has begun"
-            current_key=$(yq e '.Question'$gradeloop' /tmp/key.${{ env.test_name }})
+            cat /tmp/key.${{ env.test_name }}
+            yq e '.Question'$gradeloop'' /tmp/key.${{ env.test_name }} > 
+            current_key=$()
             echo $current_key
-            current_response=$(yq e '.Question'$gradeloop' /tmp/pr_raw_file.yml.clean)
+            current_response=$(yq e '.Question'$gradeloop'' /tmp/pr_raw_file.yml.clean)
             echo $current_response
             if [ "$current_key" == "$current_response" ]
             then
