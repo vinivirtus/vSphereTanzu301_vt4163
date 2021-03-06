@@ -176,11 +176,15 @@ jobs:
           do
             echo "gradeloop number $gradeloop has begun"
             cat /tmp/key.${{ env.test_name }}
-            yq e '.Question'$gradeloop'' /tmp/key.${{ env.test_name }} > 
-            current_key=$()
-            echo $current_key
-            current_response=$(yq e '.Question'$gradeloop'' /tmp/pr_raw_file.yml.clean)
-            echo $current_response
+            yq e '.Question'$gradeloop'' /tmp/key.${{ env.test_name }} > /tmp/currentkey
+            cat /tmp/currentkey
+            current_key=$(cat /tmp/currentkey)
+            echo "the current key is: $current_key"
+            yq e '.Question'$gradeloop'' /tmp/pr_raw_file.yml.clean
+            yq e '.Question'$gradeloop'' /tmp/pr_raw_file.yml.clean > /tmp/currentresponse
+            cat /tmp/currentresponse
+            current_response=$(cat /tmp/currentresponse)
+            echo "the current response is $current_response"
             if [ "$current_key" == "$current_response" ]
             then
               echo "Question$gradeloop: Correct"
