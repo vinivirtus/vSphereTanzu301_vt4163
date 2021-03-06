@@ -348,7 +348,7 @@ jobs:
         run: |
           # combine course meta, member course card stub, member course record top, test grading stub and member course record bottom to create new member course card file
           cat /tmp/course_meta.yml > /tmp/member_course_card.md
-          cat /tmp/student_course_card_stub.md >> /tmp/member_course_card.md
+          cat /tmp/member_course_card_stub.md >> /tmp/member_course_card.md
           cat /tmp/member_course_record_top.yml >> /tmp/member_course_card.md
           cat /tmp/grading_stub_master >> /tmp/member_course_card.md
           cat /tmp/member_course_record_bottom.yml >> /tmp/member_course_card.md
