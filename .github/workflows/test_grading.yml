@@ -199,7 +199,7 @@ jobs:
             fi
           done
           cat /tmp/${{ env.test_name }}_grading_stub_questions
-          percent_correct=$(bc <<< 'scale=2; (1-('$correct_count' / '$questioncount'))*100')
+          percent_correct=$(bc <<< 'scale=2; ('$correct_count' / '$questioncount')*100')
           # initialize stub summary as seperate file as only summary data will be included in member course record card
           echo "---  " > /tmp/${{ env.test_name }}_grading_stub_summary
           echo "## ${{ env.test_name }} Summary of Results:  " > /tmp/${{ env.test_name }}_grading_stub_summary
