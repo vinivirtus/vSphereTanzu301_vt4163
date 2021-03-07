@@ -207,7 +207,7 @@ jobs:
           echo "${{ env.test_name }}_Correct_Response_Count: $correct_count  " >> /tmp/${{ env.test_name }}_grading_stub_summary
           echo "${{ env.test_name }}_Incorrect_Response_Count: $incorrect_count  " >> /tmp/${{ env.test_name }}_grading_stub_summary
           echo "${{ env.test_name }}_Percent_Correct: $percent_correct%  " >> /tmp/${{ env.test_name }}_grading_stub_summary
-          echo "#### Please that pass or fail grades are not provided for individual tests. A passing grade for the course will be based on the cumulative average grade for all tests in the course.  " >> /tmp/${{ env.test_name }}_grading_stub_summary
+          echo "#### Pass or fail grades are not provided for individual tests. A passing grade for the course will be based on the cumulative average grade for all tests in the course.  " >> /tmp/${{ env.test_name }}_grading_stub_summary
           cat /tmp/${{ env.test_name }}_grading_stub_summary
       - name: curl grading stub file to determine if test is retake
         run: |
@@ -335,7 +335,7 @@ jobs:
               # curl grading stub
               curl \
                 -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
-                "https://raw.githubusercontent.com/modernapsninjas/${{ github.event.sender.login }}/main/static/userdata/courses/${{ github.event.repository.name }}/grading_stubs/${{ env.test_name }}_grading_stub.yml" \
+                "https://raw.githubusercontent.com/modernappsninjas/${{ github.event.sender.login }}/main/static/userdata/courses/${{ github.event.repository.name }}/grading_stubs/${{ env.test_name }}_grading_stub.yml" \
                 -o /tmp/pulled_test${grading_stub_loop_name}_grading_stub.yml
               cat /tmp/pulled_test${grading_stub_loop_name}_grading_stub.yml
               # append grading stub to master
@@ -344,6 +344,7 @@ jobs:
               gs_loop=$(( $gs_loop + 1 ))
             done
           fi
+          cat /tmp/grading_stub_master
       - name: prepare updated member course card
         run: |
           # combine course meta, member course card stub, member course record top, test grading stub and member course record bottom to create new member course card file
