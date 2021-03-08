@@ -281,11 +281,11 @@ jobs:
           "https://api.github.com/repos/modernappsninjas/${{ github.event.sender.login }}/contents/static/userdata/courses/${{ github.event.repository.name }}/grade_report.pr${{ github.event.number }}.${{ env.test_name }}.md" \
           -o /tmp/member_grade_report_post_response.json
           cat /tmp/member_grade_report_post_response.json
-      - name: pull member record and course card files
+      - name: pull existing member course card sha
         run: |
           # Pull member course card
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
-          "https://raw.githubusercontent.com/modernappsninjas/${{ github.event.sender.login }}/main/content/english/course/${{ github.event.repository.name }}.md" \
+          "https://api.github.com/repos/modernappsninjas/${{ github.event.sender.login }}/contents/content/english/course/${{ github.event.repository.name }}.md" \
           -o /tmp/member_course_card_old
           cat /tmp/member_course_card_old
           echo member_course_card_old_sha=$(yq e '.sha' /tmp/member_course_card_old)
