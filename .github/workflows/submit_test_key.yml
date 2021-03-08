@@ -181,7 +181,7 @@ jobs:
           # clean file by removing all text on eacy line after the colon
           sed 's/\:.*/:/' /tmp/issuebody.yml >> /tmp/${{ env.testname }}.yml
           # add testname back to file
-          sed -i '1 i\testName: ${{ env.testname }}' /tmp/${{ env.testname }}.yml
+          sed -i '/^draft:/c\draft: false' /tmp/issuebody.yml >> /tmp/${{ env.testname }}.yml
           # encode file as base64
           cat /tmp/${{ env.testname }}.yml | base64 -w 0 > /tmp/${{ env.testname }}.yml.base64
           # set envar with answer response sheet base64 string
