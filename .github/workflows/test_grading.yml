@@ -204,8 +204,11 @@ jobs:
           echo "---  " > /tmp/${{ env.test_name }}_grading_stub_summary
           echo "### ${{ env.test_name }} Summary of Results:  " >> /tmp/${{ env.test_name }}_grading_stub_summary
           echo "${{ env.test_name }}_Total_Question_Count: $correct_count  " >> /tmp/${{ env.test_name }}_grading_stub_summary
+          echo "#####  " >> /tmp/${{ env.test_name }}_grading_stub_summary
           echo "${{ env.test_name }}_Correct_Response_Count: $correct_count  " >> /tmp/${{ env.test_name }}_grading_stub_summary
+          echo "#####  " >> /tmp/${{ env.test_name }}_grading_stub_summary
           echo "${{ env.test_name }}_Incorrect_Response_Count: $incorrect_count  " >> /tmp/${{ env.test_name }}_grading_stub_summary
+          echo "#####  " >> /tmp/${{ env.test_name }}_grading_stub_summary
           echo "${{ env.test_name }}_Percent_Correct: $percent_correct%  " >> /tmp/${{ env.test_name }}_grading_stub_summary
           echo "#### Pass or fail grades are not provided for individual tests. A passing grade for the course will be based on the cumulative average grade for all tests in the course.  " >> /tmp/${{ env.test_name }}_grading_stub_summary
           cat /tmp/${{ env.test_name }}_grading_stub_summary
