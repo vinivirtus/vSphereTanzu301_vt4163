@@ -285,29 +285,37 @@ jobs:
         run: |
           # Pull member course card
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
-          "https://raw.githubusercontent.com/modernapsninjas/${{ github.event.sender.login }}/main/content/english/course/${{ github.event.repository.name }}.md" \
+          "https://raw.githubusercontent.com/modernappsninjas/${{ github.event.sender.login }}/main/content/english/course/${{ github.event.repository.name }}.md" \
           -o /tmp/member_course_card_old
           cat /tmp/member_course_card_old
           echo member_course_card_old_sha=$(yq e '.sha' /tmp/member_course_card_old)
           echo member_course_card_old_sha=$(yq e '.sha' /tmp/member_course_card_old) >> $GITHUB_ENV
+      - name: pull member course card stub
+        run: |
           # Pull latest member course card stub
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
-          "https://raw.githubusercontent.com/modernapsninja/${{ github.event.repository.name }}/main/static/admin/assets/coursecards/memberrepocard/member_course_card_stub.md" \
+          "https://raw.githubusercontent.com/modernappsninja/${{ github.event.repository.name }}/main/static/admin/assets/coursecards/memberrepocard/member_course_card_stub.md" \
           -o /tmp/member_course_card_stub.md
           cat /tmp/member_course_card_stub.md
+      - name: pull member course record top
+        run: |
           # Pull latest member course record top 
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           "https://raw.githubusercontent.com/modernapsninja/${{ github.event.repository.name }}/main/static/admin/assets/coursecards/memberrepocard/member_course_record_top.yml" \
           -o /tmp/member_course_record_top.yml
           cat /tmp/member_course_record_top.yml
+      - name: pull member course record bottom
+        run: |
           # Pull latest member course record bottom
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
-          "https://raw.githubusercontent.com/modernapsninja/${{ github.event.repository.name }}/main/static/admin/assets/coursecards/memberrepocard/member_course_record_bottom.yml" \
+          "https://raw.githubusercontent.com/modernappsninja/${{ github.event.repository.name }}/main/static/admin/assets/coursecards/memberrepocard/member_course_record_bottom.yml" \
           -o /tmp/member_course_record_bottom.yml
           cat /tmp/member_course_record_bottom.yml
+      - name: pull latest course meta
+        run: |
           # Pull latest course_meta.yml card
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
-          "https://raw.githubusercontent.com/modernapsninja/${{ github.event.repository.name }}/main/static/admin/assets/coursecards/course_meta.yml" \
+          "https://raw.githubusercontent.com/modernappsninja/${{ github.event.repository.name }}/main/static/admin/assets/coursecards/course_meta.yml" \
           -o /tmp/course_meta.yml
           cat /tmp/course_meta.yml
       - name: pull list of grading stubs for course
