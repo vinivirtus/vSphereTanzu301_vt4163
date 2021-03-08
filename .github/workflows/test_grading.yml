@@ -323,8 +323,8 @@ jobs:
           # Pull latest course_meta.yml card
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           "https://raw.githubusercontent.com/modernappsninja/${{ github.event.repository.name }}/main/static/admin/assets/coursecards/course_meta.yml" \
-          -o /tmp/course_meta.yml.pre
-          sed -i '/^draft:/c\draft: false' /tmp/course_meta.yml.pre >> /tmp/course_meta.yml
+          -o /tmp/course_meta.yml
+          sed -i '/^draft:/c\draft: false' /tmp/course_meta.yml
           cat /tmp/course_meta.yml
       - name: pull list of grading stubs for course
         run: |
