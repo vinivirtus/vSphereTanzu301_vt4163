@@ -215,7 +215,7 @@ jobs:
           echo "#####  " >> /tmp/${{ env.test_name }}_grading_stub_summary
           echo "${{ env.test_name }}_Percent_Correct: $percent_correct%  " >> /tmp/${{ env.test_name }}_grading_stub_summary
           echo "#####  " >> /tmp/${{ env.test_name }}_grading_stub_summary
-          echo "${{ env.test_name }}_Grade_Report_Url: "[Click Here](https://github.com/modernappsninjas/${{ github.event.sender.login }}/static/userdata/courses/${{ github.event.repository.name }}/grade_report.pr${{ github.event.number }}.${{ env.test_name }}.md)"  " >> /tmp/${{ env.test_name }}_grading_stub_summary
+          echo "${{ env.test_name }}_Grade_Report_Url: [Click Here](https://github.com/modernappsninjas/${{ github.event.sender.login }}/static/userdata/courses/${{ github.event.repository.name }}/grade_report.pr${{ github.event.number }}.${{ env.test_name }}.md)"  " >> /tmp/${{ env.test_name }}_grading_stub_summary
           echo "##### Pass or fail grades are not provided for individual tests. A passing grade for the course will be based on the cumulative average grade for all tests in the course.  " >> /tmp/${{ env.test_name }}_grading_stub_summary
           cat /tmp/${{ env.test_name }}_grading_stub_summary
       - name: curl grading stub file to determine if test is retake
