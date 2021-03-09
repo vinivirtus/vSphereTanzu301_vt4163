@@ -171,7 +171,7 @@ jobs:
           echo "questioncount is: $questioncount"
           # Initialize grading stub file to hold the question-level grading seperately from summary
           echo "---  " > /tmp/${{ env.test_name }}_grading_stub_questions
-          echo "### ${{ env.test_name }} Individual Question Results:  " >> /tmp/${{ env.test_name }}_grading_stub_questions
+          echo "#### ${{ env.test_name }} Individual Question Results:  " >> /tmp/${{ env.test_name }}_grading_stub_questions
           while [ $gradeloop -le $questioncount ]
           do
             echo "gradeloop number $gradeloop has begun"
@@ -206,7 +206,7 @@ jobs:
           percent_correct=$(bc <<< 'scale=2; ('$correct_count' / '$questioncount')*100')
           # initialize stub summary as seperate file as only summary data will be included in member course record card
           echo "---  " > /tmp/${{ env.test_name }}_grading_stub_summary
-          echo "### ${{ env.test_name }} Summary of Results:  " >> /tmp/${{ env.test_name }}_grading_stub_summary
+          echo "#### ${{ env.test_name }} Summary of Results:  " >> /tmp/${{ env.test_name }}_grading_stub_summary
           echo "${{ env.test_name }}_Total_Question_Count: $correct_count  " >> /tmp/${{ env.test_name }}_grading_stub_summary
           echo "#####  " >> /tmp/${{ env.test_name }}_grading_stub_summary
           echo "${{ env.test_name }}_Correct_Response_Count: $correct_count  " >> /tmp/${{ env.test_name }}_grading_stub_summary
@@ -357,8 +357,7 @@ jobs:
                 -o /tmp/pulled_test${grading_stub_loop_name}_grading_stub.yml
               cat /tmp/pulled_test${grading_stub_loop_name}_grading_stub.yml
               # extract summary section from grade stub
-              yq e 'select(di == 1)' /tmp/pulled_test${grading_stub_loop_name}_grading_stub.yml | \
-              tee /tmp/pulled_test${grading_stub_loop_name}_grading_stub_summary.yml
+              yq e 'select(di == 1)' /tmp/pulled_test${grading_stub_loop_name}_grading_stub.yml >> /tmp/pulled_test${grading_stub_loop_name}_grading_stub_summary.yml
               # append grading stub summary to master
               cat /tmp/pulled_test${grading_stub_loop_name}_grading_stub_summary.yml >> /tmp/grading_stub_master
               cat /tmp/grading_stub_master
