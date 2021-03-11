@@ -245,18 +245,18 @@ jobs:
             cat /tmp/${{ github.event.repository.name }}_grading_stub_tests
             # extract total question count from current test and add to tally
             echo test${gs_name_loop}_Total_Question_Count=$(yq e '.test'${gs_name_loop}'_Total_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
-            test${gs_name_loop}_Total_Question_Count=$(yq e '.test'${gs_name_loop}'_Total_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
-            total_question_tally=$(( $total_question_tally + ${test${gs_name_loop}_Total_Question_Count} ))
+            eval test${gs_name_loop}_Total_Question_Count=$(yq e '.test'${gs_name_loop}'_Total_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
+            eval total_question_tally=$(( $total_question_tally + ${test${gs_name_loop}_Total_Question_Count} ))
             echo "the total question tally after loop number ${gs_name_loop} processing is ${total_question_tally}"
             # extract correct question count from current test and add to tally
             echo test${gs_name_loop}_Correct_Question_Count=$(yq e '.test'${gs_name_loop}'_Correct_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
-            test${gs_name_loop}_Correct_Question_Count=$(yq e '.test'${gs_name_loop}'_Correct_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
-            correct_question_tally=$(( $correct_question_tally + ${test${gs_name_loop}_Correct_Question_Count} ))
+            eval test${gs_name_loop}_Correct_Question_Count=$(yq e '.test'${gs_name_loop}'_Correct_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
+            eval correct_question_tally=$(( $correct_question_tally + ${test${gs_name_loop}_Correct_Question_Count} ))
             echo "the correct question tally after loop number ${gs_name_loop} processing is ${correct_question_tally}"
             # extract incorrect question count from current test and add to tally
             echo test${gs_name_loop}_Incorrect_Question_Count=$(yq e '.test'${gs_name_loop}'_Incorrect_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
-            test${gs_name_loop}_Incorrect_Question_Count=$(yq e '.test'${gs_name_loop}'_Incorrect_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
-            incorrect_question_tally=$(( $incorrect_question_tally + ${test${gs_name_loop}_Incorrect_Question_Count} ))
+            eval test${gs_name_loop}_Incorrect_Question_Count=$(yq e '.test'${gs_name_loop}'_Incorrect_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
+            eval incorrect_question_tally=$(( $incorrect_question_tally + ${test${gs_name_loop}_Incorrect_Question_Count} ))
             echo "the incorrect question tally after loop number ${gs_name_loop} processing is ${incorrect_question_tally}"
             # increment loop counters
             gs_name_loop=$(( $gs_name_loop + 1 ))
