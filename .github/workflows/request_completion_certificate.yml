@@ -93,7 +93,7 @@ jobs:
         if: env.repeat_request == 'false'
         run: |
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
-            "https://api.github.com/repos/modernappsninjas/${{ github.event.sender.login }}/contents/userdata/courses/${{ github.event.repository.name }}/grading_stubs" \
+            "https://api.github.com/repos/modernappsninjas/${{ github.event.sender.login }}/contents/static/userdata/courses/${{ github.event.repository.name }}/grading_stubs" \
             -o /tmp/grading_stub_list.json
           cat /tmp/grading_stub_list.json
       - name: compute completed_test_count and set as envar
@@ -198,7 +198,7 @@ jobs:
       - name: curl the member grade stubs directory content list
         run: |
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
-            "https://api.github.com/repos/modernappsninjas/${{ github.event.sender.login }}/contents/userdata/courses/${{ github.event.repository.name }}/grading_stubs" \
+            "https://api.github.com/repos/modernappsninjas/${{ github.event.sender.login }}/contents/static/userdata/courses/${{ github.event.repository.name }}/grading_stubs" \
             -o /tmp/grading_stub_list.json
           cat /tmp/grading_stub_list.json
       - name: compute completed_test_count and set as envar
