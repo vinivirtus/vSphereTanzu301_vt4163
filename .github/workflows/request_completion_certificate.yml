@@ -87,8 +87,8 @@ jobs:
         if: env.repeat_request == 'false'
         run: |  
           jq -r '.[].name' /tmp/answer_key_list.json > /tmp/answer_key_name_list
-          echo total_test_count=(wc -l < /tmp/answer_key_name_list)
-          echo total_test_count=(wc -l < /tmp/answer_key_name_list) >> $GITHUB_ENV
+          echo total_test_count=$(wc -l < /tmp/answer_key_name_list)
+          echo total_test_count=$(wc -l < /tmp/answer_key_name_list) >> $GITHUB_ENV
       - name: curl the member grade stubs directory content list
         if: env.repeat_request == 'false'
         run: |
@@ -100,8 +100,8 @@ jobs:
         if: env.repeat_request == 'false'
         run: |  
           jq -r '.[].name' /tmp/grading_stub_list.json > /tmp/grading_stub_name_list
-          echo completed_test_count=(wc -l < /tmp/grading_stub_name_list)
-          echo completed_test_count=(wc -l < /tmp/grading_stub_name_list) >> $GITHUB_ENV
+          echo completed_test_count=$(wc -l < /tmp/grading_stub_name_list)
+          echo completed_test_count=$(wc -l < /tmp/grading_stub_name_list) >> $GITHUB_ENV
       - name: comparing total to completed test counts to verify member has completed all tests and set envars to reflect result
         if: env.repeat_request == 'false'
         run: |
@@ -193,8 +193,8 @@ jobs:
           jq -r '.[].name' /tmp/answer_key_list.json > /tmp/answer_key_name_list_tmp
           sort /tmp/answer_key_name_list_tmp -o /tmp/answer_key_name_list
           cat /tmp/answer_key_name_list
-          echo total_test_count=(wc -l < /tmp/answer_key_name_list)
-          echo total_test_count=(wc -l < /tmp/answer_key_name_list) >> $GITHUB_ENV
+          echo total_test_count=$(wc -l < /tmp/answer_key_name_list)
+          echo total_test_count=$(wc -l < /tmp/answer_key_name_list) >> $GITHUB_ENV
       - name: curl the member grade stubs directory content list
         run: |
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
@@ -205,10 +205,10 @@ jobs:
         run: |
           jq -r '.[].name' /tmp/grading_stub_list.json > /tmp/grading_stub_name_list.pre
           grep -v "${{ github.event.repository.name }}" /tmp/grading_stub_name_list.pre > /tmp/grading_stub_name_list
-          echo grading_stub_name_list=(cat /tmp/grading_stub_name_list)
-          echo grading_stub_name_list=(cat /tmp/grading_stub_name_list) >> $GITHUB_ENV
-          echo completed_test_count=(wc -l < /tmp/grading_stub_name_list)
-          echo completed_test_count=(wc -l < /tmp/grading_stub_name_list) >> $GITHUB_ENV
+          echo grading_stub_name_list=$(cat /tmp/grading_stub_name_list)
+          echo grading_stub_name_list=$(cat /tmp/grading_stub_name_list) >> $GITHUB_ENV
+          echo completed_test_count=$(wc -l < /tmp/grading_stub_name_list)
+          echo completed_test_count=$(wc -l < /tmp/grading_stub_name_list) >> $GITHUB_ENV
       - name: curl stub files and extract values to calculate grade and prepare final course grade stub
         run: |
           total_question_tally=0
@@ -220,7 +220,7 @@ jobs:
             echo "beginning loop number: ${gs_name_loop}"
             # the sed statement on the following line returns the line number of the specified file
             echo "this loop will process file: $(sed ''${gs_name_loop}'q;d' /tmp/grading_stub_name_list)"
-            current_filename=(sed ''${gs_name_loop}'q;d' /tmp/grading_stub_name_list)
+            current_filename=$(sed ''${gs_name_loop}'q;d' /tmp/grading_stub_name_list)
             echo "current filename is: $current_filename"
             download_url=$(jq -r '.['${gs_name_loop}'].download_url' /tmp/grading_stub_list.json)
             echo "download_url is: ${download_url}"
