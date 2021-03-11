@@ -214,7 +214,10 @@ jobs:
           total_question_tally=0
           correct_question_tally=0
           incorrect_question_tally=0
+          # the gs name loop is used for things like sed line extraction that uses a 1 based indexing
           gs_name_loop=1
+          # the zloop will be used for commands like jq that use a zero based indexing
+          zloop=0
           while [ $gs_name_loop -le ${{ env.total_test_count }} ]
           do
             echo "beginning loop number: ${gs_name_loop}"
@@ -222,7 +225,7 @@ jobs:
             echo "this loop will process file: $(sed ''${gs_name_loop}'q;d' /tmp/grading_stub_name_list)"
             current_filename=$(sed ''${gs_name_loop}'q;d' /tmp/grading_stub_name_list)
             echo "current filename is: $current_filename"
-            download_url=$(jq -r '.['${gs_name_loop}'].download_url' /tmp/grading_stub_list.json)
+            download_url=$(jq -r '.['${zloop}'].download_url' /tmp/grading_stub_list.json)
             echo "download_url is: ${download_url}"
             # curl grading stub
             curl \
@@ -255,8 +258,9 @@ jobs:
             test${gs_name_loop}_Incorrect_Question_Count=$(yq e '.test'${gs_name_loop}'_Incorrect_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
             incorrect_question_tally=$(( $incorrect_question_tally + ${test${gs_name_loop}_Incorrect_Question_Count} ))
             echo "the incorrect question tally after loop number ${gs_name_loop} processing is ${incorrect_question_tally}"
-            # increment loop counter
+            # increment loop counters
             gs_name_loop=$(( $gs_name_loop + 1 ))
+            zloop=$(( $zloop + 1 ))
           done
           # echo results of loop calculations
           echo "the final list of each test grading stub summary is:"
