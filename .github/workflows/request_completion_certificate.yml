@@ -86,7 +86,7 @@ jobs:
       - name: compute total_test_count and set as envar
         if: env.repeat_request == 'false'
         run: |  
-          jq -r '[].name' /tmp/answer_key_list.json > /tmp/answer_key_name_list
+          jq -r '.[].name' /tmp/answer_key_list.json > /tmp/answer_key_name_list
           echo total_test_count=(wc -l < /tmp/answer_key_name_list)
           echo total_test_count=(wc -l < /tmp/answer_key_name_list) >> $GITHUB_ENV
       - name: curl the member grade stubs directory content list
@@ -99,11 +99,11 @@ jobs:
       - name: compute completed_test_count and set as envar
         if: env.repeat_request == 'false'
         run: |  
-          jq -r '[].name' /tmp/grading_stub_list.json > /tmp/grading_stub_name_list
+          jq -r '.[].name' /tmp/grading_stub_list.json > /tmp/grading_stub_name_list
           echo completed_test_count=(wc -l < /tmp/grading_stub_name_list)
           echo completed_test_count=(wc -l < /tmp/grading_stub_name_list) >> $GITHUB_ENV
       - name: comparing total to completed test counts to verify member has completed all tests and set envars to reflect result
-        if: env.repeat_request== 'false'
+        if: env.repeat_request == 'false'
         run: |
           cat ${{ env.total_test_count }}
           cat ${{ env.completed_test_count }}
@@ -129,7 +129,7 @@ jobs:
             echo testcounterror=true >> $GITHUB_ENV            
           fi
       - id: testscomplete
-        if: env.testscomplete== 'true'
+        if: env.testscomplete == 'true'
         run: echo "::set-output name=testscomplete::true"
       - name: if testscomplete=false, post message to pr
         if: env.testscomplete == 'false'
@@ -190,7 +190,7 @@ jobs:
           cat /tmp/answer_key_list.json
       - name: compute total_test_count and set as envar
         run: |  
-          jq -r '[].name' /tmp/answer_key_list.json > /tmp/answer_key_name_list_tmp
+          jq -r '.[].name' /tmp/answer_key_list.json > /tmp/answer_key_name_list_tmp
           sort /tmp/answer_key_name_list_tmp -o /tmp/answer_key_name_list
           cat /tmp/answer_key_name_list
           echo total_test_count=(wc -l < /tmp/answer_key_name_list)
@@ -201,9 +201,9 @@ jobs:
             "https://api.github.com/repos/modernappsninjas/${{ github.event.sender.login }}/contents/userdata/courses/${{ github.event.repository.name }}/grading_stubs" \
             -o /tmp/grading_stub_list.json
           cat /tmp/grading_stub_list.json
-      - name: compute total_test_count and set as envar
-        run: |  
-          jq -r '[].name' /tmp/grading_stub_list.json > /tmp/grading_stub_name_list.pre
+      - name: compute completed_test_count and set as envar
+        run: |
+          jq -r '.[].name' /tmp/grading_stub_list.json > /tmp/grading_stub_name_list.pre
           grep -v "${{ github.event.repository.name }}" /tmp/grading_stub_name_list.pre > /tmp/grading_stub_name_list
           echo grading_stub_name_list=(cat /tmp/grading_stub_name_list)
           echo grading_stub_name_list=(cat /tmp/grading_stub_name_list) >> $GITHUB_ENV
