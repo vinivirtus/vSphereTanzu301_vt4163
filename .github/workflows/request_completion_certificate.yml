@@ -10,7 +10,7 @@ on:
   # curl answer key directory and create envar total_test_count to verify total quantity of tests required, as there is an answer key for each test
   # curl grade stub directory and create envar completed_test_count to verify total quantity of completed tests
   # verify that total and completed test count values are the same
-#job: calculate grade, create certificate, post records
+# job: calculate grade, create certificate, post records
   # compute total quantity of questions for all tests as envar combined_total_questions
   # compute total quantity of correct answers for all tests as envar combined_total_correct_questions
   # create certificate?
@@ -222,15 +222,15 @@ jobs:
             echo "current filename is: $current_filename"
             download_url=$(jq -r '.['${gs_name_loop}'].download_url' /tmp/grading_stub_list.json)
             echo "download_url is: ${download_url}"
-        # curl grading stub
+            # curl grading stub
             curl \
               -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
               "${download_url}" \
               -o /tmp/${current_filename}
             cat /tmp/${current_filename}
-        # extract summary section from grade stub
+            # extract summary section from grade stub
             yq e 'select(di == 1)' /tmp/${current_filename} > /tmp/test${gs_name_loop}grading_stub_summary.yml
-        # append current test summary contents to /tmp/${{ github.event.repository.name }}_grading_stub_tests
+            # append current test summary contents to /tmp/${{ github.event.repository.name }}_grading_stub_tests
             echo "the grading summary for loop number ${gs_name_loop} is:"
             cat /tmp/test${gs_name_loop}grading_stub_summary.yml
             echo "---  " >> /tmp/${{ github.event.repository.name }}_grading_stub_tests
@@ -238,25 +238,25 @@ jobs:
             echo "#####  " >> /tmp/${{ github.event.repository.name }}_grading_stub_tests
             echo "the compiled lists of grading stub summaries for this course after loop number ${gs_name_loop} is:"
             cat /tmp/${{ github.event.repository.name }}_grading_stub_tests
-        # extract total question count from current test and add to tally
+            # extract total question count from current test and add to tally
             echo test${gs_name_loop}_Total_Question_Count=$(yq e '.test'${gs_name_loop}'_Total_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
             test${gs_name_loop}_Total_Question_Count=$(yq e '.test'${gs_name_loop}'_Total_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
             total_question_tally=$(( $total_question_tally + ${test${gs_name_loop}_Total_Question_Count} ))
             echo "the total question tally after loop number ${gs_name_loop} processing is ${total_question_tally}"
-        # extract correct question count from current test and add to tally
+            # extract correct question count from current test and add to tally
             echo test${gs_name_loop}_Correct_Question_Count=$(yq e '.test'${gs_name_loop}'_Correct_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
             test${gs_name_loop}_Correct_Question_Count=$(yq e '.test'${gs_name_loop}'_Correct_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
             correct_question_tally=$(( $correct_question_tally + ${test${gs_name_loop}_Correct_Question_Count} ))
             echo "the correct question tally after loop number ${gs_name_loop} processing is ${correct_question_tally}"
-        # extract incorrect question count from current test and add to tally
+            # extract incorrect question count from current test and add to tally
             echo test${gs_name_loop}_Incorrect_Question_Count=$(yq e '.test'${gs_name_loop}'_Incorrect_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
             test${gs_name_loop}_Incorrect_Question_Count=$(yq e '.test'${gs_name_loop}'_Incorrect_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
             incorrect_question_tally=$(( $incorrect_question_tally + ${test${gs_name_loop}_Incorrect_Question_Count} ))
             echo "the incorrect question tally after loop number ${gs_name_loop} processing is ${incorrect_question_tally}"
-        # increment loop counter
+            # increment loop counter
             gs_name_loop=$(( $gs_name_loop + 1 ))
           done
-        # echo results of loop calculations
+          # echo results of loop calculations
           echo "the final list of each test grading stub summary is:"
           cat /tmp/${{ github.event.repository.name }}_grading_stub_tests
           echo "the final total question tally is: $total_question_tally"
@@ -268,7 +268,7 @@ jobs:
           percent_correct=$(bc <<< 'scale=2; ('$correct_question_tally' / '$total_question_tally')*100')
           echo percent_correct=$(bc <<< 'scale=2; ('$correct_question_tally' / '$total_question_tally')*100')
           echo percent_correct=$(bc <<< 'scale=2; ('$correct_question_tally' / '$total_question_tally')*100') >> $GITHUB_ENV
-        # determine if passing and set envar passing_grade=[true/false]
+          # determine if passing and set envar passing_grade=[true/false]
           if (( $(echo "$percent_correct > $num2" |bc -l) ));
           then
             echo "this is a passing grade"
@@ -279,7 +279,7 @@ jobs:
             echo passing_grade=false
             echo passing_grade=false >> $GITHUB_ENV
           fi
-        # prepare course final grade summary stub
+          # prepare course final grade summary stub
           echo "---  " > /tmp/${{ github.event.repository.name }}_grading_stub_summary
           echo "#### ${{ github.event.repository.name }} Cumulitive Summary of Test Results:  " >> /tmp/${{ github.event.repository.name }}_grading_stub_summary
           echo "${{ github.event.repository.name }}_Total_Question_Count: $correct_count  " >> /tmp/${{ github.event.repository.name }}_grading_stub_summary
