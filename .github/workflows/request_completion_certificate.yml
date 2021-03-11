@@ -3,7 +3,7 @@ on:
   pull_request_target:
     types: [opened]
     paths:
-    - 'static/admin/userdata/tests/**.yml'
+    - 'static/admin/userdata/certs_awarded/**.yml'
 
 # job: validate completed test count is equal to total test count
   # extract pr file body from pr event
@@ -13,15 +13,17 @@ on:
 # job: calculate grade, create certificate, post records
   # compute total quantity of questions for all tests as envar combined_total_questions
   # compute total quantity of correct answers for all tests as envar combined_total_correct_questions
-  # create certificate?
-  # ?post cert to social media?
   # prepare final grade report
   # post final grade report
   # pull member course card assets
   # prepare updated member course card
   # post updated member course card
   # post message to PR
-  # close PR
+  # merge PR
+  
+  # update registered members directory with status: [completed](url to cert)
+  # create certificate?
+  # ?post cert to social media?
 
 jobs:
   job_verify_test_completion:
