@@ -91,7 +91,7 @@ jobs:
           "https://raw.githubusercontent.com/${{ env.org_repo }}/main/static/admin/assets/coursecards/course_meta.yml" \
           -o /tmp/course_meta.yml
           cat /tmp/course_meta.yml
-      - name: pull member course card top stub
+      - name: pull member course card stub
         run: |
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           "https://raw.githubusercontent.com/${{ env.org_repo }}/main/static/admin/assets/coursecards/memberrepocard/member_course_card_stub.md" \
