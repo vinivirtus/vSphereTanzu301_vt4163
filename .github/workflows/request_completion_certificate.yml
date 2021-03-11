@@ -84,20 +84,20 @@ jobs:
             -o /tmp/answer_key_list.json
           cat /tmp/answer_key_list.json
       - name: compute total_test_count and set as envar
-        if: env.repeat_request== 'false'
+        if: env.repeat_request == 'false'
         run: |  
           jq -r '[].name' /tmp/answer_key_list.json > /tmp/answer_key_name_list
           echo total_test_count=(wc -l < /tmp/answer_key_name_list)
           echo total_test_count=(wc -l < /tmp/answer_key_name_list) >> $GITHUB_ENV
       - name: curl the member grade stubs directory content list
-        if: env.repeat_request== 'false'
+        if: env.repeat_request == 'false'
         run: |
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
             "https://api.github.com/repos/modernappsninjas/${{ github.event.sender.login }}/contents/userdata/courses/${{ github.event.repository.name }}/grading_stubs" \
             -o /tmp/grading_stub_list.json
           cat /tmp/grading_stub_list.json
-      - name: compute total_test_count and set as envar
-        if: env.repeat_request== 'false'
+      - name: compute completed_test_count and set as envar
+        if: env.repeat_request == 'false'
         run: |  
           jq -r '[].name' /tmp/grading_stub_list.json > /tmp/grading_stub_name_list
           echo completed_test_count=(wc -l < /tmp/grading_stub_name_list)
