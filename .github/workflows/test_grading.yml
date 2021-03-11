@@ -190,7 +190,7 @@ jobs:
               echo "Question$gradeloop: Correct"
               echo "Question$gradeloop: Correct  " >> /tmp/${{ env.test_name }}_grading_stub_questions
               # note the reason for echoing hashes in between responses is because if you query the file with yq it will remove whitespace including the trailing whitespaces that github markdown rendering requires to act as a newline, so the result will be the report will display all responses on a single line.
-              # the purpose of adding these hashtags is to ensure the final user report will present each grade report element is presented as a seperate line in the final report
+              # the purpose of adding these hashtags is to ensure the final user report will present each grade report element as a seperate line in the final report
               echo "#####  " >> /tmp/${{ env.test_name }}_grading_stub_questions
               correct_count=$(( $correct_count + 1 ))
               gradeloop=$(( $gradeloop + 1 ))
@@ -354,12 +354,12 @@ jobs:
               curl \
                 -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
                 "https://raw.githubusercontent.com/modernappsninjas/${{ github.event.sender.login }}/main/static/userdata/courses/${{ github.event.repository.name }}/grading_stubs/${{ env.test_name }}_grading_stub.yml" \
-                -o /tmp/pulled_test${grading_stub_loop_name}_grading_stub.yml
-              cat /tmp/pulled_test${grading_stub_loop_name}_grading_stub.yml
+                -o /tmp/pulled_test${gs_loop}_grading_stub.yml
+              cat /tmp/pulled_test${gs_loop}_grading_stub.yml
               # extract summary section from grade stub
-              yq e 'select(di == 1)' /tmp/pulled_test${grading_stub_loop_name}_grading_stub.yml >> /tmp/pulled_test${grading_stub_loop_name}_grading_stub_summary.yml
+              yq e 'select(di == 1)' /tmp/pulled_test${gs_loop}_grading_stub.yml >> /tmp/pulled_test${gs_loop}_grading_stub_summary.yml
               # append grading stub summary to master
-              cat /tmp/pulled_test${grading_stub_loop_name}_grading_stub_summary.yml >> /tmp/grading_stub_master
+              cat /tmp/pulled_test${gs_loop}_grading_stub_summary.yml >> /tmp/grading_stub_master
               cat /tmp/grading_stub_master
               gs_loop=$(( $gs_loop + 1 ))
             done

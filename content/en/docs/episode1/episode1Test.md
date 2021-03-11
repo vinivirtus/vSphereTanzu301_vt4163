@@ -14,6 +14,7 @@ Ninja tests use devops tools and processes so the testing system itself provides
   - [Full Test Instructions](#full-test-instructions)
   - [Test Answer Response Sheet](#test-answer-response-sheet)
   - [Episode 1 Test Questions](#episode-1-test-questions)
+      - [This concludes the episode 1 test. Please use the navigation bar to proceed to the next page.](#this-concludes-the-episode-1-test-please-use-the-navigation-bar-to-proceed-to-the-next-page)
 
 ## Instructions
 
@@ -41,7 +42,7 @@ It is important that you follow the instructions carefully to ensure the automat
 
 Please right click the following link to the test answer response sheet and select to open it in a new tab. The questions for this test will be provided below in this page, but you will need to enter your responses in the answer response sheet. 
 
-[Test1 Answer Response Sheet](https://github.com/modernappsninja/vSphereTanzu301_vt4163/edit/main/static/admin/userdata/tests/test1.md)  
+[Test1 Answer Response Sheet](https://github.com/modernappsninja/vSphereTanzu301_vt4163/edit/main/static/admin/userdata/tests/test1.yml)  
 
 ### Episode 1 Test Questions
 
@@ -79,3 +80,5 @@ Answers:
   c: vmotion is working
   d: basic networking between management network and workload networks is working so that you can ping between the networks
 ```
+
+##### This concludes the episode 1 test. Please use the navigation bar to proceed to the next page.
