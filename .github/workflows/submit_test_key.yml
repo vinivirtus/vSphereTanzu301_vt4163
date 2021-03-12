@@ -112,8 +112,8 @@ jobs:
           # add single space after each colon
           cat /tmp/issuebody.yml.lined | sed 's/:/: /g' > /tmp/issuebody.yml
           # encode cleaned answer file
-          cat /tmp/issuebody.yml| base64 -w 0 > /tmp/answer_key_string
-          echo answer_key_string=$(cat /tmp/answer_key_double) >> $GITHUB_ENV
+          cat /tmp/issuebody.yml | base64 -w 0 > /tmp/answer_key_string
+          echo answer_key_string=$(cat /tmp/answer_key_string) >> $GITHUB_ENV
           # double encode cleaned answer file
           cat /tmp/answer_key_string | base64 -w 0 > /tmp/answer_key_double
           echo answer_key_double=$(cat /tmp/answer_key_double) >> $GITHUB_ENV
