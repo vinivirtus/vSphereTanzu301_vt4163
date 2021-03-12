@@ -412,12 +412,6 @@ jobs:
           -o /tmp/merge_sha.tmp
           cat /tmp/merge_sha.tmp
           cat /tmp/merge_sha.tmp | jq -r '.sha' > /tmp/merge_sha
-      - name: set envar for merged certs_awarded file sha
-        if: env.passing_grade == 'true'
-        run: |
-          cat /tmp/merge_sha
-          echo filemergesha="$(cat /tmp/merge_sha)"
-          echo 'filemergesha='$(cat /tmp/merge_sha)'' >> GITHUB_ENV
       - name: curl file list for pr
         run: |
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
@@ -432,7 +426,6 @@ jobs:
       - name: delete merged certs_awarded file
         if: env.passing_grade == 'true'
         run: |
-          echo "filemergesha is: ${{ env.filemergesha }}"
           curl -X DELETE \
           -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           -H "Accept: application/vnd.github.v3+json" \
