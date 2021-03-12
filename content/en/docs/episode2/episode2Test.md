@@ -46,15 +46,16 @@ Please right click the following link to the test answer response sheet and sele
 
 ### Episode 2 Test Questions
 
-#### **Question1:** vSphere with Tanzu is the fastest way to get started with Kubernetes workloads. and ...? <!-- omit in toc -->
+#### **Question1:** This session covered creating a nested ESXi cluster with HCI Mesh. HCI mesh is new vSphere 7 feature that:||Select two choices. <!-- omit in toc -->
 
 **Please select the best response from the following to complete the statement in Question1:**
 
 ```yml
 Answers:
-  a: requires NSX-T to be installed.
-  b: is designed to work with standard vSphere networking which allows you to bring your own networking.
-  c: allows you to avoid connecting any networks.
+  a: shares a vsan datastore between clusters
+  b: 
+  c: 
+  d: 
 ```
 
 #### **Question2:** In the setup of vSphere with Tanzu you will need at least two separate, routable subnets configured. One subnet will be for Management Networking. This is where vCenter, ESXi, the Supervisor Cluster and the Load Balancer will live. The other subnet will be used for Workload Networking. This is where your virtual IP’s and TKG clusters will live. <!-- omit in toc -->
