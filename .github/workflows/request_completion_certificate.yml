@@ -507,6 +507,7 @@ jobs:
           fi
           cat /tmp/prmessage
       - name: post message to pr
+        run: |
           curl -X POST \
           -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           -H "Accept: application/vnd.github.v3+json" \
