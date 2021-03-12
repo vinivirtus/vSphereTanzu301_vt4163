@@ -227,6 +227,8 @@ jobs:
             echo "current filename is: $current_filename"
             download_url=$(jq -r '.['${zloop}'].download_url' /tmp/grading_stub_list.json)
             echo "download_url is: ${download_url}"
+            eval looptestname=$(echo test${gs_name_loop})
+            echo looptestname=$(echo test${gs_name_loop})
             # curl grading stub
             curl \
               -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
@@ -244,19 +246,19 @@ jobs:
             echo "the compiled lists of grading stub summaries for this course after loop number ${gs_name_loop} is:"
             cat /tmp/${{ github.event.repository.name }}_grading_stub_tests
             # extract total question count from current test and add to tally
-            echo test${gs_name_loop}_Total_Question_Count=$(yq e '.test'${gs_name_loop}'_Total_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
-            eval test${gs_name_loop}_Total_Question_Count=$(yq e '.test'${gs_name_loop}'_Total_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
-            eval total_question_tally=$(( $total_question_tally + ${test${gs_name_loop}_Total_Question_Count} ))
+            echo Current_Total_Question_Count=$(yq e '.test'${gs_name_loop}'_Total_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
+            eval Current_Total_Question_Count=$(yq e '.test'${gs_name_loop}'_Total_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
+            eval total_question_tally=$(( $total_question_tally + $Current_Total_Question_Count} ))
             echo "the total question tally after loop number ${gs_name_loop} processing is ${total_question_tally}"
             # extract correct question count from current test and add to tally
-            echo test${gs_name_loop}_Correct_Question_Count=$(yq e '.test'${gs_name_loop}'_Correct_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
-            eval test${gs_name_loop}_Correct_Question_Count=$(yq e '.test'${gs_name_loop}'_Correct_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
-            eval correct_question_tally=$(( $correct_question_tally + ${test${gs_name_loop}_Correct_Question_Count} ))
+            echo Current_Correct_Question_Count=$(yq e '.test'${gs_name_loop}'_Correct_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
+            eval Current_Correct_Question_Count=$(yq e '.test'${gs_name_loop}'_Correct_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
+            eval correct_question_tally=$(( $correct_question_tally + $Current_Correct_Question_Count} ))
             echo "the correct question tally after loop number ${gs_name_loop} processing is ${correct_question_tally}"
             # extract incorrect question count from current test and add to tally
-            echo test${gs_name_loop}_Incorrect_Question_Count=$(yq e '.test'${gs_name_loop}'_Incorrect_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
-            eval test${gs_name_loop}_Incorrect_Question_Count=$(yq e '.test'${gs_name_loop}'_Incorrect_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
-            eval incorrect_question_tally=$(( $incorrect_question_tally + ${test${gs_name_loop}_Incorrect_Question_Count} ))
+            echo Current_Incorrect_Question_Count=$(yq e '.test'${gs_name_loop}'_Incorrect_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
+            eval Current_Incorrect_Question_Count=$(yq e '.test'${gs_name_loop}'_Incorrect_Question_Count' /tmp/test${gs_name_loop}grading_stub_summary.yml)
+            eval incorrect_question_tally=$(( $incorrect_question_tally + $Current_Incorrect_Question_Count} ))
             echo "the incorrect question tally after loop number ${gs_name_loop} processing is ${incorrect_question_tally}"
             # increment loop counters
             gs_name_loop=$(( $gs_name_loop + 1 ))
