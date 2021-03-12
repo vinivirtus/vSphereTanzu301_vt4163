@@ -107,15 +107,20 @@ jobs:
         run: |
           # remove all whitespace and newlines
           cat /tmp/issuebody.yml.raw | tr -d '[:space:]' > /tmp/issuebody.yml.ns
+          echo "response with spaces removed: $(cat /tmp/issuebody.yml.ns)"
           # add newline before each question
           cat /tmp/issuebody.yml.ns | sed 's/Question/\nQuestion/g' > /tmp/issuebody.yml.lined
+          echo "response with newlines added: $(cat /tmp/issuebody.yml.lined)"
           # add single space after each colon
           cat /tmp/issuebody.yml.lined | sed 's/:/: /g' > /tmp/issuebody.yml
+          echo "fully cleaned response: $(cat /tmp/issuebody.yml)"
           # encode cleaned answer file
           cat /tmp/issuebody.yml | base64 -w 0 > /tmp/answer_key_string
+          echo "response single encoded: $(cat /tmp/answer_key_string)"
           echo answer_key_string=$(cat /tmp/answer_key_string) >> $GITHUB_ENV
           # double encode cleaned answer file
           cat /tmp/answer_key_string | base64 -w 0 > /tmp/answer_key_double
+          echo "response double encoded: $(cat /tmp/answer_key_double)"
           echo answer_key_double=$(cat /tmp/answer_key_double) >> $GITHUB_ENV
       - name: extract test name and set as envar testname
         run: |
@@ -158,7 +163,7 @@ jobs:
             curl -X PUT \
             -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
             -H "Accept: application/vnd.github.v3+json" \
-            -d '{"message": "Updating answer key string for ${{ env.testname }} for ${{ github.event.repository.name }}","content":"${{ env.answer_key_double }}", "sha":"${{ env.string_exists_sha }}"}' \
+            -d '{"message": "Updating answer key string for ${{ env.testname }} for ${{ github.event.repository.name }}","content":"${{ env.answer_key_double }}", "sha":${{ env.string_exists_sha }}}' \
             "https://api.github.com/repos/modernappsninja/admin-private/contents/appdata/courses/${{ github.event.repository.name }}/answer_strings/${{ env.testname }}.string" \
             -o /tmp/update_key_post_response.json
             cat /tmp/update_key_post_response.json     
