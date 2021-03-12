@@ -353,7 +353,7 @@ jobs:
               # curl grading stub
               curl \
                 -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
-                "https://raw.githubusercontent.com/modernappsninjas/${{ github.event.sender.login }}/main/static/userdata/courses/${{ github.event.repository.name }}/grading_stubs/${{ env.test_name }}_grading_stub.yml" \
+                "https://raw.githubusercontent.com/modernappsninjas/${{ github.event.sender.login }}/main/static/userdata/courses/${{ github.event.repository.name }}/grading_stubs/test${gs_loop}_grading_stub.yml" \
                 -o /tmp/pulled_test${gs_loop}_grading_stub.yml
               cat /tmp/pulled_test${gs_loop}_grading_stub.yml
               # extract summary section from grade stub
