@@ -502,6 +502,7 @@ jobs:
             prmessage='@${{ github.event.sender.login }} Congratulations, you have recieved a passing grade and have been awarded a certificate of completion for this course. You can view your grade report at https://github.com/modernappsninjas/${{ github.event.sender.login }}/blob/main/static/userdata/courses/${{ github.event.repository.name }}/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md'
             echo $prmessage
           elif [ '${{ env.passing_grade }}' == 'false' ]
+          then
             echo "this is a failing grade"
             prmessage='@${{ github.event.sender.login }} Your certificate request has been reviewed, and our records indicate that you have not met the passing criteria which requires that you correctly answer 70.00% of the questions for all tests in the course. Your grade report will indicate which tests you may need to retake to achieve a passing grade. You can view your grade report at https://github.com/modernappsninjas/${{ github.event.sender.login }}/blob/main/static/userdata/courses/${{ github.event.repository.name }}/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md'
             echo $prmessage
