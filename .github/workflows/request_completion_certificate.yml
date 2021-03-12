@@ -51,7 +51,6 @@ jobs:
             -H "Accept: application/vnd.github.v3+json" \
             "https://api.github.com/repos/modernappsninjas/${{ github.event.sender.login }}/contents/static/userdata/courses/${{ github.event.repository.name }}/grading_stubs/${{ github.event.repository.name }}_grading_stub.yml" \
             -o /tmp/repeat_request_response
-          cat /tmp/repeat_request_response
           cat /tmp/repeat_request_response | jq '.name' > /tmp/repeat_request_response_name
           if [ $(cat /tmp/string_exists | jq '.name') == 'null' ]
           then
@@ -82,7 +81,6 @@ jobs:
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
             "https://api.github.com/repos/ModernAppsNinja/admin-private/contents/appdata/courses/${{ github.event.repository.name }}/answer_strings" \
             -o /tmp/answer_key_list.json
-          cat /tmp/answer_key_list.json
       - name: compute total_test_count and set as envar
         if: env.repeat_request == 'false'
         run: |  
@@ -95,12 +93,10 @@ jobs:
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
             "https://api.github.com/repos/modernappsninjas/${{ github.event.sender.login }}/contents/static/userdata/courses/${{ github.event.repository.name }}/grading_stubs" \
             -o /tmp/grading_stub_list.json
-          cat /tmp/grading_stub_list.json
       - name: compute completed_test_count and set as envar
         if: env.repeat_request == 'false'
         run: |  
           jq -r '.[].name' /tmp/grading_stub_list.json > /tmp/grading_stub_name_list
-          echo completed_test_count=$(wc -l < /tmp/grading_stub_name_list)
           echo completed_test_count=$(wc -l < /tmp/grading_stub_name_list) >> $GITHUB_ENV
       - name: comparing total to completed test counts to verify member has completed all tests and set envars to reflect result
         if: env.repeat_request == 'false'
@@ -109,23 +105,14 @@ jobs:
           cat ${{ env.completed_test_count }}
           if [ ${{ env.total_test_count }} -eq  ${{ env.completed_test_count }} ]
           then 
-            echo "the total and complete test count values are the same"
-            echo testscomplete=true
             echo testscomplete=true >> $GITHUB_ENV
-            echo testcounterror=false
             echo testcounterror=false >> $GITHUB_ENV            
           elif [ ${{ env.total_test_count }} -gt  ${{ env.completed_test_count }} ]
           then 
-            echo "the total test count is greater than the completed test count"
-            echo testscomplete=false
             echo testscomplete=false >> $GITHUB_ENV
-            echo testcounterror=false
             echo testcounterror=false >> $GITHUB_ENV            
           else
-            echo "a valid condition has not been met, likely due to an error"
-            echo testscomplete=false
             echo testscomplete=false >> $GITHUB_ENV
-            echo testcounterror=true
             echo testcounterror=true >> $GITHUB_ENV            
           fi
       - id: testscomplete
@@ -148,7 +135,6 @@ jobs:
           -d '{"event": "COMMENT", "body": "'$test_complete_false_message'"}' \
           "https://api.github.com/repos/${{ env.org_repo }}/pulls/${{ github.event.number }}/reviews" \
           -o /tmp/false_message_post_response.json
-          cat /tmp/false_message_post_response.json
       - name: if testscomplete=false and testcounterror=false, close pr
         if: env.testscomplete == 'false'
         run: |
@@ -200,7 +186,6 @@ jobs:
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
             "https://api.github.com/repos/modernappsninjas/${{ github.event.sender.login }}/contents/static/userdata/courses/${{ github.event.repository.name }}/grading_stubs" \
             -o /tmp/grading_stub_list.json
-          cat /tmp/grading_stub_list.json
       - name: compute completed_test_count and set as envar
         run: |
           jq -r '.[].name' /tmp/grading_stub_list.json > /tmp/grading_stub_name_list.pre
@@ -313,11 +298,9 @@ jobs:
         run: |
           cat /tmp/${{ github.event.repository.name }}_grading_stub_tests > /tmp/${{ github.event.repository.name }}_grading_stub
           cat /tmp/${{ github.event.repository.name }}_grading_stub_summary >> /tmp/${{ github.event.repository.name }}_grading_stub
-          cat /tmp/${{ github.event.repository.name }}_grading_stub
       - name: encode grading_stub with base64 -w 0
         run: |
           cat /tmp/${{ github.event.repository.name }}_grading_stub| base64 -w 0 > /tmp/${{ github.event.repository.name }}_grading_stub.yml.base64
-          cat /tmp/${{ github.event.repository.name }}_grading_stub.yml.base64
           echo grading_stub_string=$(cat /tmp/${{ github.event.repository.name }}_grading_stub.yml.base64) >> $GITHUB_ENV
       - name: post grading_stub to member repo
         run: |
@@ -328,7 +311,6 @@ jobs:
           -d '{"message": "Posting ${{ github.event.repository.name }}_grading_stub file", "content": "${{ env.grading_stub_string }}"'$(if [ '${{ needs.job_verify_test_completion.outputs.repeat_request }}' == 'true' ]; then echo ",\"sha\":\"${{ needs.job_verify_test_completion.outputs.repeat_request_sha }}\"";fi)'}' \
           "https://api.github.com/repos/modernappsninjas/${{ github.event.sender.login }}/contents/static/userdata/courses/${{ github.event.repository.name }}/grading_stubs/${{ github.event.repository.name }}_grading_stub.yml" \
           -o /tmp/grading_stub_post_response.json
-          cat /tmp/grading_stub_post_response.json
       - name: prepare grade report
         run: |
           echo "---  " > /tmp/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md
@@ -341,11 +323,9 @@ jobs:
           echo "Course_URL: https://modernappsninja.github.io/${{ github.event.repository.name }}/  " >> /tmp/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md
           echo "   " >> /tmp/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md
           cat /tmp/${{ github.event.repository.name }}_grading_stub >> /tmp/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md
-          cat /tmp/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md
       - name: encode grade report with base64 -w 0
         run: |
           cat /tmp/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md | base64 -w 0 > /tmp/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md.base64
-          cat /tmp/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md.base64
           echo grade_report_string=$(cat /tmp/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md.base64) >> $GITHUB_ENV
       - name: post grade report to member repo
         run: |
@@ -355,7 +335,6 @@ jobs:
           -d '{"message": "Posting Member Grade Report grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md", "content": "${{ env.grade_report_string }}"}' \
           "https://api.github.com/repos/modernappsninjas/${{ github.event.sender.login }}/contents/static/userdata/courses/${{ github.event.repository.name }}/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md" \
           -o /tmp/member_grade_report_post_response.json
-          cat /tmp/member_grade_report_post_response.json
       - name: pull existing member course card sha
         run: |
           # Pull member course card
@@ -371,29 +350,24 @@ jobs:
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           "https://raw.githubusercontent.com/modernappsninja/${{ github.event.repository.name }}/main/static/admin/assets/coursecards/memberrepocard/member_course_card_stub.md" \
           -o /tmp/member_course_card_stub.md
-          cat /tmp/member_course_card_stub.md
       - name: pull member course record top
         run: |
           # Pull latest member course record top 
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           "https://raw.githubusercontent.com/modernappsninja/${{ github.event.repository.name }}/main/static/admin/assets/coursecards/memberrepocard/member_course_record_top.yml" \
           -o /tmp/member_course_record_top.yml
-          cat /tmp/member_course_record_top.yml
       - name: update member course record top to Status Completed
         run: |
           sed -i '/^Status/c\Status: Completed' /tmp/member_course_record_top.yml
-          cat /tmp/member_course_record_top.yml
       - name: pull member course record bottom
         run: |
           # Pull latest member course record bottom
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           "https://raw.githubusercontent.com/modernappsninja/${{ github.event.repository.name }}/main/static/admin/assets/coursecards/memberrepocard/member_course_record_bottom.yml" \
           -o /tmp/member_course_record_bottom.yml
-          cat /tmp/member_course_record_bottom.yml
       - name: update member course record bottom to Completion_Certificate Awarded
         run: |
           sed -i '/^Completion_/c\Completion_Certificate: Awarded' /tmp/member_course_record_bottom.yml
-          cat /tmp/member_course_record_bottom.yml
       - name: pull latest course meta
         run: |
           # Pull latest course_meta.yml card
@@ -401,7 +375,6 @@ jobs:
           "https://raw.githubusercontent.com/modernappsninja/${{ github.event.repository.name }}/main/static/admin/assets/coursecards/course_meta.yml" \
           -o /tmp/course_meta.yml
           sed -i '/^draft:/c\draft: false' /tmp/course_meta.yml
-          cat /tmp/course_meta.yml
       - name: prepare updated member course card
         run: |
           # combine course meta, member course card stub, member course record top, test grading stub and member course record bottom to create new member course card file
@@ -410,7 +383,6 @@ jobs:
           cat /tmp/member_course_record_top.yml >> /tmp/member_course_card.md
           cat /tmp/${{ github.event.repository.name }}_grading_stub >> /tmp/member_course_card.md
           cat /tmp/member_course_record_bottom.yml >> /tmp/member_course_card.md
-          cat /tmp/member_course_card.md
           cat /tmp/member_course_card.md | base64 -w 0 >> /tmp/member_course_card.md.base64
       - name: post updated member course card to member repo
         run: |
@@ -420,7 +392,6 @@ jobs:
           -d '{"message": "Posting updated member course record card", "content": "'$(cat /tmp/member_course_card.md.base64)'","sha":"${{ env.member_course_card_old_sha }}"}' \
           "https://api.github.com/repos/modernappsninjas/${{ github.event.sender.login }}/contents/content/english/course/${{ github.event.repository.name }}.md" \
           -o /tmp/member_course_card_post_response.json
-          cat /tmp/member_course_card_post_response.json
       - name: merge_pull_request
         if: env.passing_grade == 'true'
         run: |
@@ -493,8 +464,9 @@ jobs:
           if [ '${{ env.passing_grade }}' == 'true' ]
           then
             echo "this is a passing grade"
-            prmessage='{"event":"COMMENT","body":"@${{ github.event.sender.login }} Congratulations, you have recieved a passing grade and have been awarded a certificate of completion for this course. You can view your grade report at https://github.com/modernappsninjas/${{ github.event.sender.login }}/blob/main/static/userdata/courses/${{ github.event.repository.name }}/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md"'
-            echo $prmessage > /tmp/prmessage
+            prmessage='{"event":"COMMENT","body":"@${{ github.event.sender.login }} Congratulations, you have recieved a passing grade and have been awarded a certificate of completion for this course. You can view your grade report at https://github.com/modernappsninjas/${{ github.event.sender.login }}/blob/main/static/userdata/courses/${{ github.event.repository.name }}/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md"}'
+            echo $prmessage | jq '.' > /tmp/prmessage
+            cat /tmp/prmessage
           elif [ '${{ env.passing_grade }}' == 'false' ]
           then
             echo "this is a failing grade"
@@ -524,13 +496,3 @@ jobs:
           "https://api.github.com/repos/${{ env.org_repo }}/pulls/${{ github.event.number }}" \
           -o /tmp/pr_close_response.json
           cat /tmp/pr_close_response.json
-
-
-
-          
-
-
-
-
-
-          
