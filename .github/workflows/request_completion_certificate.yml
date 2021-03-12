@@ -282,10 +282,14 @@ jobs:
             echo "this is a passing grade"
             echo passing_grade=true
             echo passing_grade=true >> $GITHUB_ENV 
+            echo course_grade=Pass
+            echo course_grade=Pass >> $GITHUB_ENV 
           else
             echo "this is not a passing grade"
             echo passing_grade=false
             echo passing_grade=false >> $GITHUB_ENV
+            echo course_grade=Fail
+            echo course_grade=Fail >> $GITHUB_ENV 
           fi
           # prepare course final grade summary stub
           echo "---  " > /tmp/${{ github.event.repository.name }}_grading_stub_summary
@@ -297,7 +301,9 @@ jobs:
           echo "${{ github.event.repository.name }}_Incorrect_Response_Count: $incorrect_question_tally " >> /tmp/${{ github.event.repository.name }}_grading_stub_summary
           echo "#####  " >> /tmp/${{ github.event.repository.name }}_grading_stub_summary
           echo "${{ github.event.repository.name }}_Percent_Correct: $percent_correct%  " >> /tmp/${{ github.event.repository.name }}_grading_stub_summary
-          echo "#####  " >> /tmp/${{ env.test_name }}_grading_stub_summary
+          echo "#####  " >> /tmp/${{ github.event.repository.name }}_grading_stub_summary
+          echo "${{ github.event.repository.name }}_Grade: $course_grade  " >> /tmp/${{ github.event.repository.name }}_grading_stub_summary
+          echo "#####  " >> /tmp/${{ github.event.repository.name }}_grading_stub_summary
           echo '${{ github.event.repository.name }}_Grade_Report_Url: "[Click Here](https://github.com/modernappsninjas/${{ github.event.sender.login }}/blob/main/static/userdata/courses/${{ github.event.repository.name }}/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md)"' >> /tmp/${{ github.event.repository.name }}_grading_stub_summary
           echo "#####  " >> /tmp/${{ github.event.repository.name }}_grading_stub_summary
           cat /tmp/${{ github.event.repository.name }}_grading_stub_summary
