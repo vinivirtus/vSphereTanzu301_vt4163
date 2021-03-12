@@ -309,7 +309,7 @@ jobs:
       - name: encode grading_stub with base64 -w 0
         run: |
           cat /tmp/${{ github.event.repository.name }}_grading_stub| base64 -w 0 > /tmp/${{ github.event.repository.name }}_grading_stub.yml.base64
-          /tmp/${{ github.event.repository.name }}_grading_stub.yml.base64
+          cat /tmp/${{ github.event.repository.name }}_grading_stub.yml.base64
           echo grading_stub_string=$(cat /tmp/${{ github.event.repository.name }}_grading_stub.yml.base64) >> $GITHUB_ENV
       - name: post grading_stub to member repo
         run: |
