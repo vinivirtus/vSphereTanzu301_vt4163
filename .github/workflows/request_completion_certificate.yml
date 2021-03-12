@@ -290,11 +290,11 @@ jobs:
           # prepare course final grade summary stub
           echo "---  " > /tmp/${{ github.event.repository.name }}_grading_stub_summary
           echo "#### ${{ github.event.repository.name }} Cumulitive Summary of Test Results:  " >> /tmp/${{ github.event.repository.name }}_grading_stub_summary
-          echo "${{ github.event.repository.name }}_Total_Question_Count: $correct_count  " >> /tmp/${{ github.event.repository.name }}_grading_stub_summary
+          echo "${{ github.event.repository.name }}_Total_Question_Count: $total_question_tally  " >> /tmp/${{ github.event.repository.name }}_grading_stub_summary
           echo "#####  " >> /tmp/${{ github.event.repository.name }}_grading_stub_summary
-          echo "${{ github.event.repository.name }}_Correct_Response_Count: $correct_count  " >> /tmp/${{ github.event.repository.name }}_grading_stub_summary
+          echo "${{ github.event.repository.name }}_Correct_Response_Count: $correct_question_tally  " >> /tmp/${{ github.event.repository.name }}_grading_stub_summary
           echo "#####  " >> /tmp/${{ github.event.repository.name }}_grading_stub_summary
-          echo "${{ github.event.repository.name }}_Incorrect_Response_Count: $incorrect_count  " >> /tmp/${{ github.event.repository.name }}_grading_stub_summary
+          echo "${{ github.event.repository.name }}_Incorrect_Response_Count: $incorrect_question_tally " >> /tmp/${{ github.event.repository.name }}_grading_stub_summary
           echo "#####  " >> /tmp/${{ github.event.repository.name }}_grading_stub_summary
           echo "${{ github.event.repository.name }}_Percent_Correct: $percent_correct%  " >> /tmp/${{ github.event.repository.name }}_grading_stub_summary
           echo "#####  " >> /tmp/${{ env.test_name }}_grading_stub_summary
