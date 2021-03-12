@@ -499,22 +499,22 @@ jobs:
           if [ '${{ env.passing_grade }}' == 'true' ]
           then
             echo "this is a passing grade"
-            echo "@${{ github.event.sender.login }} Congratulations, you have recieved a passing grade and have been awarded a certificate of completion for this course. You can view your grade report at 'https://github.com/modernappsninjas/${{ github.event.sender.login }}/blob/main/static/userdata/courses/${{ github.event.repository.name }}/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md'" > /tmp/prmessage
+            echo '"@${{ github.event.sender.login }} Congratulations, you have recieved a passing grade and have been awarded a certificate of completion for this course. You can view your grade report at https://github.com/modernappsninjas/${{ github.event.sender.login }}/blob/main/static/userdata/courses/${{ github.event.repository.name }}/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md"' > /tmp/prmessage
             cat /tmp/prmessage
           elif [ '${{ env.passing_grade }}' == 'false' ]
           then
             echo "this is a failing grade"
-            echo "@${{ github.event.sender.login }} Your certificate request has been reviewed, and our records indicate that you have not met the passing criteria which requires that you correctly answer 70.00% of the questions for all tests in the course. Your grade report will indicate which tests you may need to retake to achieve a passing grade. You can view your grade report at 'https://github.com/modernappsninjas/${{ github.event.sender.login }}/blob/main/static/userdata/courses/${{ github.event.repository.name }}/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md'" > /tmp/prmessage
+            echo '"@${{ github.event.sender.login }} Your certificate request has been reviewed, and our records indicate that you have not met the passing criteria which requires that you correctly answer 70.00% of the questions for all tests in the course. Your grade report will indicate which tests you may need to retake to achieve a passing grade. You can view your grade report at https://github.com/modernappsninjas/${{ github.event.sender.login }}/blob/main/static/userdata/courses/${{ github.event.repository.name }}/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md"' > /tmp/prmessage
             cat /tmp/prmessage
           else
             echo "this is an error condition"
-            echo '@${{ github.event.sender.login }} There has been an error in processing your completion certificate request. Please open a support request issue ticket on the course repository, and include the link to this pull request page in your request.' > /tmp/prmessage
+            echo '"@${{ github.event.sender.login }} There has been an error in processing your completion certificate request. Please open a support request issue ticket on the course repository, and include the link to this pull request page in your request."' > /tmp/prmessage
             cat /tmp/prmessage
           fi
           curl -X POST \
           -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           -H "Accept: application/vnd.github.v3+json" \
-          -d '{"event": "COMMENT", "body": "'$(cat /tmp/prmessage)'"}' \
+          -d '{"event": "COMMENT", "body": '$(cat /tmp/prmessage)'}' \
           "https://api.github.com/repos/${{ env.org_repo }}/pulls/${{ github.event.number }}/reviews" \
           -o /tmp/pr_comment_post_response.json
           cat /tmp/pr_comment_post_response.json
