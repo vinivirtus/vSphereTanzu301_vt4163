@@ -277,7 +277,7 @@ jobs:
           echo percent_correct=$(bc <<< 'scale=2; ('$correct_question_tally' / '$total_question_tally')*100')
           echo percent_correct=$(bc <<< 'scale=2; ('$correct_question_tally' / '$total_question_tally')*100') >> $GITHUB_ENV
           # determine if passing and set envar passing_grade=[true/false]
-          if (( $(echo "$percent_correct > $num2" |bc -l) ));
+          if (( $(echo "$percent_correct > 70" |bc -l) ));
           then
             echo "this is a passing grade"
             echo passing_grade=true
