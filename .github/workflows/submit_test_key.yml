@@ -108,9 +108,9 @@ jobs:
           # remove all whitespace and newlines
           cat /tmp/issuebody.yml.raw | tr -d '[:space:]' > /tmp/issuebody.yml.ns
           # add newline before each question
-          cat /tmp/issuebody.yml.raw.ns | sed 's/Question/\nQuestion/g' > /tmp/issuebody.yml.lined
+          cat /tmp/issuebody.yml.ns | sed 's/Question/\nQuestion/g' > /tmp/issuebody.yml.lined
           # add single space after each colon
-          cat /tmp/issuebody.yml.raw.lined | sed 's/:/: /g' > /tmp/issuebody.yml
+          cat /tmp/issuebody.yml.lined | sed 's/:/: /g' > /tmp/issuebody.yml
           # encode cleaned answer file
           cat /tmp/issuebody.yml| base64 -w 0 > /tmp/answer_key_string
           echo answer_key_string=$(cat /tmp/answer_key_double) >> $GITHUB_ENV

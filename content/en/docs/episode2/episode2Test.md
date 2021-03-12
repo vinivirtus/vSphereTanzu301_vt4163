@@ -46,9 +46,9 @@ Please right click the following link to the test answer response sheet and sele
 
 ### Episode 2 Test Questions
 
-#### **Question1:** This session covered creating a nested ESXi cluster with HCI Mesh. HCI mesh is new vSphere 7 feature that:||Select two choices. <!-- omit in toc -->
+#### **Question1:** This session covered creating a nested ESXi cluster with HCI Mesh. HCI mesh is new vSphere 7 feature that:||Select two choices.  <!-- omit in toc -->
 
-**Please select the best response from the following to complete the statement in Question1:**
+**Please select the best 2 responses from the following to complete the statement in Question1:**
 
 ```yml
 Answers:
@@ -58,28 +58,17 @@ Answers:
   d: can talk native vsan protocol to the parent cluster
 ```
 
-#### **Question2:** In the setup of vSphere with Tanzu you will need at least two separate, routable subnets configured. One subnet will be for Management Networking. This is where vCenter, ESXi, the Supervisor Cluster and the Load Balancer will live. The other subnet will be used for Workload Networking. This is where your virtual IP’s and TKG clusters will live. <!-- omit in toc -->
+#### **Question2:** vSphere with Tanzu: || Select three responses.  <!-- omit in toc -->
 
-**Based on the scenario above, please select which 2 of the following statements are accurate:**
-
-```yml
-Answers:
-  a: The Management and Workload Networks cannot be on the same subnet. They require L2 isolation.
-  b: The Management and Workload Networks can be on the same subnet. They do not require L2 isolation.
-  c: Avoid using VLANs to isolate the Management and Workload Network
-  d: VMware recommends using VLANs to isolate the Management and Workload Network
-```
-
-#### **Question3:** Which of the following items can be used to check and validate the base networking configuration: <!-- omit in toc -->
-
-**Select 3 of the following statements:**
+**Please select the best 3 responses from the following which could accurately complete the statement in Question2:**
 
 ```yml
 Answers:
-  a: basic networking - management network can reach internet
-  b: basic networking - management network can reach ESXi hosts
-  c: vmotion is working
-  d: basic networking between management network and workload networks is working so that you can ping between the networks
+  a: allows you to bring your own network and storage
+  b: requires VSAN
+  c: requires DRS to be disabled
+  d: requires the use of a VDS
+  e: requires HA and DRS are enabled
 ```
 
 ##### This concludes the episode 2 test. Please use the navigation bar to proceed to the next page.
