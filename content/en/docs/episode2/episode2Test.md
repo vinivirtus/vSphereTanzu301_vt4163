@@ -53,9 +53,9 @@ Please right click the following link to the test answer response sheet and sele
 ```yml
 Answers:
   a: shares a vsan datastore between clusters
-  b: 
-  c: 
-  d: 
+  b: provides automated vCenter installation
+  c: creates half the storage needed
+  d: can talk native vsan protocol to the parent cluster
 ```
 
 #### **Question2:** In the setup of vSphere with Tanzu you will need at least two separate, routable subnets configured. One subnet will be for Management Networking. This is where vCenter, ESXi, the Supervisor Cluster and the Load Balancer will live. The other subnet will be used for Workload Networking. This is where your virtual IP’s and TKG clusters will live. <!-- omit in toc -->
