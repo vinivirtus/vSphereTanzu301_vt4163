@@ -493,7 +493,7 @@ jobs:
           if [ '${{ env.passing_grade }}' == 'true' ]
           then
             echo "this is a passing grade"
-            prmessage='{"event":"COMMENT","body":"@${{ github.event.sender.login }} Congratulations, you have recieved a passing grade and have been awarded a certificate of completion for this course. You can view your grade report at https://github.com/modernappsninjas/${{ github.event.sender.login }}/blob/main/static/userdata/courses/${{ github.event.repository.name }}/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md"}'
+            prmessage='{"event":"COMMENT","body":"@${{ github.event.sender.login }} Congratulations, you have recieved a passing grade and have been awarded a certificate of completion for this course. You can view your grade report at https://github.com/modernappsninjas/${{ github.event.sender.login }}/blob/main/static/userdata/courses/${{ github.event.repository.name }}/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md"'
             echo $prmessage > /tmp/prmessage
           elif [ '${{ env.passing_grade }}' == 'false' ]
           then
