@@ -505,6 +505,7 @@ jobs:
             prmessage='{"event":"COMMENT","body":"@${{ github.event.sender.login }} There has been an error in processing your completion certificate request. Please open a support request issue ticket on the course repository, and include the link to this pull request page in your request."}'
             echo $prmessage
           fi
+          echo "if statement passed"
           curl -X POST \
           -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           -H "Accept: application/vnd.github.v3+json" \
