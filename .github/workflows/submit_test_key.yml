@@ -100,7 +100,7 @@ jobs:
         run: |
           echo -e '${{ github.event.issue.body }}' > /tmp/answer_key_string_raw
           echo "the issuebody base64 string is: $(cat /tmp/answer_key_string_raw)"
-          echo answer_key_string_raw=$(cat /tmp/answer_key_string) >> $GITHUB_ENV
+          echo answer_key_string_raw=$(cat /tmp/answer_key_string_raw) >> $GITHUB_ENV
           echo "the issuebody decoded content is: $(cat /tmp/answer_key_string_raw | base64 -d)"
           cat /tmp/answer_key_string_raw | base64 -d > /tmp/issuebody.yml.raw
       - name: clean answer key file
@@ -204,7 +204,7 @@ jobs:
           cat /tmp/existing_response_sheet
           cat /tmp/existing_response_sheet | jq '.sha' > /tmp/existing_response_sheet_sha
           cat /tmp/existing_response_sheet_sha
-          echo existing_response_sheet_sha=$(cat /tmp/string_exists_sha) >> $GITHUB_ENV          
+          echo existing_response_sheet_sha=$(cat /tmp/existing_response_sheet_sha) >> $GITHUB_ENV          
       - name: if update, delete existing answer response sheet 
         if: env.string_exists == 'true'
         run: |
