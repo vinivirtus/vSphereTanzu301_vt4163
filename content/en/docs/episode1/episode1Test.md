@@ -42,7 +42,7 @@ It is important that you follow the instructions carefully to ensure the automat
 
 Please right click the following link to the test answer response sheet and select to open it in a new tab. The questions for this test will be provided below in this page, but you will need to enter your responses in the answer response sheet. 
 
-[Test1 Answer Response Sheet](https://github.com/modernappsninja/vSphereTanzu301_vt4163/edit/main/static/admin/userdata/tests/test1.yml)  
+[test1 Answer Response Sheet](https://github.com/modernappsninja/vSphereTanzu301_vt4163/edit/main/static/admin/userdata/tests/test1.yml)  
 
 ### Episode 1 Test Questions
 
