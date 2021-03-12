@@ -511,7 +511,7 @@ jobs:
             echo '"@${{ github.event.sender.login }} There has been an error in processing your completion certificate request. Please open a support request issue ticket on the course repository, and include the link to this pull request page in your request."' > /tmp/prmessage
             cat /tmp/prmessage
           fi
-          curl -X POST \
+          eval curl -X POST \
           -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           -H "Accept: application/vnd.github.v3+json" \
           -d '{"event": "COMMENT", "body": '$(cat /tmp/prmessage)'}' \
