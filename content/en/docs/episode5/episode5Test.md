@@ -46,39 +46,43 @@ Please right click the following link to the test answer response sheet and sele
 
 ### Episode 5 Test Questions
 
-#### **Question1:** vSphere with Tanzu is the fastest way to get started with Kubernetes workloads. and ...? <!-- omit in toc -->
+#### **Question1:** In Episode 5, Ben runs through a variety of sanity checks to validate the K8s cluster created. What is the reason for the Create a ConfigMap check? <!-- omit in toc -->
 
-**Please select the best response from the following to complete the statement in Question1:**
+**Please select the best response:**
 
 ```yml
 Answers:
-  a: requires NSX-T to be installed.
-  b: is designed to work with standard vSphere networking which allows you to bring your own networking.
-  c: allows you to avoid connecting any networks.
+  a: validates delegation
+  b: validates permission to create a simple object
+  c: validates cluster networking
+  d: validates persistent volumes are working
+  e: validates all nodes can be scheduled to
 ```
 
-#### **Question2:** In the setup of vSphere with Tanzu you will need at least two separate, routable subnets configured. One subnet will be for Management Networking. This is where vCenter, ESXi, the Supervisor Cluster and the Load Balancer will live. The other subnet will be used for Workload Networking. This is where your virtual IP’s and TKG clusters will live. <!-- omit in toc -->
+#### **Question2:** In Episode 5, Ben runs through a variety of sanity checks to validate the K8s cluster created. What is the reason for the Run a Pod check? <!-- omit in toc -->
 
-**Based on the scenario above, please select which 2 of the following statements are accurate:**
+**Please select the best response:**
 
 ```yml
 Answers:
-  a: The Management and Workload Networks cannot be on the same subnet. They require L2 isolation.
-  b: The Management and Workload Networks can be on the same subnet. They do not require L2 isolation.
-  c: Avoid using VLANs to isolate the Management and Workload Network
-  d: VMware recommends using VLANs to isolate the Management and Workload Network
+  a: validates permission to create a simple object
+  b: validates K8s admin permissions and validate registry settings
+  c: validates cluster networking
+  d: validates HAProxy load balancing
+  e: validates all nodes can be scheduled to
 ```
 
-#### **Question3:** Which of the following items can be used to check and validate the base networking configuration: <!-- omit in toc -->
+#### **Question3:** In Episode 5, Ben runs through a variety of sanity checks to validate the K8s cluster created. What is the reason for the Create a new user and login check?: <!-- omit in toc -->
 
-**Select 3 of the following statements:**
+**Please select the best response:**
 
 ```yml
 Answers:
-  a: basic networking - management network can reach internet
-  b: basic networking - management network can reach ESXi hosts
-  c: vmotion is working
-  d: basic networking between management network and workload networks is working so that you can ping between the networks
+  a: validates delegation
+  b: validates permission to create a simple object
+  c: validates cluster networking
+  d: validates HAProxy load balancing
+  e: validates persistent volumes are working
 ```
 
 ##### This concludes the episode 5 test. Please use the navigation bar to proceed to the next page.
