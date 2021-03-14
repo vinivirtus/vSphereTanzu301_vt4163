@@ -46,27 +46,33 @@ Please right click the following link to the test answer response sheet and sele
 
 ### Episode 4 Test Questions
 
-#### **Question1:** vSphere with Tanzu is the fastest way to get started with Kubernetes workloads. and ...? <!-- omit in toc -->
+#### **Question1:** In the Namespaces Summary tab you see the various configuration sections for the vSphere Namespace, including: <!-- omit in toc -->
 
-**Please select the best response from the following to complete the statement in Question1:**
+**Please select 4 responses:**
 
 ```yml
 Answers:
-  a: requires NSX-T to be installed.
-  b: is designed to work with standard vSphere networking which allows you to bring your own networking.
-  c: allows you to avoid connecting any networks.
+  a: HAProxy
+  b: Permissions
+  c: vSan Health
+  d: Storage
+  e: Capacity and Usage
+  f: Tanzu Kubernetes
+  g: vPods
 ```
 
-#### **Question2:** In the setup of vSphere with Tanzu you will need at least two separate, routable subnets configured. One subnet will be for Management Networking. This is where vCenter, ESXi, the Supervisor Cluster and the Load Balancer will live. The other subnet will be used for Workload Networking. This is where your virtual IP’s and TKG clusters will live. <!-- omit in toc -->
+#### **Question2:** Having a Kubernetes control plane on the hypervisor layer enables the following capabilities in vSphere: <!-- omit in toc -->
 
-**Based on the scenario above, please select which 2 of the following statements are accurate:**
+**Please select 4 responses:**
 
 ```yml
 Answers:
-  a: The Management and Workload Networks cannot be on the same subnet. They require L2 isolation.
-  b: The Management and Workload Networks can be on the same subnet. They do not require L2 isolation.
-  c: Avoid using VLANs to isolate the Management and Workload Network
-  d: VMware recommends using VLANs to isolate the Management and Workload Network
+  a: As a vSphere administrator, you can create namespaces on the Supervisor Cluster, called Supervisor Namespaces, and configure them with dedicated memory, CPU, and storage. You provide Supervisor Namespaces to DevOps engineers.
+  b: As a vSphere administrator, you can manage and monitor Tanzu Kubernetes clusters by using the same tools as with regular VMs.
+  c: As a vSphere administrator, you are required to use NSX for networking.
+  d: As a vSphere administrator, you have full visibility over Tanzu Kubernetes clusters running within different namespaces, their placement in the environment, and how they consume resources.
+  e: As a vSphere administrator, you configure the vSphere with Tanzu platform with the necessary compute, storage, and networking components.
+  f: All of the above
 ```
 
 #### **Question3:** Which of the following items can be used to check and validate the base networking configuration: <!-- omit in toc -->

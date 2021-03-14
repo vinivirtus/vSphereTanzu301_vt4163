@@ -30,7 +30,7 @@ The Answer sheet will open in Github's web-based editor, similar to the image sh
 
 ![Example Test Response Sheet](/vSphereTanzu301_vt4163/admin/assets/images/blank_test_screen_example.png)  
 
-After you fill in your answer sheet, you will submit  your responses as a git [pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) following the instructions provided below, which will trigger a workflow that will grade your responses and provide your test grading sheet. 
+After you fill in your answer sheet, you will submit your responses as a git [pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) following the instructions provided below, which will trigger a workflow that will grade your responses and provide your test grading sheet. 
 
 ### Full Test Instructions
 
@@ -46,39 +46,39 @@ Please right click the following link to the test answer response sheet and sele
 
 ### Episode 3 Test Questions
 
-#### **Question1:** vSphere with Tanzu is the fastest way to get started with Kubernetes workloads. and ...? <!-- omit in toc -->
+#### **Question1:** in a vSphere with Tanzu implementation that uses vDS and HAproxy, which of the following IP ranges should be prepared for the supervisor cluster networking topology?  <!-- omit in toc -->
 
-**Please select the best response from the following to complete the statement in Question1:**
-
-```yml
-Answers:
-  a: requires NSX-T to be installed.
-  b: is designed to work with standard vSphere networking which allows you to bring your own networking.
-  c: allows you to avoid connecting any networks.
-```
-
-#### **Question2:** In the setup of vSphere with Tanzu you will need at least two separate, routable subnets configured. One subnet will be for Management Networking. This is where vCenter, ESXi, the Supervisor Cluster and the Load Balancer will live. The other subnet will be used for Workload Networking. This is where your virtual IP’s and TKG clusters will live. <!-- omit in toc -->
-
-**Based on the scenario above, please select which 2 of the following statements are accurate:**
+**Please select the best 2 responses from the following:**
 
 ```yml
 Answers:
-  a: The Management and Workload Networks cannot be on the same subnet. They require L2 isolation.
-  b: The Management and Workload Networks can be on the same subnet. They do not require L2 isolation.
-  c: Avoid using VLANs to isolate the Management and Workload Network
-  d: VMware recommends using VLANs to isolate the Management and Workload Network
+  a: A range for allocating virtual IPs for HAProxy. The IP range that you configure for the virtual servers of HAProxy are reserved by the load balancer appliance. 
+  b: DHCP IP ranges
+  c: Configure a gateway within the HAProxy virtual IP range, so all routes to that gateway will succeed.
+  d: An IP range for the nodes of the Supervisor Cluster and Tanzu Kubernetes clusters.
 ```
 
-#### **Question3:** Which of the following items can be used to check and validate the base networking configuration: <!-- omit in toc -->
+#### **Question2:** True or False - Before installing Workload Management (the user interface designation for running Kubernetes inside vSphere), you have to setup HA-Proxy, a virtual appliance for provisioning load-balancers. <!-- omit in toc -->
 
-**Select 3 of the following statements:**
+**Important: On your answer sheet, please use the letter a for true, and the letter b for false. DO NOT type in the words true or false on the answer sheet as the grading service only processes single letter responses**
 
 ```yml
 Answers:
-  a: basic networking - management network can reach internet
-  b: basic networking - management network can reach ESXi hosts
-  c: vmotion is working
-  d: basic networking between management network and workload networks is working so that you can ping between the networks
+  a: true
+  b: false
 ```
+
+#### **Question3:** Kubernetes cluster configuration includes providing a CIDR range for Kubernetes services and a CIDR range for pods. || Select all that apply.: <!-- omit in toc -->
+
+**Select 2 of the following statements:**
+
+```yml
+Answers:
+  a: CIDR Range == IP Range. You can pick any IP range you want but it must not conflict with anything else on the management or workload networks.
+  b: IP ranges are not needed for the supervisor cluster
+  c: a /20 is required
+  d: default for services is a /24 as supervisor cluster doesn't use a lot ... but this can be changed.
+```
+
 
 ##### This concludes the episode 3 test. Please use the navigation bar to proceed to the next page.
