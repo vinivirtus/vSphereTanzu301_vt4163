@@ -120,7 +120,6 @@ changes to course completion requirements. &lt;/p></description></item><item><t
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
 &lt;iframe src="https://www.youtube.com/embed/uSGujnlYpVc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
 &lt;/div></description></item><item><title>Docs: Episode 1 Test</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode1/episode1test/</link><pubDate>Fri, 09 Oct 2020 03:15:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode1/episode1test/</guid><description>
-&lt;p>&lt;strong>The Testing and Completion Certificate Services are in testing and will be available shortly. Please check back soon to use these services, in the meantime please feel free to utilize the rest of the course content.&lt;/strong>&lt;/p>
 &lt;p>All Modernapps Ninja learning content is publicly accessible and available openly, however a free membership is required to take tests and recieve a certificate of completion for the course. You must first &lt;a href="https://modernapps.ninja/about/membership/">join the community&lt;/a> and register for this course per the instructions in the course introduction section before attempting to submit a test.&lt;/p>
 &lt;p>Ninja tests use devops tools and processes so the testing system itself provides both experience with and validation of foundational devops skills.&lt;/p>
 &lt;ul>
@@ -171,8 +170,24 @@ changes to course completion requirements. &lt;/p></description></item><item><t
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">b&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">basic networking - management network can reach ESXi hosts&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">c&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">vmotion is working&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">d&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">basic networking between management network and workload networks is working so that you can ping between the networks&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="this-concludes-the-episode-1-test-please-use-the-navigation-bar-to-proceed-to-the-next-page">This concludes the episode 1 test. Please use the navigation bar to proceed to the next page.&lt;/h5></description></item><item><title>Docs: Episode 2 Test</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode2/episode2test/</link><pubDate>Fri, 09 Oct 2020 03:15:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode2/episode2test/</guid><description>
-&lt;p>&lt;strong>The Testing and Completion Certificate Services are in testing and will be available shortly. Please check back soon to use these services, in the meantime please feel free to utilize the rest of the course content.&lt;/strong>&lt;/p>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="this-concludes-the-episode-1-test-please-use-the-navigation-bar-to-proceed-to-the-next-page">This concludes the episode 1 test. Please use the navigation bar to proceed to the next page.&lt;/h5></description></item><item><title>Docs: vSphere with Tanzu - Creating a Nested Cluster</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode2/createnestedcluster/</link><pubDate>Mon, 12 Oct 2020 18:34:25 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode2/createnestedcluster/</guid><description>
+&lt;p>On the next page you will find the second in a series of videos that walk you through the whole process of deploying and using vSphere with Tanzu.&lt;/p>
+&lt;p>This particular video focuses on setting up a nested vSphere Cluster in an existing vCenter using the networking we configured in episode 1. The nested vSphere Cluster is often used by our customers for situations where they want a sandbox type of environment.&lt;/p>
+&lt;p>This session is especially important for understanding validating and troubleshooting along the journey to setting up the environment.&lt;/p>
+&lt;p>If you already have a lab set up with workload management enabled, take the knowledge check in this module and then skip ahead to video 4.&lt;/p>
+&lt;p>Chapter Timing:&lt;/p>
+&lt;pre>&lt;code> 0:00​ vSphere With Tanzu Deep Dive Series Ep 1
+3:10​ Creating a Nested vSphere Cluster with HCI Mesh
+6:06​ Creating Nested ESXi Hosts
+11:36​ Configuring the vSphere Cluster
+14:11​ Validating the vSphere Cluster
+18:29​ Configuring Host Scratch Locations
+22:40​ Customizing the ESXi Hosts
+25:56​ Nested Cluster Network Configuration
+35:19​ Final Cluster Configuration and Validation&lt;/code>&lt;/pre></description></item><item><title>Docs: Video - Creating a Nested Cluster</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode2/createnestedclustervideo/</link><pubDate>Mon, 12 Oct 2020 18:40:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode2/createnestedclustervideo/</guid><description>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/Ubsm04VWXKk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div></description></item><item><title>Docs: Episode 2 Test</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode2/episode2test/</link><pubDate>Fri, 09 Oct 2020 03:15:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode2/episode2test/</guid><description>
 &lt;p>All Modernapps Ninja learning content is publicly accessible and available openly, however a free membership is required to take tests and recieve a certificate of completion for the course. You must first &lt;a href="https://modernapps.ninja/about/membership/">join the community&lt;/a> and register for this course per the instructions in the course introduction section before attempting to submit a test.&lt;/p>
 &lt;p>Ninja tests use devops tools and processes so the testing system itself provides both experience with and validation of foundational devops skills.&lt;/p>
 &lt;ul>
@@ -218,8 +233,18 @@ changes to course completion requirements. &lt;/p></description></item><item><t
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">c&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">requires DRS to be disabled&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">d&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">requires the use of a VDS&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">e&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">requires HA and DRS are enabled&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="this-concludes-the-episode-2-test-please-use-the-navigation-bar-to-proceed-to-the-next-page">This concludes the episode 2 test. Please use the navigation bar to proceed to the next page.&lt;/h5></description></item><item><title>Docs: Episode 3 Test</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode3/episode3test/</link><pubDate>Fri, 09 Oct 2020 03:15:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode3/episode3test/</guid><description>
-&lt;p>&lt;strong>The Testing and Completion Certificate Services are in testing and will be available shortly. Please check back soon to use these services, in the meantime please feel free to utilize the rest of the course content.&lt;/strong>&lt;/p>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="this-concludes-the-episode-2-test-please-use-the-navigation-bar-to-proceed-to-the-next-page">This concludes the episode 2 test. Please use the navigation bar to proceed to the next page.&lt;/h5></description></item><item><title>Docs: Configuring a vSphere Cluster for Tanzu</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode3/configureclustertanzu/</link><pubDate>Mon, 12 Oct 2020 18:47:30 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode3/configureclustertanzu/</guid><description>
+&lt;p>On the next page is the third in a series of videos that walk you through the whole process of deploying and using vSphere with Tanzu. See below for chapter links.&lt;/p>
+&lt;p>This particular video focuses on enabling workload management and deploying a load balancer into the vSphere cluster we created in episode 2.&lt;/p>
+&lt;p>If you already have a lab set up with workload management enabled, skip ahead to video 4.&lt;/p>
+&lt;pre>&lt;code> 00:00​ vSphere With Tanzu Deep Dive Series Ep 3
+02:46​ Exploring Network Topologies and Supervisor Concept
+07:41​ Installing and Configuring HAProxy Load Balancer
+18:24​ Validating the HAProxy Appliance
+24:29​ Enabling Workload Management &lt;/code>&lt;/pre></description></item><item><title>Docs: Video - Configuring a vSphere Cluster for Tanzu</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode3/configureclustertanzuvideo/</link><pubDate>Mon, 12 Oct 2020 20:05:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode3/configureclustertanzuvideo/</guid><description>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/wfYDDbBJHfM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div></description></item><item><title>Docs: Episode 3 Test</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode3/episode3test/</link><pubDate>Fri, 09 Oct 2020 03:15:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode3/episode3test/</guid><description>
 &lt;p>All Modernapps Ninja learning content is publicly accessible and available openly, however a free membership is required to take tests and recieve a certificate of completion for the course. You must first &lt;a href="https://modernapps.ninja/about/membership/">join the community&lt;/a> and register for this course per the instructions in the course introduction section before attempting to submit a test.&lt;/p>
 &lt;p>Ninja tests use devops tools and processes so the testing system itself provides both experience with and validation of foundational devops skills.&lt;/p>
 &lt;ul>
@@ -269,8 +294,20 @@ changes to course completion requirements. &lt;/p></description></item><item><t
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">b&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">IP ranges are not needed for the supervisor cluster&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">c&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">a /20 is required&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">d&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">default for services is a /24 as supervisor cluster doesn&amp;#39;t use a lot ... but this can be changed.&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="this-concludes-the-episode-3-test-please-use-the-navigation-bar-to-proceed-to-the-next-page">This concludes the episode 3 test. Please use the navigation bar to proceed to the next page.&lt;/h5></description></item><item><title>Docs: Episode 4 Test</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/episode4test/</link><pubDate>Fri, 09 Oct 2020 03:15:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/episode4test/</guid><description>
-&lt;p>&lt;strong>The Testing and Completion Certificate Services are in testing and will be available shortly. Please check back soon to use these services, in the meantime please feel free to utilize the rest of the course content.&lt;/strong>&lt;/p>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="this-concludes-the-episode-3-test-please-use-the-navigation-bar-to-proceed-to-the-next-page">This concludes the episode 3 test. Please use the navigation bar to proceed to the next page.&lt;/h5></description></item><item><title>Docs: vSphere with Tanzu - Creating a Namespace and Deploying a K8s Cluster</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/deploynamespacecluster/</link><pubDate>Mon, 12 Oct 2020 18:47:30 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/deploynamespacecluster/</guid><description>
+&lt;p>On the next page is&lt;/p>
+&lt;p>The fourth in a series of videos that walk you through the whole process of deploying and using vSphere with Tanzu. See below for chapter links.&lt;/p>
+&lt;p>This video gets into the good stuff - how to deploy an upstream Kubernetes Cluster to vSphere using vSphere with Tanzu. It goes into detail about how the vSphere admin configures a namespace, the delegation model and hand-off to the Kubernetes Cluster Admin, and then ultimately how to interact with vSphere to deploy a Tanzu Kubernetes Cluster.&lt;/p>
+&lt;p>Target audience: vSphere Admins and Kubernetes Admins Chapters:&lt;/p>
+&lt;pre>&lt;code> 0:00​ vSphere With Tanzu Deep Dive Series Ep 4
+0:57​ Validating and Troubleshooting 5:09​ Creating a Namespace
+10:30​ Logging into a Namespace
+20:27​ Creating a Tanzu Kubernetes Cluster
+27:34​ Inspecting the Tanzu Kubernetes Cluster
+32:08​ Logging into the Tanzu Kubernetes Cluster &lt;/code>&lt;/pre></description></item><item><title>Docs: Video - Creating a Namespace and Deploying a K8s Cluster</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/deploynamespaceclustervideo/</link><pubDate>Mon, 12 Oct 2020 20:05:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/deploynamespaceclustervideo/</guid><description>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/biqSFIu_hmQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div></description></item><item><title>Docs: Episode 4 Test</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/episode4test/</link><pubDate>Fri, 09 Oct 2020 03:15:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/episode4test/</guid><description>
 &lt;p>All Modernapps Ninja learning content is publicly accessible and available openly, however a free membership is required to take tests and recieve a certificate of completion for the course. You must first &lt;a href="https://modernapps.ninja/about/membership/">join the community&lt;/a> and register for this course per the instructions in the course introduction section before attempting to submit a test.&lt;/p>
 &lt;p>Ninja tests use devops tools and processes so the testing system itself provides both experience with and validation of foundational devops skills.&lt;/p>
 &lt;ul>
@@ -327,8 +364,41 @@ changes to course completion requirements. &lt;/p></description></item><item><t
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">b&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">basic networking - management network can reach ESXi hosts&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">c&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">vmotion is working&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">d&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">basic networking between management network and workload networks is working so that you can ping between the networks&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="this-concludes-the-episode-4-test-please-use-the-navigation-bar-to-proceed-to-the-next-page">This concludes the episode 4 test. Please use the navigation bar to proceed to the next page.&lt;/h5></description></item><item><title>Docs: Episode 5 Test</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode5/episode5test/</link><pubDate>Fri, 09 Oct 2020 03:15:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode5/episode5test/</guid><description>
-&lt;p>&lt;strong>The Testing and Completion Certificate Services are in testing and will be available shortly. Please check back soon to use these services, in the meantime please feel free to utilize the rest of the course content.&lt;/strong>&lt;/p>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="this-concludes-the-episode-4-test-please-use-the-navigation-bar-to-proceed-to-the-next-page">This concludes the episode 4 test. Please use the navigation bar to proceed to the next page.&lt;/h5></description></item><item><title>Docs: vSphere with Tanzu - Exploring a Tanzu Kubernetes Cluster</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode5/configureclustertanzu/</link><pubDate>Mon, 12 Oct 2020 18:47:30 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode5/configureclustertanzu/</guid><description>
+&lt;p>On the next page is the third in a series of videos that walk you through the whole process of deploying and using vSphere with Tanzu. See below for chapter links.&lt;/p>
+&lt;p>This particular video focuses on enabling workload management and deploying a load balancer into the vSphere cluster we created in episode 2.&lt;/p>
+&lt;p>If you already have a lab set up with workload management enabled, skip ahead to video 4.&lt;/p>
+&lt;pre>&lt;code> 00:00​ vSphere With Tanzu Deep Dive Series Ep 3
+02:46​ Exploring Network Topologies and Supervisor Concept
+07:41​ Installing and Configuring HAProxy Load Balancer
+18:24​ Validating the HAProxy Appliance
+24:29​ Enabling Workload Management &lt;/code>&lt;/pre></description></item><item><title>Docs: Video - Configuring a vSphere Cluster for Tanzu</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode5/configureclustertanzuvideo/</link><pubDate>Mon, 12 Oct 2020 20:05:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode5/configureclustertanzuvideo/</guid><description>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/wfYDDbBJHfM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div></description></item><item><title>Docs: Course Completion Certificate</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/closingsummary/completioncertificate/</link><pubDate>Fri, 09 Oct 2020 03:15:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/closingsummary/completioncertificate/</guid><description>
+&lt;p>If you have completed all tests in the course and recieved over 70% correct responses, you can make an automated request to recieve a certificate of completion for this course.&lt;/p>
+&lt;p>To request your certificate of completion:&lt;/p>
+&lt;ol>
+&lt;li>In a seperate browser tab navigate to: &lt;a href="https://github.com/ModernAppsNinja/vSphereTanzu301_vt4163/tree/main/static/admin/userdata/certs_awarded">https://github.com/ModernAppsNinja/vSphereTanzu301_vt4163/tree/main/static/admin/userdata/certs_awarded&lt;/a>&lt;/li>
+&lt;li>Click on the &lt;code>Add file&lt;/code> button to add a new file&lt;/li>
+&lt;li>Name the file using your own github username in the format &lt;code>yourgithubusername.yml&lt;/code>&lt;/li>
+&lt;li>In the body of the file type: &lt;code>Status: Completed&lt;/code>&lt;/li>
+&lt;li>Click on &lt;code>Propose new file&lt;/code> and then &lt;code>Create pull request&lt;/code> to submit your new file.&lt;/li>
+&lt;/ol>
+&lt;p>When you submit your new file as described in the steps above (also called making a pull request) it will trigger an automated github action workflow that will:&lt;/p>
+&lt;ul>
+&lt;li>Compare the total quantity of tests in the course with the quantity of tests you have completed to ensure you have completed all required tests for the course&lt;/li>
+&lt;li>Tabulate the total quantity of all test questions from all tests&lt;/li>
+&lt;li>Compare the quantity of questions you have answered correctly against the total quantity of questions for all tests to ensure you have attained a minimum of 70% correct answers&lt;/li>
+&lt;li>Post grade report and updated course record card to your member repository&lt;/li>
+&lt;li>Append a message to the pull request to notify the requesting user the course grading is complete, the result, and links to the updated grade report and course record card.
+&lt;ul>
+&lt;li>The requesting members github account will be mentioned in the posted message, which will trigger a github notification to the requestors github account and associated email address.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>In the event that a user requests a certificate and does not have the minimum required grade to pass, a grade report will be provided that will include details on the percent of correct answers for each test in the course, highlighting which test(s) may need to be retaken to achieve a passing grade. Members can then retake any tests necesarry to increase their grade, and then repeat the above process again to request that the certificate service run again.&lt;/p>
+&lt;p>If you encounter any problems with testing or with the certificate process, please open an issue ticket on this course.&lt;/p></description></item><item><title>Docs: Episode 5 Test</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode5/episode5test/</link><pubDate>Fri, 09 Oct 2020 03:15:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode5/episode5test/</guid><description>
 &lt;p>All Modernapps Ninja learning content is publicly accessible and available openly, however a free membership is required to take tests and recieve a certificate of completion for the course. You must first &lt;a href="https://modernapps.ninja/about/membership/">join the community&lt;/a> and register for this course per the instructions in the course introduction section before attempting to submit a test.&lt;/p>
 &lt;p>Ninja tests use devops tools and processes so the testing system itself provides both experience with and validation of foundational devops skills.&lt;/p>
 &lt;ul>
@@ -383,57 +453,34 @@ changes to course completion requirements. &lt;/p></description></item><item><t
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">c&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">validates cluster networking&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">d&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">validates HAProxy load balancing&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">e&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">validates persistent volumes are working&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="this-concludes-the-episode-5-test-please-use-the-navigation-bar-to-proceed-to-the-next-page">This concludes the episode 5 test. Please use the navigation bar to proceed to the next page.&lt;/h5></description></item><item><title>Docs: vSphere with Tanzu - Creating a Nested Cluster</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode2/createnestedcluster/</link><pubDate>Mon, 12 Oct 2020 18:34:25 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode2/createnestedcluster/</guid><description>
-&lt;p>On the next page you will find the second in a series of videos that walk you through the whole process of deploying and using vSphere with Tanzu.&lt;/p>
-&lt;p>This particular video focuses on setting up a nested vSphere Cluster in an existing vCenter using the networking we configured in episode 1. The nested vSphere Cluster is often used by our customers for situations where they want a sandbox type of environment.&lt;/p>
-&lt;p>This session is especially important for understanding validating and troubleshooting along the journey to setting up the environment.&lt;/p>
-&lt;p>If you already have a lab set up with workload management enabled, take the knowledge check in this module and then skip ahead to video 4.&lt;/p>
-&lt;p>Chapter Timing:&lt;/p>
-&lt;pre>&lt;code> 0:00​ vSphere With Tanzu Deep Dive Series Ep 1
-3:10​ Creating a Nested vSphere Cluster with HCI Mesh
-6:06​ Creating Nested ESXi Hosts
-11:36​ Configuring the vSphere Cluster
-14:11​ Validating the vSphere Cluster
-18:29​ Configuring Host Scratch Locations
-22:40​ Customizing the ESXi Hosts
-25:56​ Nested Cluster Network Configuration
-35:19​ Final Cluster Configuration and Validation&lt;/code>&lt;/pre></description></item><item><title>Docs: Video - Creating a Nested Cluster</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode2/createnestedclustervideo/</link><pubDate>Mon, 12 Oct 2020 18:40:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode2/createnestedclustervideo/</guid><description>
-&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-&lt;iframe src="https://www.youtube.com/embed/Ubsm04VWXKk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
-&lt;/div></description></item><item><title>Docs: Configuring a vSphere Cluster for Tanzu</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode3/configureclustertanzu/</link><pubDate>Mon, 12 Oct 2020 18:47:30 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode3/configureclustertanzu/</guid><description>
-&lt;p>On the next page is the third in a series of videos that walk you through the whole process of deploying and using vSphere with Tanzu. See below for chapter links.&lt;/p>
-&lt;p>This particular video focuses on enabling workload management and deploying a load balancer into the vSphere cluster we created in episode 2.&lt;/p>
-&lt;p>If you already have a lab set up with workload management enabled, skip ahead to video 4.&lt;/p>
-&lt;pre>&lt;code> 00:00​ vSphere With Tanzu Deep Dive Series Ep 3
-02:46​ Exploring Network Topologies and Supervisor Concept
-07:41​ Installing and Configuring HAProxy Load Balancer
-18:24​ Validating the HAProxy Appliance
-24:29​ Enabling Workload Management &lt;/code>&lt;/pre></description></item><item><title>Docs: Video - Configuring a vSphere Cluster for Tanzu</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode3/configureclustertanzuvideo/</link><pubDate>Mon, 12 Oct 2020 20:05:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode3/configureclustertanzuvideo/</guid><description>
-&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-&lt;iframe src="https://www.youtube.com/embed/wfYDDbBJHfM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
-&lt;/div></description></item><item><title>Docs: vSphere with Tanzu - Creating a Namespace and Deploying a K8s Cluster</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/deploynamespacecluster/</link><pubDate>Mon, 12 Oct 2020 18:47:30 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/deploynamespacecluster/</guid><description>
-&lt;p>On the next page is&lt;/p>
-&lt;p>The fourth in a series of videos that walk you through the whole process of deploying and using vSphere with Tanzu. See below for chapter links.&lt;/p>
-&lt;p>This video gets into the good stuff - how to deploy an upstream Kubernetes Cluster to vSphere using vSphere with Tanzu. It goes into detail about how the vSphere admin configures a namespace, the delegation model and hand-off to the Kubernetes Cluster Admin, and then ultimately how to interact with vSphere to deploy a Tanzu Kubernetes Cluster.&lt;/p>
-&lt;p>Target audience: vSphere Admins and Kubernetes Admins Chapters:&lt;/p>
-&lt;pre>&lt;code> 0:00​ vSphere With Tanzu Deep Dive Series Ep 4
-0:57​ Validating and Troubleshooting 5:09​ Creating a Namespace
-10:30​ Logging into a Namespace
-20:27​ Creating a Tanzu Kubernetes Cluster
-27:34​ Inspecting the Tanzu Kubernetes Cluster
-32:08​ Logging into the Tanzu Kubernetes Cluster &lt;/code>&lt;/pre></description></item><item><title>Docs: Video - Creating a Namespace and Deploying a K8s Cluster</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/deploynamespaceclustervideo/</link><pubDate>Mon, 12 Oct 2020 20:05:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode4/deploynamespaceclustervideo/</guid><description>
-&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-&lt;iframe src="https://www.youtube.com/embed/biqSFIu_hmQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
-&lt;/div></description></item><item><title>Docs: vSphere with Tanzu - Exploring a Tanzu Kubernetes Cluster</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode5/configureclustertanzu/</link><pubDate>Mon, 12 Oct 2020 18:47:30 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode5/configureclustertanzu/</guid><description>
-&lt;p>On the next page is the third in a series of videos that walk you through the whole process of deploying and using vSphere with Tanzu. See below for chapter links.&lt;/p>
-&lt;p>This particular video focuses on enabling workload management and deploying a load balancer into the vSphere cluster we created in episode 2.&lt;/p>
-&lt;p>If you already have a lab set up with workload management enabled, skip ahead to video 4.&lt;/p>
-&lt;pre>&lt;code> 00:00​ vSphere With Tanzu Deep Dive Series Ep 3
-02:46​ Exploring Network Topologies and Supervisor Concept
-07:41​ Installing and Configuring HAProxy Load Balancer
-18:24​ Validating the HAProxy Appliance
-24:29​ Enabling Workload Management &lt;/code>&lt;/pre></description></item><item><title>Docs: Video - Configuring a vSphere Cluster for Tanzu</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode5/configureclustertanzuvideo/</link><pubDate>Mon, 12 Oct 2020 20:05:26 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/episode5/configureclustertanzuvideo/</guid><description>
-&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-&lt;iframe src="https://www.youtube.com/embed/wfYDDbBJHfM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
-&lt;/div></description></item><item><title>Docs: Course Complete</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/closingsummary/coursecomplete/</link><pubDate>Mon, 12 Oct 2020 20:20:53 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/closingsummary/coursecomplete/</guid><description>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="this-concludes-the-episode-5-test-please-use-the-navigation-bar-to-proceed-to-the-next-page">This concludes the episode 5 test. Please use the navigation bar to proceed to the next page.&lt;/h5></description></item><item><title>Docs: Resources and References</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/closingsummary/resourcesandreferences/</link><pubDate>Mon, 12 Oct 2020 20:18:29 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/closingsummary/resourcesandreferences/</guid><description>
+&lt;p>&lt;strong>Links to additional materials:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>For more information on vSphere with Tanzu check out the &lt;a href="https://www.vmware.com/products/vsphere.html">vSphere
+product&lt;/a> page.&lt;/li>
+&lt;li>&lt;a href="https://blogs.vmware.com/vsphere/2020/09/announcing-vsphere-with-tanzu.html">vSphere with
+Tanzu&lt;/a> by
+Kit Colbert&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=d6Hc2ceghIk&amp;amp;feature=youtu.be">vSphere with Tanzu -
+YouTube&lt;/a> by
+Sheldon D'Paiva &lt;/li>
+&lt;li>ebook: &lt;a href="https://www.vmware.com/learn/648341_REG.html">Deliver Developer-Ready Infrastructure Using vSphere with
+Tanzu&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://kube.academy/">KubeAcademy&lt;/a> courses are composed of a
+series of bite-size video lessons - terrific resource for learning
+about containers, Kubernetes, and Cloud Native Concepts.&lt;/li>
+&lt;li>&lt;a href="https://tanzu.vmware.com/content/blog/simply-scaling-a-tanzu-kubernetes-cluster-with-the-tkg-service-for-vsphere">Scaling a Tanzu
+Kubernetes&lt;/a> Cluster
+by Kenny Coleman&lt;/li>
+&lt;li>&lt;a href="https://tanzu.vmware.com/content/blog/an-elevated-view-of-the-tanzu-kubernetes-grid-service-architecture">An Elevated View of the Tanzu Kubernetes Kubernetes Grid Service
+Architecture&lt;/a> by
+Kenny Coleman&lt;/li>
+&lt;li>&lt;a href="https://tanzu.vmware.com/content/blog/dissecting-a-tanzu-kubernetes-cluster-spec-with-the-tkg-service-for-vsphere">Dissecting a Tanzu Kubernetes Cluster Spec with the TKG Service for
+vSphere&lt;/a> by
+Kenny Coleman&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Web:&lt;/strong> &lt;a href="https://tanzu.vmware.com">https://tanzu.vmware.com&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Blog:&lt;/strong> &lt;a href="https://tanzu.vmware.com/blog">https://tanzu.vmware.com/blog&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Twitter:&lt;/strong> @vmwaretanzu&lt;/p>
+&lt;p>&lt;strong>Email:&lt;/strong> asktanzu@vmware.com&lt;/p></description></item><item><title>Docs: Course Complete</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/closingsummary/coursecomplete/</link><pubDate>Mon, 12 Oct 2020 20:20:53 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/closingsummary/coursecomplete/</guid><description>
 &lt;p>Thank you for completing the course!&lt;/p></description></item></channel></rss>
