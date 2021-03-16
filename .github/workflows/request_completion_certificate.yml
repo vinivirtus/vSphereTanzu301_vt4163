@@ -323,6 +323,8 @@ jobs:
         run: |
           preferredemailaddress=$(yq e '.preferredEmailAddress' /tmp/member_record.yml)
           badgeclass_entity_id=f_fV8gZmSO6BqIcADjZ0vQ
+          reponame=${{ github.event.repository.name }}
+          lorepo=$(echo ${reponame,,})
           badgrtoken=$(curl -X POST "https://api.badgr.io/o/token" -d "username=${{ secrets.BADGREMAIL }}&password=${{ secrets.BADGRPASSWORD }}" | jq -r '.access_token')
           echo "badgrtoken is: ${badgrtoken}"
           curl -X POST \
@@ -337,7 +339,7 @@ jobs:
             },
             "evidence": [
               {
-                "url": "https://modernappsninjas.github.io/${{ github.event.sender.login }}/course/${{ github.event.repository.name }}/"
+                "url": "https://modernappsninjas.github.io/${{ github.event.sender.login }}/course/'$lorepo'/"
               }
             ],
             "notify": true
@@ -410,9 +412,9 @@ jobs:
       - name: update member course record top to Status Completed
         if: env.passing_grade == 'true'
         run: |
-          sed -i '/^Status/c\Status: Completed\nzaa\n' /tmp/member_course_record_top.yml
-          sed -i '/^zaa/c\OpenBadge_EntityId: '$(cat /tmp/badge_entityId)'\nzbb\n' /tmp/member_course_record_top.yml
-          sed -i '/^zbb/c\OpenBadge_Certificate_Url: ['$(cat /tmp/badge_openBadgeId)']('$(cat /tmp/badge_openBadgeId)')' /tmp/member_course_record_top.yml
+          sed -i '/^Status/c\Status: Completed\n#####\nzaa\n' /tmp/member_course_record_top.yml
+          sed -i '/^zaa/c\OpenBadge_EntityId: '$(cat /tmp/badge_entityId)'\n#####\nzbb\n' /tmp/member_course_record_top.yml
+          sed -i '/^zbb/c\OpenBadge_Certificate_Url: ['$(cat /tmp/badge_openBadgeId)']('$(cat /tmp/badge_openBadgeId)')\n#####\n' /tmp/member_course_record_top.yml
           cat /tmp/member_course_record_top.yml
       - name: pull member course record bottom
         run: |
@@ -451,9 +453,9 @@ jobs:
           -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           -H "Accept: application/vnd.github.v3+json" \
           -d '{"message": "deleting member record card from registered members dir to prepare to repost in certs dir to reflect completed status","sha":"${{ env.member_course_card_old_sha }}"}' \
-          "https://api.github.com/repos/${{ env.org_repo }}/contents/${{ env.pr_filename }}" \
-          -o /tmp/file_delete_response.json
-          cat /tmp/file_delete_response.json
+          "https://api.github.com/repos/modernappsninjas/${{ github.event.sender.login }}/contents/content/english/course/${{ github.event.repository.name }}.md" \
+          -o /tmp/member_course_record_delete_response.json
+          cat /tmp/member_course_record_delete_response.json
       - name: post updated member course card to member repo certs dir
         if: env.passing_grade == 'true'
         run: |
