@@ -18,11 +18,10 @@ When you submit your new file as described in the steps above (also called makin
 - Tabulate the total quantity of all test questions from all tests
 - Compare the quantity of questions you have answered correctly against the total quantity of questions for all tests to ensure you have attained a minimum of 70% correct answers
 - Post grade report and updated course record card to your member repository
+- A digital badge will be created for the requestor with badgr.com
 - Append a message to the pull request to notify the requesting user the course grading is complete, the result, and links to the updated grade report and course record card. 
   - The requesting members github account will be mentioned in the posted message, which will trigger a github notification to the requestors github account and associated email address. 
 
 In the event that a user requests a certificate and does not have the minimum required grade to pass, a grade report will be provided that will include details on the percent of correct answers for each test in the course, highlighting which test(s) may need to be retaken to achieve a passing grade. Members can then retake any tests necesarry to increase their grade, and then repeat the above process again to request that the certificate service run again. 
 
 If you encounter any problems with testing or with the certificate process, please open an issue ticket on this course.
-
-
