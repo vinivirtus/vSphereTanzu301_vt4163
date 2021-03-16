@@ -339,12 +339,12 @@ jobs:
       - name: review variables from assertion response
         if: env.passing_grade == 'true'
         run: |
-        echo "status.success is : $(jq -r '.status.success' /tmp/assert_call_response.json)"
-        jq -r '.status.success' /tmp/assert_call_response.json > /tmp/assert_success
-        echo "result.entityId is : $(jq -r '.result.entityId' /tmp/assert_call_response.json)"
-        jq -r '.result.entityId' /tmp/assert_call_response.json > /tmp/badge_entityId
-        echo "result.openBadgeId is : $(jq -r '.result.openBadgeId' /tmp/assert_call_response.json)"
-        jq -r '.result.openBadgeId' /tmp/assert_call_response.json > /tmp/badge_openBadgeId
+          echo "status.success is : $(jq -r '.status.success' /tmp/assert_call_response.json)"
+          jq -r '.status.success' /tmp/assert_call_response.json > /tmp/assert_success
+          echo "result.entityId is : $(jq -r '.result.entityId' /tmp/assert_call_response.json)"
+          jq -r '.result.entityId' /tmp/assert_call_response.json > /tmp/badge_entityId
+          echo "result.openBadgeId is : $(jq -r '.result.openBadgeId' /tmp/assert_call_response.json)"
+          jq -r '.result.openBadgeId' /tmp/assert_call_response.json > /tmp/badge_openBadgeId
       - name: prepare grade report
         run: |
           echo "---  " > /tmp/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md
