@@ -322,8 +322,12 @@ jobs:
         run: |
           echo preferredemailaddress=$(yq e '.preferredEmailAddress' /tmp/member_record.yml)
           badgeclass_entity_id=f_fV8gZmSO6BqIcADjZ0vQ
-          badgrtoken=$(curl -X POST 'https://api.badgr.io/o/token' -d "username=modernappsninja@gmail.com&password=thequickbrownfox" | jq -r '.access_token')
-          eval curl -X POST 'https://api.badgr.io/v2/badgeclasses/'${badgeclass_entity_id}'/assertions' --header 'Content-Type: application/json' --header 'Authorization: Bearer ''$badgrtoken'' --data-raw '{
+          badgrtoken=$(curl -X POST "https://api.badgr.io/o/token" -d "username={{ secrets.BADGREMAIL }}&password={{ secrets.BADGRPASSWORD }}" | jq -r '.access_token')
+          curl -X POST \
+          "https://api.badgr.io/v2/badgeclasses/${badgeclass_entity_id}/assertions" \
+          --header "Content-Type: application/json" \
+          --header "Authorization: Bearer $badgrtoken" \
+          --data-raw '{
             "recipient": {
               "identity": "'$(yq e '.preferredEmailAddress' /tmp/member_record.yml)'",
               "type": "email",
@@ -336,6 +340,7 @@ jobs:
             ],
             "notify": true
           }' >> /tmp/assert_call_response.json
+          cat /tmp/assert_call_response.json
       - name: review variables from assertion response
         if: env.passing_grade == 'true'
         run: |
