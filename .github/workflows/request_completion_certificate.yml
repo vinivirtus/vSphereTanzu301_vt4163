@@ -348,9 +348,9 @@ jobs:
         run: |
           echo "status.success is : $(jq -r '.status.success' /tmp/assert_call_response.json)"
           jq -r '.status.success' /tmp/assert_call_response.json > /tmp/assert_success
-          echo "result.entityId is : $(jq -r '.result.entityId' /tmp/assert_call_response.json)"
+          echo "result.entityId is : $(jq -r '.result[0].entityId' /tmp/assert_call_response.json)"
           jq -r '.result.entityId' /tmp/assert_call_response.json > /tmp/badge_entityId
-          echo "result.openBadgeId is : $(jq -r '.result.openBadgeId' /tmp/assert_call_response.json)"
+          echo "result.openBadgeId is : $(jq -r '.result[0].openBadgeId' /tmp/assert_call_response.json)"
           jq -r '.result.openBadgeId' /tmp/assert_call_response.json > /tmp/badge_openBadgeId
       - name: prepare grade report
         run: |
