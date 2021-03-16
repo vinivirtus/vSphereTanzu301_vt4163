@@ -391,6 +391,7 @@ changes to course completion requirements. &lt;/p></description></item><item><t
 &lt;li>Tabulate the total quantity of all test questions from all tests&lt;/li>
 &lt;li>Compare the quantity of questions you have answered correctly against the total quantity of questions for all tests to ensure you have attained a minimum of 70% correct answers&lt;/li>
 &lt;li>Post grade report and updated course record card to your member repository&lt;/li>
+&lt;li>A digital badge will be created for the requestor with badgr.com&lt;/li>
 &lt;li>Append a message to the pull request to notify the requesting user the course grading is complete, the result, and links to the updated grade report and course record card.
 &lt;ul>
 &lt;li>The requesting members github account will be mentioned in the posted message, which will trigger a github notification to the requestors github account and associated email address.&lt;/li>
