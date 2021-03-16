@@ -339,7 +339,7 @@ jobs:
             },
             "evidence": [
               {
-                "url": "https://modernappsninjas.github.io/${{ github.event.sender.login }}/course/'${lorepo}'/"
+                "url": "https://modernappsninjas.github.io/${{ github.event.sender.login }}/cert/'${lorepo}'/"
               }
             ],
             "notify": true
