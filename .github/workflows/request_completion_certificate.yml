@@ -321,9 +321,9 @@ jobs:
       - name: make assertion to award digital badge to recipient
         if: env.passing_grade == 'true'
         run: |
-          echo preferredemailaddress=$(yq e '.preferredEmailAddress' /tmp/member_record.yml)
+          preferredemailaddress=$(yq e '.preferredEmailAddress' /tmp/member_record.yml)
           badgeclass_entity_id=f_fV8gZmSO6BqIcADjZ0vQ
-          badgrtoken=$(curl -X POST "https://api.badgr.io/o/token" -d "username={{ secrets.BADGREMAIL }}&password={{ secrets.BADGRPASSWORD }}" | jq -r '.access_token')
+          badgrtoken=$(curl -X POST "https://api.badgr.io/o/token" -d "username=${{ secrets.BADGREMAIL }}&password=${{ secrets.BADGRPASSWORD }}" | jq -r '.access_token')
           echo "badgrtoken is: ${badgrtoken}"
           curl -X POST \
           "https://api.badgr.io/v2/badgeclasses/${badgeclass_entity_id}/assertions" \
