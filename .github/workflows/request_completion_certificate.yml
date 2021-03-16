@@ -349,8 +349,8 @@ jobs:
           echo "status.success is : $(jq -r '.status.success' /tmp/assert_call_response.json)"
           jq -r '.status.success' /tmp/assert_call_response.json > /tmp/assert_success
           echo "result.entityId is : $(jq -r '.result[0].entityId' /tmp/assert_call_response.json)"
-          jq -r '.result.entityId' /tmp/assert_call_response.json > /tmp/badge_entityId
-          echo "result.openBadgeId is : $(jq -r '.result[0].openBadgeId' /tmp/assert_call_response.json)"
+          jq -r '.result[0].entityId' /tmp/assert_call_response.json > /tmp/badge_entityId
+          echo "result[0].openBadgeId is : $(jq -r '.result[0].openBadgeId' /tmp/assert_call_response.json)"
           jq -r '.result.openBadgeId' /tmp/assert_call_response.json > /tmp/badge_openBadgeId
       - name: prepare grade report
         run: |
@@ -423,7 +423,7 @@ jobs:
       - name: update member course record bottom to Completion_Certificate Awarded
         if: env.passing_grade == 'true'
         run: |
-          sed -i '/^Completion_/c\Completion_Certificate: Awarded' /tmp/member_course_record_bottom.yml
+          sed -i '/^Completion_/c\Completion_Certificate: [Awarded]('$(cat /tmp/badge_openBadgeId)')' /tmp/member_course_record_bottom.yml
       - name: pull latest course meta
         if: env.passing_grade == 'true'
         run: |
@@ -432,6 +432,7 @@ jobs:
           "https://raw.githubusercontent.com/modernappsninja/${{ github.event.repository.name }}/main/static/admin/assets/coursecards/course_meta.yml" \
           -o /tmp/course_meta.yml
           sed -i '/^draft:/c\draft: false' /tmp/course_meta.yml
+          sed -i '/^type:/c\type: cert' /tmp/course_meta.yml
       - name: prepare updated member course card
         if: env.passing_grade == 'true'
         run: |
@@ -442,14 +443,25 @@ jobs:
           cat /tmp/${{ github.event.repository.name }}_grading_stub >> /tmp/member_course_card.md
           cat /tmp/member_course_record_bottom.yml >> /tmp/member_course_card.md
           cat /tmp/member_course_card.md | base64 -w 0 >> /tmp/member_course_card.md.base64
-      - name: post updated member course card to member repo
+      - name: delete member course record card from courses
+      # member course record card will be reposted to certs dir to reflect completed status
+        if: env.passing_grade == 'true'
+        run: |
+          curl -X DELETE \
+          -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          -d '{"message": "deleting member record card from registered members dir to prepare to repost in certs dir to reflect completed status","sha":"${{ env.member_course_card_old_sha }}"}' \
+          "https://api.github.com/repos/${{ env.org_repo }}/contents/${{ env.pr_filename }}" \
+          -o /tmp/file_delete_response.json
+          cat /tmp/file_delete_response.json
+      - name: post updated member course card to member repo certs dir
         if: env.passing_grade == 'true'
         run: |
           curl -X PUT \
           -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           -H "Accept: application/vnd.github.v3+json" \
-          -d '{"message": "Posting updated member course record card", "content": "'$(cat /tmp/member_course_card.md.base64)'","sha":"${{ env.member_course_card_old_sha }}"}' \
-          "https://api.github.com/repos/modernappsninjas/${{ github.event.sender.login }}/contents/content/english/course/${{ github.event.repository.name }}.md" \
+          -d '{"message": "Posting updated member course record card", "content": "'$(cat /tmp/member_course_card.md.base64)'"}' \
+          "https://api.github.com/repos/modernappsninjas/${{ github.event.sender.login }}/contents/content/english/certs/${{ github.event.repository.name }}.md" \
           -o /tmp/member_course_card_post_response.json
       - name: merge_pull_request
         if: env.passing_grade == 'true'
