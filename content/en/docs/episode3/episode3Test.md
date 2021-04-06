@@ -56,7 +56,7 @@ Answers:
   d: An IP range for the nodes of the Supervisor Cluster and Tanzu Kubernetes clusters.
 ```
 
-#### **Question2:** True or False - Before installing Workload Management (the user interface designation for running Kubernetes inside vSphere), you have to setup HA-Proxy, a virtual appliance for provisioning load-balancers. <!-- omit in toc -->
+#### **Question2:** True or False - Before installing Workload Management (the user interface designation for running Kubernetes inside vSphere), you must provision and configure a supported load balancer. <!-- omit in toc -->
 
 **Important: On your answer sheet, please use the letter a for true, and the letter b for false. DO NOT type in the words true or false on the answer sheet as the grading service only processes single letter responses**
 
