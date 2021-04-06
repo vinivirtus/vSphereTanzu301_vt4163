@@ -73,16 +73,4 @@ Answers:
   f: All of the above
 ```
 
-#### **Question3:** Which of the following items can be used to check and validate the base networking configuration: <!-- omit in toc -->
-
-**Select 3 of the following statements:**
-
-```yml
-Answers:
-  a: basic networking - management network can reach internet
-  b: basic networking - management network can reach ESXi hosts
-  c: vmotion is working
-  d: basic networking between management network and workload networks is working so that you can ping between the networks
-```
-
 ##### This concludes the episode 4 test. Please use the navigation bar to proceed to the next page.
