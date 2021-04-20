@@ -4,6 +4,15 @@ date: 2020-10-12T20:18:29-07:00
 weight: 9005
 draft: false
 ---
+**References from the videos:**
+
+-   [GitHub link to scripts](https://github.com/corrieb/vspherewithtanzudemo)
+-   [Quick Start Guide](https://core.vmware.com/resource/vsphere-tanzu-quick-start-guide-v1a)
+-   [New simpler/faster lab setup from William Lam](https://www.virtuallyghetto.com/2020/11/complete-vsphere-with-tanzu-homelab-with-just-32gb-of-memory.html)
+-   [William Lam's Blog](https://www.virtuallyghetto.com/)
+-   [Cormac Hogan's Blog](https://cormachogan.com/)
+-   [vSphere Documentation](https://docs.vmware.com/en/VMware-vSphere/7.0/vmware-vsphere-with-tanzu/GUID-152BE7D2-E227-4DAA-B527-557B564D9718.html)
+
 **Links to additional materials:**
 
 -   For more information on vSphere with Tanzu check out the [vSphere
