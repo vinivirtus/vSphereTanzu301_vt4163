@@ -44,7 +44,7 @@ Please right click the following link to the test answer response sheet and sele
 
 ### Episode 4 Test Questions
 
-#### **Question1:** In the Namespaces Summary tab you see the various configuration sections for the vSphere Namespace, including: <!-- omit in toc -->
+#### **Question1:** With a namespace object selected in the vCenter Host and Cluster view; in the Namespaces Summary tab you see the various configuration sections for the vSphere Namespace, including: <!-- omit in toc -->
 
 **Please select 4 responses:**
 
@@ -70,7 +70,6 @@ Answers:
   c: As a vSphere administrator, you are required to use NSX for networking.
   d: As a vSphere administrator, you have full visibility over Tanzu Kubernetes clusters running within different namespaces, their placement in the environment, and how they consume resources.
   e: As a vSphere administrator, you configure the vSphere with Tanzu platform with the necessary compute, storage, and networking components.
-  f: All of the above
 ```
 
 ##### This concludes the episode 4 test. Please use the navigation bar to proceed to the next page.
