@@ -453,6 +453,15 @@ changes to course completion requirements. &lt;/p></description></item><item><t
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">d&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">validates HAProxy load balancing&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">e&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">validates persistent volumes are working&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="this-concludes-the-episode-5-test-please-use-the-navigation-bar-to-proceed-to-the-next-page">This concludes the episode 5 test. Please use the navigation bar to proceed to the next page.&lt;/h5></description></item><item><title>Docs: Resources and References</title><link>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/closingsummary/resourcesandreferences/</link><pubDate>Mon, 12 Oct 2020 20:18:29 -0700</pubDate><guid>https://modernappsninja.github.io/vSphereTanzu301_vt4163/docs/closingsummary/resourcesandreferences/</guid><description>
+&lt;p>&lt;strong>References from the videos:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/corrieb/vspherewithtanzudemo">GitHub link to scripts&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://core.vmware.com/resource/vsphere-tanzu-quick-start-guide-v1a">Quick Start Guide&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.virtuallyghetto.com/2020/11/complete-vsphere-with-tanzu-homelab-with-just-32gb-of-memory.html">New simpler/faster lab setup from William Lam&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.virtuallyghetto.com/">William Lam&amp;rsquo;s Blog&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cormachogan.com/">Cormac Hogan&amp;rsquo;s Blog&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.vmware.com/en/VMware-vSphere/7.0/vmware-vsphere-with-tanzu/GUID-152BE7D2-E227-4DAA-B527-557B564D9718.html">vSphere Documentation&lt;/a>&lt;/li>
+&lt;/ul>
 &lt;p>&lt;strong>Links to additional materials:&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>For more information on vSphere with Tanzu check out the &lt;a href="https://www.vmware.com/products/vsphere.html">vSphere
